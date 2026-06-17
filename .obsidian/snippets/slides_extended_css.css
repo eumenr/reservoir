@@ -22,6 +22,9 @@
 	/*--text-accent: hsl(from var(--r-link-color) calc(h + 60) 80 60);*/
 	color: var(--r-link-color, #42affa);
 }
+.reveal .button {
+	display: none;
+}
 
 /* ========================================================
    2. 專屬 Slides Extended (獨立瀏覽器環境降維打擊)
