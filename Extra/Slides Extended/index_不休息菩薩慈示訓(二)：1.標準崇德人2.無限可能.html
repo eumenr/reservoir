@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>不休息菩薩慈示訓(二)：1.標準崇德人2.無限可能</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="../../.obsidian/snippets/mater.css" />
+    <link rel="stylesheet" href="../../.obsidian/snippets/slides_extended_css.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!--
+
+[down::]
+[next::]
+[prev::]
+[same::]
+-->
+
+# 不休息菩薩慈示訓(二)
+## 1.標準崇德人 2.無限可能
+
+<div class="button">
+
+[up::傳題 ]
+
+上次修改日期：`=dateformat(this.file.mtime, "yyyy-MM-dd HH:mm:ss")`
+
+投影片 | Templates
+`BUTTON[presentation]`
+
+```meta-bind-button
+style: default
+label: 開啟簡報
+toolip: 'presentation'
+id: presentation
+hidden: true
+action:
+  type: command
+  command: slides:start
+```
+
+[Presentation](obsidian://adv-uri?vault=Note&commandid=slides%3Astart)|[Slide Extended: Open Preview](obsidian://adv-uri?vault=Note&filepath=Cabinet%2F%E5%82%B3%E9%A1%8C%2F%E4%B8%8D%E4%BC%91%E6%81%AF%E8%8F%A9%E8%96%A9%E6%85%88%E7%A4%BA%E8%A8%93(%E4%BA%8C)%EF%BC%9A1.%E6%A8%99%E6%BA%96%E5%B4%87%E5%BE%B7%E4%BA%BA2.%E7%84%A1%E9%99%90%E5%8F%AF%E8%83%BD.md&commandid=slides-extended%3Aopen-preview)
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> [!example|blue] 大綱
+> - [前言](#/2)
+> - [標準崇德人](#/3)
+> 	- [冠頂訓](#/4)
+> 	- [冠頂訓解釋](#/5)
+> 		- [德者](#/5) | [大白](#/6) | [善愿](#/7) | [辱](#/8)
+> 	- [崇德人](#/13)
+> 	- [以身示道](#/14)
+> 	- [身為崇德人](#/21)
+> - [無限可能](#/24)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## 前言
+
+- 濟公活佛慈悲《<u>崇德</u>道場》
+	+ 「<u>崇德</u>」二字非只是宗教名詞
+	+ 更象徵*一貫薪傳*之精神
+	+ 深具歷史重要的地位
+	+ <u>燃盡前人輩生命蘊化成的**蓮花**</u>
+	+ 它是<u>刻在千百萬後學心間上的**名字**</u>
+	+ 它是<u>菩薩倒裝來降世乘愿來的**愿立**</u>
+	+ 它是<u>印證道真、理真及天命真的**殊勝**</u>
+
+[回大綱](#/1)<!-- .element: style="width: 100%; text-align: right" -->
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## 標準崇德人
+
+- 不休息菩薩慈訓
+- 崇德佛院 台北道場負責講師輔導講師研習
+- 2018-02-04
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 冠頂訓
+
+- <mark>標</mark><u>本</u>兼治智慧伸，<u>內聖外王</u>圓滿臻。
+- <mark>準</mark>繩<u>規矩</u>不可紊，而弗失之道從遵。
+- <mark>崇</mark>高品性得公認，心悅誠服皆敬欽。
+- <mark>德</mark>者<u>若谷</u>鄰親近，大白若<u>辱</u>心純真。
+- <mark>人</mark>有壯志天助陣，人有<u>善愿</u>佛助奔。
+
+
+
+[回大綱](#/1)|[>>](#/13)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 冠頂訓解釋
+
+> 不休息菩薩慈訓：**德者**<u>若谷</u>鄰親近
+- 老師慈悲：
+	- 我們修道是要「<u>看重自己</u>」，
+	- 　　　而不是「標榜自己」
+	- 是要「<u>自信</u>」，而不是「自負、自傲」；
+	- 是要「<u>謙卑、涵養</u>」，
+		- 而不是要「矯揉造作」；
+	- 是要「精進」的「<u>鞭策自己</u>」，
+		- 而不是「柔軟」的「放棄自己」。
+
+[標準崇德人](#/3)|[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### 大白
+
+> **大白若辱**<u>心純真</u>。
+- 老子道德經聞道章第41
+  馬王堆帛書《老子乙本．德經》
+	- 故建言有之：
+		- 明道若昧；進道若退；夷道若<ruby>纇<rp>(</rp><rt>ㄌㄟˋ</rt><rp>)</rp></ruby>；
+		- 上德若谷；**大白若辱**；廣德若不足；
+		- 建德若偷；質真若渝；
+		- 大方無隅；大器免成；
+		- 大音希聲；大象無形；道隱無名。
+	- 夫唯道，善貸且成。
+
+[標準崇德人](#/3)|[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### 善愿
+
+
+
+> [!flex]
+> - 人有<u>善愿</u>佛助奔
+> - 活佛師尊慈訓：
+> 	- 徒有<u>三分</u>心
+> 	- 師助你<u>七分</u>力
+>
+> <img src="https://imgpile.com/images/haZFaj.png" alt="" style="width: 350px; object-fit: fill">
+
+
+[標準崇德人](#/3)|[回大綱](#/1)|[崇德人](#/13)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### 忍辱仙人
+
+- 賢愚經 羼提波梨品第12
+
+- 乃往久遠無量無邊不可思議阿僧祇劫，此閻浮提，有一大國，名波羅㮈，當時國王，名為迦梨。爾時國中，有一大仙士，名羼提波梨，與五百弟子，處於山林，修行忍辱。
+- 于時國王與諸群臣夫人婇女，入山遊觀。王時疲懈，因臥休息。諸婇女輩，捨王遊行，觀諸花林，見羼提波梨端坐思惟，敬心內生，即以眾花而散其上，因坐其前，聽所說法。
+
+[標準崇德人](#/3)|[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+- 王覺顧望，不見諸女，與四大臣，行共求之。
+- 見諸女輩坐仙人前，
+- 尋即問曰：『汝於**四空定**，為悉得未？』
+	- 答言：『未得。』
+- 又復問曰：『<mark>四無量心</mark>，汝復得未？』
+	- 答言：『未得。』
+- 王又問曰：『於**四禪事**，汝為得未？』
+	- 猶答：『未得。』
+
+[忍辱仙人](#/7)|[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+- 王即怒曰：『於爾所功德，皆言未有，汝是凡夫，獨與諸女，在此屏處，云何可信？』
+- 又復問曰：『汝常在此，為是何人？修設何事？』仙人答曰：『**修行忍辱**。』
+- 王即拔劍，而語之言：『
+	- 若當忍辱，我欲試汝，知能忍不？』
+- 即割其兩手而問仙人，猶言**忍辱**。
+- 復斷其兩脚，復問之言，故言忍辱。
+
+[忍辱仙人](#/7)|[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+- 爾時天地，六種震動。
+- 時仙人五百弟子，飛於虛空，而問師言：『被如是苦，忍辱之心，不忘失耶？』其師答言：『心未變易。』
+- 王乃驚愕，復更問言：『汝云忍辱，以何為證？』
+- 仙人答曰：『我若實忍，至誠不虛，血當為乳，身當還復。』其言已訖，血尋成乳，平完如故。
+
+[忍辱仙人](#/7)|[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+- 王見忍證，倍懷恐怖，『咄我無狀！毀辱大仙，唯見垂哀受我懺悔。』
+- 仙人告曰：『汝以女色，刀截我形，吾忍如地；**我後成佛，先以慧刀，斷汝三毒。**』
+- 爾時山中，諸龍鬼神，見迦梨王抂忍辱仙人，各懷懊惱，興大雲霧，雷電霹靂，欲害彼王，及其眷屬。
+- 時仙人仰語：『若為我者，莫苦傷害。』時迦梨國王，懺悔之後，常請仙人，就宮供養。
+- 時王<u>迦梨</u>及四大臣，今<u>憍陳如</u>等五比丘是。
+
+[忍辱仙人](#/7)|[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 崇德人
+
+- 肩負著：傳承<u>天命金線</u>，
+	- 延續一貫道脈之神聖使命；
+- 扮演著：五湖四海芸芸眾生，
+	- <u>歸根認中</u>之領航員；
+- 承繼著：老祖師、<u>師尊、師母、老前人</u>
+	- 之宏偉德業；
+- 承擔著：承先啟後、繼往開來之榮耀<u>天職</u>。
+
+[標準崇德人](#/3)|[↤](#/4)|[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 以身示道
+
+- 故崇德人不論
+	- 天職高低，
+	- 道齡深淺
+- 不論乾坤或貧富貴賤，
+- 皆當<u>素位而行</u>，**以身示道**。
+
+[以身示道](#/13)|[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+- 日日以智慧<mark>覺察</mark>己言行，
+	+ 是否合乎道？
+- 時時以智慧<mark>覺知</mark>己修辦，
+	+ 是否正知見？
+- 二六以智慧<mark>覺照</mark>己心念，
+	+ 是否皆光明？
+- 分秒以智慧<mark>覺悟</mark>己愿力，
+	+ 是否真實踐？
+
+[以身示道](#/13)|[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+- 能自覺者，必能<u>覺他</u>。
+	- 猶如一根蠟燭，
+		- 能燃燒自己，
+		- 必能照亮他人。
+- 能自悟者，必能**以身示道**，
+	- 承上啟下，尊師重道。
+
+[以身示道](#/13)|[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+- 能自渡者，必有
+	- <u>光明坦蕩</u>之言行、
+	- <u>慈悲喜捨</u>之胸襟。
+- 進而使父母、兄弟、親友、鄰居，
+	- 以至道場同修、前賢、後學，
+- 皆因接觸你而受感化。 
+
+[以身示道](#/13)|[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+- 使迷惑者，得解惑；
+- 使沈淪苦海之**餘蘊**，
+	- 得以覺醒登道岸，
+	- 領悟人生真諦，發心修辦。
+- 使修辦過程受挫者，
+	- 得以重整旗鼓，奮發向上，
+- 使發心精益求精，正己成人。
+
+[以身示道](#/13)|[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+- 批至此，問一問崇德人！
+	- 是否看重自己？
+	- 是否嚴以律己？
+	- 是否全心全意？
+	- 是否盡心竭力？
+
+[以身示道](#/13)|[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+- 一字字，一句句，
+	- 皆為喚醒同修你！
+- 一字字，一句句，
+	- 皆為大愛續傳遞！
+
+[以身示道](#/13)|[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 身為崇德人
+
+- 身為崇德人，
+	- 敬天地，禮神明，貴乎<u>**誠**敬</u>！
+- 身為崇德人，
+	- 道並行，德不悖，貴乎<u>**誠**信</u>！
+- 身為崇德人，
+	- 護天命，大道揚，貴乎<u>**誠**心</u>！
+
+[身為崇德人](#/21)|[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+- 身為崇德人，
+	- 明明德，新民作，貴乎<u>**誠**摯</u>！
+- 身為崇德人，
+	- 勤學道，志修辦，貴乎<u>**誠**懇</u>！
+- 望吾崇德人，
+	- 以此篇自勉自勵，自我期許！
+
+[身為崇德人](#/21)|[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+- 盼吾崇德人，
+	- 秉持真心誠意，真修實煉，
+	- 必能真道真成。
+- 新一年重發心愿，知行合一，
+	- 立志成為「**標準崇德人**」
+
+[身為崇德人](#/21)|[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## 無限可能
+
+- 2018-06-03
+- 民國107年歲次戊戌四月二十日
+- 臺南 濟德佛院
+- 臺南道場學界人才精進班
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 本
+
+- 聖人<u>不因想成為聖人</u>而濟世救人，
+- 凡人<u>故因想取得名利</u>而汲汲營營，
+- 修道之人，應當曉得自身得人身之可貴，
+	- 故真修道而<u>改毛病、去脾氣</u>。
+	- 故而步入修道之路。人欲得而行之，
+- 聖人不因其得失，方能無為奉獻之。
+	- 且觀今聖與凡者，而不同乎！
+- 今修道者，想步入修道之領域，
+	- 必定先從<u>聖賢功夫</u>入手。
+
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 標
+
+- 從<u>反省</u>中，精進修業；
+- 從<u>行</u>道中，改變提升；
+- 從<u>辦</u>道中，無為奉獻；
+- 從<u>真</u>知中，訂定藍圖；
+	- 懷<u>慈悲</u>，必可與眾生時刻思及；
+	- 懷<u>無為</u>，必能與眾生二六不離。
+- 思從此，舉從嚴；
+	- 寬行道路，廣化有緣；
+- 才可謂創造無限可能，
+	- 才可能與聖賢之路相合也。
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## 讓我們人人做
+
+# **標準崇德人**
+
+# <small>達成</small>**無限可能**
+
+## 敬祝
+
+## 福慧增長 平安健康
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            // normalize to rgb(a)
+            const optionEl = document.createElement("option");
+            optionEl.style.color = color;
+            const normalizedColor = optionEl.style.color;
+
+            const match = normalizedColor.match(/(\d+), (\d+), (\d+)/);
+            if (!match) return false;
+            const [, c_r, c_g, c_b] = match;
+
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.KaTeX,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+            ],
+            allottedTime: "120",
+
+            katex: {
+                local: 'plugin/math/katex',
+                extensions: ["mhchem"],
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                    {
+                        id: 'toggle-overview',
+                        title: 'Toggle overview (O)',
+                        icon: '<i class="fa fa-th"></i>',
+                        action: 'Reveal.toggleOverview();'
+                    },
+                ]
+            },
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":true,"transition":"concave","transitionSpeed":"default","width":960,"height":700,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      /**
+       * KaTeX Equation Numbering Note
+       *
+       * KaTeX maintains a global equation counter for \begin{equation} environments.
+       * When navigating between slides, reveal.js math plugin may re-render math, causing
+       * equation numbers to change randomly.
+       *
+       * Note: Regular $$ blocks don't have equation numbers - only \begin{equation} does.
+       *
+       * If you experience issues with equation numbers changing:
+       * Use manual \tag{} commands: \begin{equation}\tag{1} ... \end{equation}
+       */
+
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
