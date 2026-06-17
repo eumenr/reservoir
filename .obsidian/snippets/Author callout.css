@@ -1,0 +1,35 @@
+/* snippets: Author callout.css */
+.callout[data-callout="author"] {
+	display: flex;
+	flex-direction: column-reverse;
+	--callout-icon: user;
+	--callout-color: transparent;
+/*	box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;*/
+	box-shadow: var(--background-modifier-border) 0px 10px 50px;
+	border-left: solid;
+}
+
+.callout[data-callout="author"] > .callout-title {
+	display: flex;
+	justify-content: flex-end;
+	padding-right: 8px;
+	font-style: normal;
+}
+
+.callout[data-callout="author"] .mod-header,
+.callout[data-callout="author"] .markdown-embed-title
+ {
+	display: none;
+}
+
+.callout[data-callout="author"] .callout-content p {
+	margin-top: 0;
+}
+
+.callout[data-callout="author"] .markdown-embed-content .markdown-rendered {
+	padding: 0;
+}
+
+.callout[data-callout="author"] .internal-embed {
+	
+}

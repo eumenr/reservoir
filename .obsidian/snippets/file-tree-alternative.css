@@ -1,0 +1,27 @@
+/* snippets: file-tree-alternative.css */
+.theme-light,
+.theme-dark {
+	/* 以下是資料夾部分字體 */
+	--oz-fta-folder-font-size: calc(var(--font-text-size)/12*12); /* 13px ? var(--font-text-size)? var(--font-ui-medium) ? var(--font-smaller*/
+	/* 以下是資料夾下檔案部分字體 */
+	--oz-fta-file-font-size: calc(var(--font-text-size)/12*12); /* 12px ? var(--font-ui-small) */
+	/* 以下定義.file-tree-container的全部字體 */
+	--oz-fta-font-family: "menlo"; monospace; "monaco"; "PT mono"; "menlo"; "inconsolata";
+}
+.oz-file-tree-header {
+	font-size: calc(var(--font-text-size)/12*10);21px; /* 15px */
+}
+.oz-nav-file-tag {
+	font-size: calc(var(--font-text-size)/12*8);15px; /* 9px */
+}
+.oz-folder-type {
+	/* 以下是原版字體
+	font-family: monospace; 
+	font-size: 0.6em;
+	font-family: "" ;"SauceCodePro Nerd Font Mono";
+	*/
+	font-size: 0.6em;
+}
+.file-tree-container {
+	font-family: var(--oz-fta-font-family);
+}

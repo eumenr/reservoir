@@ -1,0 +1,19 @@
+/* snippets: Cloze.css */
+.cloze:not([data-cloze-hide]) {
+	color: var(--text-accent-hover);
+}
+.cloze-span:hover {
+	color: var(--text-accent);
+}
+.cloze-span {
+	color: transparent;
+}
+.cloze-span[data-cloze-hide='true'] svg{
+	fill: transparent;
+}
+.fill_out {
+	display: inline;
+	color: transparent;
+	text-decoration-line: underline;
+	text-decoration-color: var(--text-normal);
+}

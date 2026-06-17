@@ -1,0 +1,192 @@
+/* snippets: slides_extended_css.css */
+
+/* 粗體改色，適用 slides extended */
+
+/* ========================================================
+   共通重設：先讓大家回到最乾淨的狀態
+   ======================================================== */
+.reveal .slides section strong {
+	color: initial;
+	background: transparent;
+	-webkit-background-clip: border-box;
+	background-clip: border-box;
+	-webkit-text-fill-color: initial;
+}
+
+/* ========================================================
+   1. 專屬 Obsidian Core Slides
+   ======================================================= */
+/* 核心簡報在全螢幕放映時，html 標籤上會被強行注入 Obsidian 軟體的專屬特徵，
+   例如帶有對電子軟體（Electron）環境的變數，或者維持傳統的 color 即可 */
+.reveal-viewport .slides section strong {
+	/*--text-accent: hsl(from var(--r-link-color) calc(h + 60) 80 60);*/
+	color: var(--r-link-color, #42affa);
+}
+
+/* ========================================================
+   2. 專屬 Slides Extended (獨立瀏覽器環境降維打擊)
+   ======================================================== */
+/* 當在外掛的獨立瀏覽器（localhost）打開時，Reveal.js 會在 <body> 加上 .reveal-full-page。
+   最關鍵的是，為了不讓 Core Slides 吃到，我們加上「排除 Obsidian 內部獨有標籤機制」的防禦： */
+@media screen {
+	/* 這裡利用一個特權：外掛網頁的 html 標籤上「絕對不會」帶有 obsidian 核心的特有主題 class */
+	html:not([class*="theme-"]) .reveal .slides section strong {
+		/* 掏空文字 */
+		color: transparent !important;
+		-webkit-text-fill-color: transparent !important;
+
+		/* 🛠️ 成功換成 h + 60 的新語法 */
+		/*background: oklch(from var(--r-link-color) l c h) !important;*/
+		/*background: oklch(from var(--r-link-color) 0.75 0.14 calc(h - 283)) !important;*/
+		background: oklch(from var(--r-link-color, #42affa) 0.75 0.14 h) !important;
+
+		-webkit-background-clip: text !important;
+		background-clip: text !important;
+		
+		filter: none !important;
+		display: inline !important;
+	}
+}
+
+blockquote {
+	font-style: normal !important;
+	color: oklch(from var(--r-main-color, #ffffff) calc(l*0.75) c h);
+}
+
+
+/* 處理 callout flex */
+
+.callout[data-type="flex"] {
+	border: none !important;
+	background-color: transparent !important;
+	padding: 0 !important; 
+	margin: 0 !important;
+	display: flex !important;
+	flex-wrap: wrap; /* 讓內容自動換行 */
+	gap: 1em;
+	margin-right: -1em !important;
+}
+
+/* 2. 讓 .callout-content 透明化，讓裡面的子元素直接受 Flex 控制 */
+.callout[data-type="flex"] .callout-content {
+	display: contents !important;
+}
+
+/* 3. 【核心邏輯】：自動平均分配寬度 */
+.callout[data-type="flex"] .callout {
+	flex: 1 1 calc(33.33% - 1em) !important;   /* 基礎寬度 30% */
+	min-width: 250px !important; /* 防止縮得太小，可以根據你的需求調整 */
+
+	float: none !important;      /* 絕對禁止浮動 */
+	margin: 0 !important; 
+	/*padding: 0 !important;*/
+	box-sizing: border-box !important;
+}
+
+.callout[data-type*="flex"]::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.callout[data-type="flex"] > .callout-title,
+.callout[data-type*="table"] > .callout-title {
+	display: none;
+}
+.callout[data-type="flex"] > .callout-content,
+.callout[data-type="flex"] > .callout-content .callout-content > table {
+	padding: 0; margin: 0;
+}
+
+/*.callout[data-type*="outline"]*/
+.callout-color-default {
+	--callout-color: var(--r-link-color, #42affa) !important;
+	background-color: hsl(from var(--r-link-color, #42affa) h s l / 0.1) !important;
+	border-left: 4px solid var(--r-link-color, #42affa) !important;
+}
+
+/*.callout[data-type*="outline"]*/
+.callout-color-default .callout-title {
+	background-color: hsl(from var(--r-link-color, #42affa) h s l / 0.1) !important;
+}
+/*.callout[data-type*="outline"] .callout-icon*/
+.callout-color-default[data-type*="outline"] .callout-icon,
+.callout-color-default[data-type*="outline"] .callout-title {
+	color: var(--r-link-color, #42affa) !important;
+}
+
+
+/* 1. 先把原本 HTML 裡自帶的舊 SVG 隱藏 */
+.callout[data-type*="outline"] .callout-icon svg {
+	display: none !important;
+}
+
+/* 2. 用虛擬元素 + 你的專屬 SVG 遮罩完美注入 */
+.callout[data-type*="outline"] .callout-icon::before {
+	content: "" !important;
+	display: inline-block;
+	
+	/* 調整圖標大小與對齊，使其與文字完美貼齊 */
+	width: 1.1em;
+	height: 1.1em;
+	vertical-align: middle;
+	
+	/* 🛠️ 注入你提供的 6.7.2 版 SVG 路徑（已轉換為網頁安全格式並移除註解） */
+	-webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path d='M40 48C26.7 48 16 58.7 16 72l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24L40 48zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L192 64zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zM16 232l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24l-48 0c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24l-48 0z'/></svg>") !important;
+	mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path d='M40 48C26.7 48 16 58.7 16 72l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24L40 48zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L192 64zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zM16 232l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24l-48 0c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24l-48 0z'/></svg>") !important;
+	
+	/* 確保遮罩縮放正確 */
+	-webkit-mask-size: contain;
+	mask-size: contain;
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	
+	/* 🎨 核心：讓圖標的底色直接使用目前環境的文字顏色（自動適應亮暗主題與變色） */
+	background-color: currentColor !important; 
+}
+/* 使用更完整的路徑，並確保 padding-left 不受父層影響 */
+.callout[data-type*="flex"] > .callout-content > .callout[data-type*="reading-view-hide"] > .callout-content {
+	padding-left: 0.58em !important; /* 加大數值看看效果 */
+	/* 如果還無效，嘗試加這一行強制覆蓋 */
+	display: block !important; 
+}
+
+/* 隱藏回大綱 slide-hide */
+.reveal .callout[data-type*="slide-hide"],
+.reveal section p:has(a[href="#/1"]) + p {
+	display: none !important;
+}
+
+/* 顯示 #/1 */
+.reveal section p:has(a[href="#/1"]) {
+	text-align: right; width: 100%; 
+	margin: 0 1em 0 0;
+}
+
+mark {
+	/*background-color: hsl(from var(--r-link-color-dark) h s l / 0.5);*/
+	background-color: oklch(from var(--r-link-color-dark, rgb(19.8216494845, 155.4536082474, 248.7783505155)) calc(l*0.8) c h);
+	color: white;
+}
+
+section :is(h2, h3, h4, h5, h6):not(:is(h2, h3, h4, h5, h6) ~ *) {
+	/* 1. 基礎屬性維持不變 */
+	background-color: transparent !important;
+	text-shadow: 
+		0 0 0.1em var(--r-link-color-dark, rgb(19.8216494845, 155.4536082474, 248.7783505155)),
+		0 0 0.3em var(--r-link-color-dark, rgb(19.8216494845, 155.4536082474, 248.7783505155)),
+		0 0 0.6em var(--r-link-color-dark, rgb(19.8216494845, 155.4536082474, 248.7783505155)),
+		0 0 0.9em var(--r-link-color-dark, rgb(19.8216494845, 155.4536082474, 248.7783505155)) !important;
+
+	/* 
+	   2. 直接使用 color-contrast 函數 (現代瀏覽器皆支援)
+	   它會自動計算 var(--r-main-color) 與白色、黑色的對比度，
+	   並自動選擇對比度最高的那一個！
+	*/
+	/*color: color-contrast(var(--r-main-color) vs #fff, #000 to AA) !important;*/
+	color: var(--r-main-color, #fff);
+}
+
+u {
+	text-decoration-color: var(--r-link-color, #42affa);
+}

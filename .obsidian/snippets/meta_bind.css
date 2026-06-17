@@ -1,0 +1,66 @@
+/* snippets: meta_bind.css */
+.mb-input > div.mb-input-type-text > input[type="text"] {
+	width: 8em;
+}
+.input_100 .mb-input > div.mb-input-type-text > input[type="text"] {
+	width: 100%;
+}
+
+.input-5-5em .mb-input > div.mb-input-type-text > input[type="text"] {
+	width: 5.5em;
+}
+
+/*.input-4em .mb-input input[type="text"] {
+	width: 4em !important;
+}*/
+.mb-input > .mb-input-type-number > input[type="number"],
+.mb-input > .mb-input-type-text > input[type="text"],
+.mb-input > .mb-input-type-inlineSelect > select {
+	font-size: var(--font-text-size);
+	font-family: Menlo, LiHei;
+	height: calc(1.5em + 6px);
+	border: 1px var(--background-modifier-border) solid !important;
+}
+p:first-child:has(textarea.mb-input-textarea) {
+/*	background-color: navy;*/
+	margin: 0;
+}
+textarea.mb-input-textarea {
+	font-size: var(--font-text-size);
+}
+.input-3em .mb-input,
+.callout[data-callout-metadata="input-3em"] .mb-input {
+	> div.mb-input-type-number > input[type="number"] {
+		width: 3em;
+		background-color: red !important;
+	}
+}
+.input_w_4em_13em table tr {
+	& td:nth-child(2) > .mb-input > div.mb-input-type-text > input[type="text"] {
+		width: calc(4em + 1em);
+	}
+	& td:nth-child(3) > .mb-input > div.mb-input-type-text > input[type="text"] {
+		width: calc(3em + 1em);
+	}
+	& td:nth-child(4) > .mb-input > div.mb-input-type-text > input[type="text"] {
+		width: calc(10em + 1em);
+	}
+}
+
+.mb-input {
+	> div.mb-input-wrapper.mb-input-type-inlineSelect {
+		> select {
+			font-style: normal;
+/*			font-size: 1em;*/
+		}
+	}
+}
+.mb-view > div.mb-view-wrapper {
+	
+}
+.is-mobile {}
+.is-mobile .mb-input > .mb-input-type-inlineSelect > select:placeholder-shown,
+.mb-input > .mb-input-type-inlineSelect > select:placeholder-shown {
+	background-color: yellow;
+
+}

@@ -1,0 +1,367 @@
+/* snippets: Callout styling - customized.css */
+/* callout 設定顏色 */
+.callout[data-callout-metadata*="color-red"] {
+	--callout-color: var(--color-red-rgb);
+}
+.callout[data-callout-metadata*="color-orange"] {
+	--callout-color: var(--color-orange-rgb);
+}
+.callout[data-callout-metadata*="color-yellow"] {
+	--callout-color: var(--color-yellow-rgb);
+}
+.callout[data-callout-metadata*="color-green"] {
+	--callout-color: var(--color-green-rgb);
+}
+.callout[data-callout-metadata*="color-cyan"] {
+	--callout-color: var(--color-cyan-rgb);
+}
+.callout[data-callout-metadata*="color-blue"] {
+	--callout-color: var(--color-blue-rgb);
+}
+.callout[data-callout-metadata*="color-purple"] {
+	--callout-color: var(--color-purple-rgb);
+}
+.callout[data-callout-metadata*="color-pink"] {
+	--callout-color: var(--color-pink-rgb);
+}
+
+.callout[data-callout="outline"] {
+	/*--callout-color: var(--accent-rgb);*/
+	/*--callout-color: 161, 124, 177; #A17CB1;*/
+	--callout-icon: list;
+	ul {
+		margin-top: 0.3em;
+	}
+	li {
+		margin-left: -0.75em;
+	}
+	a {
+		/*color: #A17CB1;*/
+	}
+}
+
+.callout[data-callout="bulb"] {
+	/*--callout-color: var(--accent-rgb);*/
+	/*--callout-color: var(--color-yellow-rgb);*/
+	--callout-icon: lightbulb;
+}
+
+/*.callout[data-callout="note"] {
+	--color-yellow-rgb: 135, 105, 191; 
+	--callout-color: var(--color-yellow-rgb);
+}*/
+.callout[data-callout="target"] {
+	--callout-icon: target;
+}
+.callout[data-callout="map"] {
+	--callout-icon: map;
+}
+/*.callout[data-callout="tip"] {
+	--callout-color: var(--color-yellow-rgb);
+	--callout-icon: lightbulb;
+}*/
+.callout[data-callout="fman"] {
+	--callout-icon: folder-search;
+}
+
+.callout[data-callout*="flex"],
+.callout[data-callout*="left"],
+.callout[data-callout*="right"],
+.callout[data-callout*="table"],
+.callout[data-callout*="col2"],
+.callout[data-callout*="col3"],
+.callout[data-callout*="col4"],
+.callout[data-callout*="col1:2"],
+.callout[data-callout*="col2:1"] {
+	--callout-color: transparent;
+	padding: 0; 
+	margin: 0 !important;
+}
+.callout-content {
+	height: 100%;
+}
+.callout[data-callout*="flex"] {
+	display: flex;
+	flex-direction: column;
+	height: auto;
+/*	background-color: navy;*/
+	> .callout-content > * {
+		margin: 0;
+	}
+}
+.callout[data-callout*="w100"] {
+	width: 100%;
+	flex-shrink: 0 !important;
+	margin: 0;
+}
+.callout[data-callout*="flex"] > .callout-content {
+	display: flex;
+	flex-direction: row;
+	flex-grow: 1;
+	width: auto !important;
+/*	background-color: navy;*/
+	justify-content: center; /* 水平置中 */
+	align-items: stretch;    /* 讓內容撐滿父元素的高度 */
+}
+.callout-title .callout-fold svg, .callout-title .callout-icon svg {
+	--font-text-size: 1em; /* Primary */
+	--icon-size: 1em; /* Atom */
+}
+.callout[data-callout*="flex"] > .callout-content > table:nth-child(1),
+.callout[data-callout*="flex"] > .callout-content > ul:nth-child(1) {
+	flex-shrink: 0; /* 确保表格不会收缩 */
+	width: auto; /* 自动调整表格宽度 */
+/*	background-color: purple;*/
+}
+.callout[data-callout*="flex"] > .callout-content > table:nth-child(1) ~ .block-language-dataviewjs.node-insert-event,
+.callout[data-callout*="flex"] > .callout-content > ul:nth-child(1) ~ .block-language-dataviewjs.node-insert-event {
+	flex-grow: 1; /* 占据剩余的空间 */
+	overflow-x: auto; /* 允许水平滚动以防内容过多 */
+/*	background-color: green;*/
+	min-width: 0; /* 使溢出部分正确处理 */
+	margin-left: 10px;
+}
+.callout-content .block-language-dataviewjs .language-markdown > code.language-markdown.is-loaded {
+	white-space: pre;
+}
+/* 處理引用的邊界, ex.CDTP_54.期中測驗 > 收回卷數 */
+.callout:not([data-callout*="col2"],[data-callout*="col3"],[data-callout*="col4"]) .callout:has(>.callout-content > p > .internal-embed.markdown-embed.inline-embed.is-loaded) {
+	padding-left: 0 !important;
+/*	background-color: navy;*/
+}
+.callout[data-callout-metadata*="left"]:nth-of-type(n+2) {
+/*	background-color: navy;*/
+/*	margin-left: 10px;*/
+}
+.callout > .callout-content > p:has(> .internal-embed.markdown-embed.inline-embed.is-loaded) {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.markdown-embed-content.node-insert-event table {
+	background-color: transparent; hsla(var(--accent-h),var(--accent-s),var(--accent-l),0.15);
+}
+.markdown-preview-sizer.markdown-preview-section,
+.markdown-embed-content.node-insert-event {
+	margin-bottom: -0em;
+	margin-left: 0em;
+}
+.markdown-embed-content.node-insert-event table:first-child {
+	margin-top: 0;
+	margin-bottom: 0.5em;
+}
+/* 引用下隱藏 */
+.markdown-embed-content.node-insert-event .callout[data-callout="cite"]:has(.language-markdown) {
+	display: none;
+}
+/* 引用下[回大綱]向右留白 */
+.markdown-embed-content.node-insert-event p:has(a[data-href^="#^toc-"]) {
+	padding-right: 8px;
+}
+/* 引用下隱藏表格左欄, ex.CDTP_54.期中測驗 > 當天任務 */
+.callout[data-callout-metadata*="hide1stCol"] .markdown-embed-content.node-insert-event table tr > th:first-child,
+.callout[data-callout-metadata*="hide1stCol"] .markdown-embed-content.node-insert-event table tr > td:first-child {
+	display: none;
+}
+.callout[data-callout-metadata*="hideFirst2Cols"] .markdown-embed-content.node-insert-event table tr > th:nth-of-type(-n+2),
+.callout[data-callout-metadata*="hideFirst2Cols"] .markdown-embed-content.node-insert-event table tr > td:nth-of-type(-n+2) {
+	display: none;
+}
+.callout[data-callout-metadata*="hideFirst3Cols"] .markdown-embed-content.node-insert-event table tr > th:nth-of-type(-n+3),
+.callout[data-callout-metadata*="hideFirst3Cols"] .markdown-embed-content.node-insert-event table tr > td:nth-of-type(-n+3) {
+	display: none;
+}
+/* 引用清單向左位移1em: ex.CDTP_54.期中測驗 > 考場分配 */
+/* task出錯: ex.e等公務園學習平臺 > 已完成課程 */
+.markdown-embed-content.node-insert-event div > ul:first-child:not(:has(>li>input.task-list-item-checkbox)) {
+	margin-left: -1em;
+	margin-top: 0em !important;
+/*	background-color: DarkSlateBlue;*/
+}
+div.markdown-reading-view li { /* for Mac mini 1.6 */
+	margin-left: 2em !important;
+}
+ul { /* for Macbook Air 1.5 */
+/*	padding-left: 2em !important;*/
+}
+.is-mobile .markdown-embed-content.node-insert-event div > ul:first-child {
+/*	background-color: navy;*/
+}
+.is-mobile ul {
+	padding-left: 0em !important;
+}
+/* 處理引用內第一個標題: 收回卷數 */
+.callout > .callout-content > p > .internal-embed.markdown-embed.inline-embed.is-loaded > .markdown-embed-content.node-insert-event h1:first-child,
+.callout > .callout-content > p > .internal-embed.markdown-embed.inline-embed.is-loaded > .markdown-embed-content.node-insert-event h2:first-child,
+.callout > .callout-content > p > .internal-embed.markdown-embed.inline-embed.is-loaded > .markdown-embed-content.node-insert-event h3:first-child,
+.callout > .callout-content > p > .internal-embed.markdown-embed.inline-embed.is-loaded > .markdown-embed-content.node-insert-event h4:first-child,
+.callout > .callout-content > p > .internal-embed.markdown-embed.inline-embed.is-loaded > .markdown-embed-content.node-insert-event h5:first-child,
+.callout > .callout-content > p > .internal-embed.markdown-embed.inline-embed.is-loaded > .markdown-embed-content.node-insert-event h6:first-child {
+	margin-top: 0em !important; margin-bottom: 0.25em;
+	display: none;
+}
+.callout[data-callout*="col2"] > .callout-content,
+.callout[data-callout*="col3"] > .callout-content,
+.callout[data-callout*="col4"] > .callout-content,
+.callout[data-callout*="col1:2"] > .callout-content {
+	display: grid; 
+	gap: 10px; 
+	margin-top: 0;
+/*	padding: 0 !important;*/
+}
+
+.callout[data-callout*="col2"] > .callout-content {
+	grid-template-columns: repeat(2, 1fr);
+}
+.callout[data-callout*="col3"] > .callout-content {
+	grid-template-columns: repeat(3, 1fr);
+}
+.callout[data-callout*="col4"] > .callout-content {
+	grid-template-columns: repeat(4, 1fr);
+}
+.callout[data-callout*="col1:2"] > .callout-content {
+	grid-template-columns: 1fr 2fr;
+}
+.callout[data-callout*="col2:1"] > .callout-content {
+	grid-template-columns: 2fr 1fr;
+}
+.callout[data-callout*="right"],
+.callout[data-callout-metadata*="right"] {
+	float: right; 
+}
+.callout[data-callout*="left"],
+.callout[data-callout-metadata*="left"] {
+	float: left; 
+}
+.callout[data-callout-metadata*="clear"] {
+	clear: both;
+}
+.callout[data-callout*="margin-zero"],
+.callout[data-callout-metadata*="margin-zero"] {
+	margin-bottom: 0;
+}
+.callout[data-callout*="para"],
+.callout[data-callout-metadata*="para"] {
+	margin: 0;
+	padding: 0;
+	> .callout-content > p {
+		margin-bottom: 0; margin-top: 0;
+		padding: 0;
+	}
+}
+.el-div:has(.callout[data-callout-metadata*="para"]) {
+	display: flow-root; padding: 0; margin:0;
+}
+/*div.el-div:has(.callout[data-callout-metadata*="para"])+div.el-table {
+	clear: both;
+}
+div.el-div:has(.callout[data-callout-metadata*="para"])+div.el-hr {
+	> hr {
+		margin-bottom: 0;
+	}
+}*/
+.callout[data-callout-metadata*="margin-right:-1em"] {
+	margin-right: -1em !important;
+}
+.callout[data-callout-metadata*="margin-left:-1em"] {
+	margin-left: -1em !important;
+}
+.callout[data-callout-metadata*="margin-bottom:0"] {
+	margin-bottom: 0 !important;
+}
+.callout[data-callout-metadata*="width11em"] {
+	width: calc(11em + 16px + 10px) !important;
+/*	background-color: navy !important;*/
+}
+div:has(>.callout[data-callout-metadata*="clear"]) + .el-p {
+	clear: both;
+}
+
+.callout[data-callout*="padding-zero"],
+.callout[data-callout-metadata*="padding-zero"] {
+	padding: 0; margin-bottom:0;
+	> .callout-content > p {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+/* Callout 下第一個選項, ex.CDTP_54.期中測驗 */
+.callout:has( > .callout-content > .block-language-meta-bind:first-child > .mb-card) {
+	padding: 0;
+	margin: 0;
+}
+.callout:has( > .callout-content > .block-language-meta-bind:first-child > .mb-card) 
+> .callout-content > .block-language-meta-bind:first-child > .mb-card {
+	margin-top: 0;
+}
+.callout:has( > .callout-content > .block-language-meta-bind:first-child > .mb-card) 
+> .callout-content > .block-language-meta-bind:first-child ~ p {
+	padding-left: 10px;
+	margin-top: 0.5em;
+}
+.callout:has( > .callout-content > .block-language-meta-bind:first-child > .mb-card) 
+> .callout-content > .block-language-meta-bind:first-child ~ p > .mb-input {
+	padding: 0;
+}
+.callout:has( > .callout-content > .block-language-meta-bind:first-child > .mb-card) 
+> .callout-content > .block-language-meta-bind:first-child ~ p > .mb-input > .mb-input-wrapper.mb-input-type-text > input {
+	width: calc(100% - 2em - 10px - 8px);
+}
+.mb-card h3 {
+	font-size: 1.1em;
+	margin-bottom: 0em;
+}
+/* 取消顯示 callout-title */
+.callout[data-callout*="flex"] > .callout-title,
+.callout[data-callout*="table"] > .callout-title,
+.callout[data-callout*="left"] > .callout-title, 
+.callout[data-callout*="right"] > .callout-title,
+.callout[data-callout*="col2"] > .callout-title,
+.callout[data-callout*="col3"] > .callout-title,
+.callout[data-callout*="col4"] > .callout-title,
+.callout[data-callout*="col1:2"] > .callout-title {
+	display: none;
+}
+
+section .callout[data-callout="flex"] > .callout-content > .callout[data-callout="table"] > .callout-content > ul,
+section .callout[data-callout="col2"] > .callout-content > .callout[data-callout="table"] > .callout-content > ul,
+section .callout[data-callout="col3"] > .callout-content > .callout[data-callout="table"] > .callout-content > ul,
+section .callout[data-callout="col4"] > .callout-content > .callout[data-callout="table"] > .callout-content > ul {
+	padding: 0;
+}
+.callout[data-callout-metadata*="25%"] {
+	width: 25%;
+}
+.callout[data-callout-metadata*="33%"] {
+	width: 33%;
+}
+.callout[data-callout-metadata*="50%"] {
+	width: 50%;
+}
+.callout[data-callout-metadata*="67%"] {
+	width: 67%;
+}
+.callout[data-callout-metadata*="input1em"] > .callout-content .mb-input.mb-input-inline > .mb-input-wrapper.mb-input-type-number > input {
+	width: calc(0.25em*2 + 1em + 8px*2);
+/*	background-color: darkred !important;*/
+}
+.callout[data-callout-metadata*="input1.3em"] > .callout-content .mb-input.mb-input-inline > .mb-input-wrapper.mb-input-type-number > input {
+	width: calc(0.25em*2 + 1.3em + 8px*2);
+/*	background-color: darkred !important;*/
+}
+.callout[data-callout-metadata*="input2em"] > .callout-content .mb-input.mb-input-inline > .mb-input-wrapper.mb-input-type-number > input {
+	width: calc(0.25em*2 + 2em + 8px*2);
+/*	background-color: darkred !important;*/
+}
+
+/* 決定callout admonition表格引用 */
+.callout[data-callout="flex"]:has(>.callout-content>div[data-callout-metadata*="left"]),
+.callout[data-callout="flex"]:has(>.callout-content>div[data-callout-metadata*="right"]) {
+	display: grid;
+	gap: 10px;
+/*	background-color: darkgray;*/
+}
+.callout[data-callout="flex"]:has(>.callout-content>div[data-callout-metadata="left"])
+> .callout-content > .callout[data-callout="table"] {
+/*	background-color: navy;*/
+}
