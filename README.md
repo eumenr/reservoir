@@ -4,7 +4,7 @@
 
 <img src="一貫道母字_黑色.svg" alt="示例圖片" width="50" style="background-color: gray"><img src="一貫道母字_白色.svg" alt="示例圖片" width="50" style="background-color: gray">
 
-## Obsidian 簡報集
+## 簡報
 
 1. [不休息菩薩慈示訓(六)︰1.囑咐壇主2.崇德家書3.使命](./不休息菩薩慈示訓(六)︰1.囑咐壇主2.崇德家書3.使命/)
 2. [不休息菩薩慈示訓(二)：1.標準崇德人2.無限可能](<./Extra/Slides Extended/index_不休息菩薩慈示訓(二)：1.標準崇德人2.無限可能.html>)
