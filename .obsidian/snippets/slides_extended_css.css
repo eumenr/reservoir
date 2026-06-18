@@ -5,13 +5,14 @@
 /* ========================================================
    共通重設：先讓大家回到最乾淨的狀態
    ======================================================== */
-.reveal .slides section strong {
+
+/*.reveal .slides section strong {
 	color: initial;
 	background: transparent;
 	-webkit-background-clip: border-box;
 	background-clip: border-box;
 	-webkit-text-fill-color: initial;
-}
+}*/
 
 /* ========================================================
    1. 專屬 Obsidian Core Slides
@@ -36,7 +37,7 @@
 	/* 這裡利用一個特權：外掛網頁的 html 標籤上「絕對不會」帶有 obsidian 核心的特有主題 class */
 	html:not([class*="theme-"]) .reveal .slides section strong {
 		/* 掏空文字 */
-		color: transparent !important;
+		/*color: transparent !important;*/
 		-webkit-text-fill-color: transparent !important;
 
 		/* 🛠️ 成功換成 h + 60 的新語法 */
@@ -47,7 +48,7 @@
 		-webkit-background-clip: text !important;
 		background-clip: text !important;
 		
-		filter: none !important;
+		/*filter: none !important;*/
 		display: inline !important;
 	}
 }
@@ -193,4 +194,22 @@ section :is(h2, h3, h4, h5, h6):not(:is(h2, h3, h4, h5, h6) ~ *) {
 
 u {
 	text-decoration-color: var(--r-link-color, #42affa);
+}
+
+/* mater 問題 */
+
+/* 當 u 標籤裡面包著 mater 圖示時，強行用偽元素在底部畫一條完美的線 */
+u:has(.mater) {
+	text-decoration: none !important; /* 關閉 Reveal.js 那條會跑版的原生底線 */
+	position: relative !important;
+	display: inline-block !important;
+}
+
+u:has(.mater)::after {
+	content: "" !important;
+	position: absolute !important;
+	left: 0 !important;
+	right: 0 !important;
+	bottom: 0.1em !important; /* 線條的垂直高度：可以自由微調 0.05em ~ 0.2em 來對齊旁邊文字 */
+	border-bottom: 0.1em solid var(--r-link-color, #42affa) !important; /* 完美繼承你發現的簡報連結線顏色 */
 }
