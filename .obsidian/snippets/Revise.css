@@ -1,7 +1,0 @@
-/* snippets: Revise.css */
-.revise del {
-	/*display: none !important;*/
-}
-.revise u {
-	background-color: var(--text-highlight-bg);
-}
