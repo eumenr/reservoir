@@ -1,5 +1,26 @@
 /* snippets: slides_extended_css.css */
 
+/* snippets: 跨平台通用等寬與中文型設定 */
+
+/* 1. 強制覆蓋全簡報與所有區塊的字體 */
+.reveal, 
+.reveal .slides, 
+.reveal section, 
+.reveal p, 
+.reveal li, 
+.reveal .callout,
+.reveal code, 
+.reveal pre {
+	font-family: "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", "PingFang TC", "Helvetica Neue", "Microsoft JhengHei", "微軟正黑體", monospace !important;
+}
+
+/* 2. 針對需要精準等寬對齊的數字與代碼區塊優化 */
+.reveal code,
+.reveal pre,
+.reveal ol {
+	font-variant-numeric: tabular-nums !important; /* 強制數字採用等寬模式，防止 21. 與 11. 寬度不同 */
+}
+
 /* 粗體改色，適用 slides extended */
 
 /* ========================================================

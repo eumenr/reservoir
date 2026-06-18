@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>論語選讀(四)：性與天道、禮與仁</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="../../.obsidian/snippets/mater.css" />
+    <link rel="stylesheet" href="../../.obsidian/snippets/Author callout.css" />
+    <link rel="stylesheet" href="../../.obsidian/snippets/slides_extended_css.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<style>
+/* 強制讓 Reveal 內部的 callout 繼承你 snippet 寫好的 Obsidian 變數 */
+.reveal .callout {
+	/* 這裡借用 Obsidian 原生的 class 名稱，誘騙你的 snippet 生效 */
+	@extend .markdown-preview-view;
+}
+
+/* 如果上面的進階語法沒反應，可以用最乾淨的「別名對齊」： */
+.reveal .callout {
+	text-align: left !important;
+	background-color: var(--callout-bg) !important;
+	border-left: var(--callout-border-width) solid var(--callout-border-color) !important;
+}
+.reveal .callout-title {
+	color: var(--callout-title-color) !important;
+	font-weight: var(--callout-title-padding) !important;
+}
+</style>
+
+# 論語選讀(四)：性與天道、禮與仁
+
+<div class="hide-in-slides">
+
+> [!table|share-none]
+>> [!table|right]
+>> 狀態：`INPUT[inlineSelect(option(🌱 下種), option(🪴 發展), option(👣 追蹤), option(🥾 交付), option(✅ 完成), option(🌲 常青), option(❌ 取消), showcase):status]`
+>> 主題：`INPUT[inlineSelect(option(beige), option(black), option(blood), option(dracula), option(league), option(moon), option(night), option(serif), option(simple), option(sky), option(solarized), option(white), showcase):theme]`
+>> 切換：`INPUT[inlineSelect(option(none), option(fade), option(slide), option(convex), option(concave), option(zoom), showcase):transition]`
+>
+> [up:: 傳題, 投影片]  目前位置 模板
+> ```meta-bind-button
+> style: default
+> label: 開啟簡報
+> tooltip: 'presentation'
+> id: presentation
+> hidden: false
+> action:
+>   type: command
+>   command: slides:start
+> ```
+>
+> ```meta-bind-button
+> style: default
+> label: RevealJS
+> tooltip: 'Slides Extended: Show slide preview'
+> id: RevealJS
+> hidden: false
+> action:
+>   type: command
+>   command: slides-extended:open-preview
+> ```
+
+> [!right]
+> 修改@`=dateformat(this.file.mtime, "yyyy-MM-dd HH:mm:ss")`
+
+</div><!-- .element: style="display: none" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## 大綱
+
+```dataviewjs
+const file = dv.current().file;
+const content = await this.app.vault.read(app.vault.getAbstractFileByPath(file.path));
+const lines = content.split("\n");
+const file_name = file?.name;
+
+// 解析 slide 頁碼（從 HTML 註解抓 (#/n)）
+function getSlideIndex(i) {
+	for (let j = i - 1; j >= 0; j--) {
+		const m = lines[j].match(/\(#\/(\d+)\)/);
+		if (m) return m[1];
+	}
+	return null;
+}
+
+// 擷取標題
+const headings_reveal = [];
+for (let i = 0; i < lines.length; i++) {
+	const line = lines[i];
+	const m = line.match(/^(#{2,4})\s+(.*)/);
+	if (!m) continue;
+
+	const level = m[1].length; // ## = 2, ### = 3, #### = 4
+	const title = m[2].trim();
+	const slide = getSlideIndex(i);
+
+	if (slide) {
+		headings_reveal.push({ level, title, slide });
+	}
+}
+
+// 基準層級
+const baseLevel = 2;
+
+// 產生階層清單
+let slide_block = "";
+let reading_block = "";
+
+for (const h of headings_reveal) {
+	const indent = "  ".repeat(h.level - baseLevel);
+	const link =
+		h.level === 2
+			? `(#/${h.slide})`
+			: `(#/${h.slide}/0/0)`;
+	// Slide Mode 標記，裡面是 Reveal/Slide 專用標記
+	slide_block += `>> ${indent}- [${h.title}]${link}\n`;
+	// Reading View 標記
+	reading_block += `>> ${indent}- #${h.title}\n`;
+}
+
+// 輸出，無法顯示在reading-view，因為slide_block無法渲染
+let link_block = "> [!flex] \n>> [!outline|slide-hide] " + file_name + "\n" + reading_block + ">\n>> [!outline|color-purple|reading-view-hide] " + file_name + "\n>>\n>>" + slide_block
+// 輸出，可以顯示在reading-view，但slide_block要手動貼上
+let code_block = "> [!flex] \n>> [!outline|slide-hide] " + file_name + "\n" + reading_block + ">\n>> [!outline|color-purple|reading-view-hide] " + file_name + "\n>>\n>> ````text\n" + slide_block + ">> ````\n";
+let code_pure = `
+\`\`\`\`markdown
+> [!flex]
+>> [!outline|slide-hide] ${file_name}
+${reading_block}
+> [!flex]
+>> [!outline|color-purple|reading-view-hide] ${file_name}
+${slide_block}
+\`\`\`\`
+`;
+
+// 顯示為大綱及文字區塊
+dv.paragraph(code_pure);
+
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/2) 頁 -->
+
+## 一、性與天道
+
+> [!flex]
+>> [!info] [性與**天命**](#/1/0/0)
+>> - [上知下愚](#/1/0/0)
+>> - [性相近](#/1/0/0)
+>> - [不亦君子乎](#/1/0/0)
+>> - [畏天命](#/1/0/0)
+>> - [天無言](#/1/0/0)
+>> - [朝聞道](#/1/0/0)
+>
+>> [!tip] [夫子之道](#/1/0/0)
+>> - [一以貫之](#/1/0/0)
+>> - [可得而聞](#/1/0/0)
+>> - [出不由戶](#/1/0/0)
+>> - [天之曆數](#/1/0/0)
+>> - [不知命](#/1/0/0)
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 性與天命
+
+#### 上知下愚
+
+> [!author] 論語#陽貨17.3
+> 
+> <!-- begin::[論語.md] -->
+> 3. 子曰：「唯上知與下愚不移。」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### 性相近
+
+> [!author] 論語#陽貨17.2
+> 
+> <!-- begin::[論語.md] -->
+> 2. 子曰：「性相近也，習相遠也。」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 中庸證釋#第一章
+> 天命之謂性，率性之謂道，修道之謂教。道也者，不可須臾離也；可離，非道也。
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### 不亦君子乎
+
+> [!author] 論語#學而1.1
+> 
+> <!-- begin::[論語.md] -->
+> 1. 子曰：「學而時習之，不亦說乎？有朋自遠方來，不亦樂乎？人不知而不慍，不亦君子乎？」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### 畏天命
+
+> [!author] 論語#季氏16.8
+> 
+> <!-- begin::[論語.md] -->
+> 8. 孔子曰：「君子有三畏：畏天命，畏大人，畏聖人之言。小人不知天命而不畏也，狎大人，侮聖人之言。」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### 天無言
+
+> [!author] 論語#陽貨17.19
+> 
+> <!-- begin::[論語.md] -->
+> 19. 子曰：「予欲無言。」子貢曰：「子如不言，則小子何述焉？」子曰：「天何言哉？四時行焉，百物生焉，天何言哉？」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#里仁4.8
+> 
+> <!-- begin::[論語.md] -->
+> 8. 子曰：「朝聞道，夕死可矣。」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 夫子之道
+
+#### 一以貫之
+
+> [!author] 論語#衛靈公15.3
+> 
+> <!-- begin::[論語.md] -->
+> 3. 子曰：「賜也，女以予為多學而識之者與？」對曰：「然，非與？」曰：「非也，予一以貫之。」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> [!author] 論語#里仁4.15
+> 
+> <!-- begin::[論語.md] -->
+> 15. 子曰：「參乎！吾道一以貫之。」曾子曰：「唯。」子出。門人問曰：「何謂也？」曾子曰：「夫子之道，忠恕而已矣。」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/3) 頁 -->
+
+#### 可得而聞
+
+> [!author] 論語#公冶長5.13
+> 
+> <!-- begin::[論語.md] -->
+> 13. 子貢曰：「夫子之文章，可得而聞也；夫子之言性與天道，不可得而聞也。」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### 出不由戶
+
+> [!author] 論語#雍也6.17
+> 
+> <!-- begin::[論語.md] -->
+> 17. 子曰：「誰能出不由戶？何莫由斯道也？」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### 天之曆數
+
+> [!author] 論語#堯曰20.1
+> 堯曰：「咨！爾舜！天之曆數在爾躬。允執其中。四海困窮，天祿永終。」舜亦以命禹。
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### 不知命
+
+> [!author] 論語#堯曰20.3
+> 
+> <!-- begin::[論語.md] -->
+> 3. 子曰：「不知命，無以為君子也。不知禮，無以立也。不知言，無以知人也。」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## 二、禮與仁
+
+> [!col3]
+>> [!info] 禮
+>> - 禮之用
+>> - 齊之以禮
+>> - 人而不仁
+>> - 禮之本
+>> - 禘
+>> - 祭如在
+>> - 每事問
+>> - 里仁為美
+>> - 仁者安仁
+>> - 仁者能好人
+>> - 苟志於仁
+>> - 未見好仁
+>> - 仁者樂山
+>> - 博施於民
+>> - 仁遠乎哉
+>> - 恭而無禮
+>> - 仁者不憂
+>> - 克己復禮
+>> - 己所不欲
+>> - 其言也訒
+>> - 約之以禮
+>> - 愛人知人
+>> - 禹稷躬稼
+>> - 殺身成仁
+>> - 事賢友仁
+>> - 知及仁守
+>> - 未見蹈仁
+>> - 寬則得眾
+>
+>> [!table]
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 禮門義路
+
+#### 禮之用
+
+> [!author] 論語#學而1.12
+> 
+> <!-- begin::[論語.md] -->
+> 12. 有子曰：「禮之用，和為貴。先王之道斯為美，小大由之。有所不行，知和而和，不以禮節之，亦不可行也。」
+> <!-- end::[論語.md] -->
+
+
+#### 齊之以禮
+
+> [!author] 論語#為政2.3
+> 
+> <!-- begin::[論語.md] -->
+> 3. 子曰：「道之以政，齊之以刑，民免而無恥；道之以德，齊之以禮，有恥且格。」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 祭之以禮
+
+#### 禘
+
+> [!author] 論語#八佾3.10
+> 
+> <!-- begin::[論語.md] -->
+> 10. 子曰：「禘自既灌而往者，吾不欲觀之矣。」
+> <!-- end::[論語.md] -->
+
+
+#### 祭如在
+
+> [!author] 論語#八佾3.12
+> 
+> <!-- begin::[論語.md] -->
+> 12. 祭如在，祭神如神在。子曰：「吾不與祭，如不祭。」
+> <!-- end::[論語.md] -->
+
+
+#### 每事問
+
+> [!author] 論語#八佾3.15
+> 
+> <!-- begin::[論語.md] -->
+> 15. 子入大廟，每事問。或曰：「孰謂鄹人之子知禮乎？入大廟，每事問。」子聞之曰：「是禮也。」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 禮之本
+
+#### 人而不仁
+
+> [!author] 論語#八佾3.3
+> 
+> <!-- begin::[論語.md] -->
+> 3. 子曰：「人而不仁，如禮何？人而不仁，如樂何？」
+> <!-- end::[論語.md] -->
+
+
+#### 里仁為美
+
+> [!author] 論語#里仁4.1
+> 
+> <!-- begin::[論語.md] -->
+> 1. 子曰：「里仁為美。擇不處仁，焉得知？」
+> <!-- end::[論語.md] -->
+
+
+#### 禮之本
+
+> [!author] 論語#八佾3.4
+> 
+> <!-- begin::[論語.md] -->
+> 4. 林放問禮之本。子曰：「大哉問！禮，與其奢也，寧儉；喪，與其易也，寧戚。」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### 仁者安仁
+
+> [!author] 論語#里仁4.2
+> 
+> <!-- begin::[論語.md] -->
+> 2. 子曰：「不仁者不可以久處約，不可以長處樂。仁者安仁，知者利仁。」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### 仁者能好人
+
+> [!author] 論語#里仁4.3
+> 
+> <!-- begin::[論語.md] -->
+> 3. 子曰：「唯仁者能好人，能惡人。」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### 苟志於仁
+
+> [!author] 論語#里仁4.4
+> 
+> <!-- begin::[論語.md] -->
+> 4. 子曰：「苟志於仁矣，無惡也。」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### 未見好仁者
+
+> [!author] 論語#里仁4.6
+> 
+> <!-- begin::[論語.md] -->
+> 6. 子曰：「我未見好仁者，惡不仁者。好仁者，無以尚之；惡不仁者，其為仁矣，不使不仁者加乎其身。有能一日用其力於仁矣乎？我未見力不足者。蓋有之矣，我未之見也。」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### 仁者樂山
+
+> [!author] 論語#雍也6.23
+> 
+> <!-- begin::[論語.md] -->
+> 23. 子曰：「知者樂水，仁者樂山；知者動，仁者靜；知者樂，仁者壽。」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### 博施於民
+
+> [!author] 論語#雍也6.30
+> 
+> <!-- begin::[論語.md] -->
+> 30. 子貢曰：「如有博施於民而能濟眾，何如？可謂仁乎？」子曰：「何事於仁，必也聖乎！堯舜其猶病諸！夫仁者，己欲立而立人，己欲達而達人。能近取譬，可謂仁之方也已。」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### 我欲仁
+
+> [!author] 論語#述而7.30
+> 
+> <!-- begin::[論語.md] -->
+> 30. 子曰：「仁遠乎哉？我欲仁，斯仁至矣。」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### 恭而無禮
+
+> [!author] 論語#泰伯8.2
+> 
+> <!-- begin::[論語.md] -->
+> 2. 子曰：「恭而無禮則勞，慎而無禮則葸，勇而無禮則亂，直而無禮則絞。君子篤於親，則民興於仁；故舊不遺，則民不偷。」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### 仁者不憂
+
+> [!author] 論語#子罕9.29
+> 
+> <!-- begin::[論語.md] -->
+> 29. 子曰：「知者不惑，仁者不憂，勇者不懼。」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### 克己復禮
+
+> [!author] 論語#顏淵12.1
+> 
+> <!-- begin::[論語.md] -->
+> 1. 顏淵問仁。子曰：「克己復禮為仁。一日克己復禮，天下歸仁焉。為仁由己，而由人乎哉？」顏淵曰：「請問其目。」子曰：「非禮勿視，非禮勿聽，非禮勿言，非禮勿動。」顏淵曰：「回雖不敏，請事斯語矣。」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### 己所不欲
+
+> [!author] 論語#顏淵12.2
+> 
+> <!-- begin::[論語.md] -->
+> 2. 仲弓問仁。子曰：「出門如見大賓，使民如承大祭。己所不欲，勿施於人。在邦無怨，在家無怨。」仲弓曰：「雍雖不敏，請事斯語矣。」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### 其言也訒
+
+> [!author] 論語#顏淵12.3
+> 
+> <!-- begin::[論語.md] -->
+> 3. 司馬牛問仁。子曰：「仁者其言也訒。」曰：「其言也訒，斯謂之仁已乎？」子曰：「為之難，言之得無訒乎？」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### 約之以禮
+
+> [!author] 論語#顏淵12.15
+> 
+> <!-- begin::[論語.md] -->
+> 15. 子曰：「君子博學於文，約之以禮，亦可以弗畔矣夫！」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### 愛人知人
+
+> [!author] 論語#顏淵12.22
+> 
+> <!-- begin::[論語.md] -->
+> 22. 樊遲問仁。子曰：「愛人。」問知。子曰：「知人。」樊遲未達。子曰：「舉直錯諸枉，能使枉者直。」樊遲退，見子夏。曰：「鄉也吾見於夫子而問知，子曰，『舉直錯諸枉，能使枉者直』，何謂也？」子夏曰：「富哉言乎！舜有天下，選於眾，舉皋陶，不仁者遠矣。湯有天下，選於眾，舉伊尹，不仁者遠矣。」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### 禹稷躬稼
+
+> [!author] 論語#憲問14.5
+> 
+> <!-- begin::[論語.md] -->
+> 5. 南宮适問於孔子曰：「羿善射，奡盪舟，俱不得其死然；禹稷躬稼，而有天下。」夫子不答，南宮适出。子曰：「君子哉若人！尚德哉若人！」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### 殺身成仁
+
+> [!author] 論語#衛靈公15.9
+> 
+> <!-- begin::[論語.md] -->
+> 9. 子曰：「志士仁人，無求生以害仁，有殺身以成仁。」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### 事賢友仁
+
+> [!author] 論語#衛靈公15.10
+> 
+> <!-- begin::[論語.md] -->
+> 10. 子貢問為仁。子曰：「工欲善其事，必先利其器。居是邦也，事其大夫之賢者，友其士之仁者。」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<% tp.file.cursor(1) %>
+#### 知及仁守
+
+> [!author] 論語#衛靈公15.33
+> 
+> <!-- begin::[論語.md] -->
+> 33. 子曰：「知及之，仁不能守之；雖得之，必失之。知及之，仁能守之。不莊以涖之，則民不敬。知及之，仁能守之，莊以涖之。動之不以禮，未善也。」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### 知及仁守
+
+> [!author] 論語#衛靈公15.35
+> 
+> <!-- begin::[論語.md] -->
+> 35. 子曰：「民之於仁也，甚於水火。水火，吾見蹈而死者矣，未見蹈仁而死者也。」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### 寬則得眾
+
+> [!author] 論語#陽貨17.6
+> 
+> <!-- begin::[論語.md] -->
+> 6. 子張問仁於孔子。孔子曰：「能行五者於天下，為仁矣。」請問之。曰：「恭、寬、信、敏、惠。恭則不侮，寬則得眾，信則人任焉，敏則有功，惠則足以使人。」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+%%
+
+# 教材
+
+##### 一、性與天道
+
+> [!author] 論語#學而1.1
+> 
+> <!-- begin::[論語.md] -->
+> 1. 子曰：「學而時習之，不亦說乎？有朋自遠方來，不亦樂乎？人不知而不慍，不亦君子乎？」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#里仁4.8
+> 
+> <!-- begin::[論語.md] -->
+> 8. 子曰：「朝聞道，夕死可矣。」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#里仁4.15
+> 
+> <!-- begin::[論語.md] -->
+> 15. 子曰：「參乎！吾道一以貫之。」曾子曰：「唯。」子出。門人問曰：「何謂也？」曾子曰：「夫子之道，忠恕而已矣。」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#公冶長5.13
+> 
+> <!-- begin::[論語.md] -->
+> 13. 子貢曰：「夫子之文章，可得而聞也；夫子之言性與天道，不可得而聞也。」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#雍也6.17
+> 
+> <!-- begin::[論語.md] -->
+> 17. 子曰：「誰能出不由戶？何莫由斯道也？」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#衛靈公15.3
+> 
+> <!-- begin::[論語.md] -->
+> 3. 子曰：「賜也，女以予為多學而識之者與？」對曰：「然，非與？」曰：「非也，予一以貫之。」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#季氏16.8
+> 
+> <!-- begin::[論語.md] -->
+> 8. 孔子曰：「君子有三畏：畏天命，畏大人，畏聖人之言。小人不知天命而不畏也，狎大人，侮聖人之言。」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#陽貨17.2
+> 
+> <!-- begin::[論語.md] -->
+> 2. 子曰：「性相近也，習相遠也。」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#陽貨17.3
+> 
+> <!-- begin::[論語.md] -->
+> 3. 子曰：「唯上知與下愚不移。」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#陽貨17.19
+> 
+> <!-- begin::[論語.md] -->
+> 19. 子曰：「予欲無言。」子貢曰：「子如不言，則小子何述焉？」子曰：「天何言哉？四時行焉，百物生焉，天何言哉？」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#堯曰20.1
+> 堯曰：「咨！爾舜！天之曆數在爾躬。允執其中。四海困窮，天祿永終。」舜亦以命禹。
+
+> [!author] 論語#堯曰20.3
+> 
+> <!-- begin::[論語.md] -->
+> 3. 子曰：「不知命，無以為君子也。不知禮，無以立也。不知言，無以知人也。」
+> <!-- end::[論語.md] -->
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+##### 二、禮與仁
+
+> [!author] 論語#學而1.12
+> 
+> <!-- begin::[論語.md] -->
+> 12. 有子曰：「禮之用，和為貴。先王之道斯為美，小大由之。有所不行，知和而和，不以禮節之，亦不可行也。」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#為政2.3
+> 
+> <!-- begin::[論語.md] -->
+> 3. 子曰：「道之以政，齊之以刑，民免而無恥；道之以德，齊之以禮，有恥且格。」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#八佾3.3
+> 
+> <!-- begin::[論語.md] -->
+> 3. 子曰：「人而不仁，如禮何？人而不仁，如樂何？」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#八佾3.4
+> 
+> <!-- begin::[論語.md] -->
+> 4. 林放問禮之本。子曰：「大哉問！禮，與其奢也，寧儉；喪，與其易也，寧戚。」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#八佾3.10
+> 
+> <!-- begin::[論語.md] -->
+> 10. 子曰：「禘自既灌而往者，吾不欲觀之矣。」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#八佾3.12
+> 
+> <!-- begin::[論語.md] -->
+> 12. 祭如在，祭神如神在。子曰：「吾不與祭，如不祭。」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#八佾3.15
+> 
+> <!-- begin::[論語.md] -->
+> 15. 子入大廟，每事問。或曰：「孰謂鄹人之子知禮乎？入大廟，每事問。」子聞之曰：「是禮也。」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#里仁4.1
+> 
+> <!-- begin::[論語.md] -->
+> 1. 子曰：「里仁為美。擇不處仁，焉得知？」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#里仁4.2
+> 
+> <!-- begin::[論語.md] -->
+> 2. 子曰：「不仁者不可以久處約，不可以長處樂。仁者安仁，知者利仁。」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#里仁4.3
+> 
+> <!-- begin::[論語.md] -->
+> 3. 子曰：「唯仁者能好人，能惡人。」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#里仁4.4
+> 
+> <!-- begin::[論語.md] -->
+> 4. 子曰：「苟志於仁矣，無惡也。」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#里仁4.6
+> 
+> <!-- begin::[論語.md] -->
+> 6. 子曰：「我未見好仁者，惡不仁者。好仁者，無以尚之；惡不仁者，其為仁矣，不使不仁者加乎其身。有能一日用其力於仁矣乎？我未見力不足者。蓋有之矣，我未之見也。」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#雍也6.23
+> 
+> <!-- begin::[論語.md] -->
+> 23. 子曰：「知者樂水，仁者樂山；知者動，仁者靜；知者樂，仁者壽。」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#雍也6.30
+> 
+> <!-- begin::[論語.md] -->
+> 30. 子貢曰：「如有博施於民而能濟眾，何如？可謂仁乎？」子曰：「何事於仁，必也聖乎！堯舜其猶病諸！夫仁者，己欲立而立人，己欲達而達人。能近取譬，可謂仁之方也已。」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#述而7.30
+> 
+> <!-- begin::[論語.md] -->
+> 30. 子曰：「仁遠乎哉？我欲仁，斯仁至矣。」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#泰伯8.2
+> 
+> <!-- begin::[論語.md] -->
+> 2. 子曰：「恭而無禮則勞，慎而無禮則葸，勇而無禮則亂，直而無禮則絞。君子篤於親，則民興於仁；故舊不遺，則民不偷。」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#子罕9.29
+> 
+> <!-- begin::[論語.md] -->
+> 29. 子曰：「知者不惑，仁者不憂，勇者不懼。」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#顏淵12.1
+> 
+> <!-- begin::[論語.md] -->
+> 1. 顏淵問仁。子曰：「克己復禮為仁。一日克己復禮，天下歸仁焉。為仁由己，而由人乎哉？」顏淵曰：「請問其目。」子曰：「非禮勿視，非禮勿聽，非禮勿言，非禮勿動。」顏淵曰：「回雖不敏，請事斯語矣。」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#顏淵12.2
+> 
+> <!-- begin::[論語.md] -->
+> 2. 仲弓問仁。子曰：「出門如見大賓，使民如承大祭。己所不欲，勿施於人。在邦無怨，在家無怨。」仲弓曰：「雍雖不敏，請事斯語矣。」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#顏淵12.3
+> 
+> <!-- begin::[論語.md] -->
+> 3. 司馬牛問仁。子曰：「仁者其言也訒。」曰：「其言也訒，斯謂之仁已乎？」子曰：「為之難，言之得無訒乎？」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#顏淵12.15
+> 
+> <!-- begin::[論語.md] -->
+> 15. 子曰：「君子博學於文，約之以禮，亦可以弗畔矣夫！」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#顏淵12.22
+> 
+> <!-- begin::[論語.md] -->
+> 22. 樊遲問仁。子曰：「愛人。」問知。子曰：「知人。」樊遲未達。子曰：「舉直錯諸枉，能使枉者直。」樊遲退，見子夏。曰：「鄉也吾見於夫子而問知，子曰，『舉直錯諸枉，能使枉者直』，何謂也？」子夏曰：「富哉言乎！舜有天下，選於眾，舉皋陶，不仁者遠矣。湯有天下，選於眾，舉伊尹，不仁者遠矣。」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#憲問14.5
+> 
+> <!-- begin::[論語.md] -->
+> 5. 南宮适問於孔子曰：「羿善射，奡盪舟，俱不得其死然；禹稷躬稼，而有天下。」夫子不答，南宮适出。子曰：「君子哉若人！尚德哉若人！」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#衛靈公15.9
+> 
+> <!-- begin::[論語.md] -->
+> 9. 子曰：「志士仁人，無求生以害仁，有殺身以成仁。」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#衛靈公15.10
+> 
+> <!-- begin::[論語.md] -->
+> 10. 子貢問為仁。子曰：「工欲善其事，必先利其器。居是邦也，事其大夫之賢者，友其士之仁者。」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#衛靈公15.33
+> 
+> <!-- begin::[論語.md] -->
+> 33. 子曰：「知及之，仁不能守之；雖得之，必失之。知及之，仁能守之。不莊以涖之，則民不敬。知及之，仁能守之，莊以涖之。動之不以禮，未善也。」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#衛靈公15.35
+> 
+> <!-- begin::[論語.md] -->
+> 35. 子曰：「民之於仁也，甚於水火。水火，吾見蹈而死者矣，未見蹈仁而死者也。」
+> <!-- end::[論語.md] -->
+
+
+> [!author] 論語#陽貨17.6
+> 
+> <!-- begin::[論語.md] -->
+> 6. 子張問仁於孔子。孔子曰：「能行五者於天下，為仁矣。」請問之。曰：「恭、寬、信、敏、惠。恭則不侮，寬則得眾，信則人任焉，敏則有功，惠則足以使人。」
+> <!-- end::[論語.md] -->
+
+
+%%
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<p style="font-size:2em; text-align: center;">敬祝</p>
+<p style="font-size:3em; text-align: center;">聖凡如意</p>
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            // normalize to rgb(a)
+            const optionEl = document.createElement("option");
+            optionEl.style.color = color;
+            const normalizedColor = optionEl.style.color;
+
+            const match = normalizedColor.match(/(\d+), (\d+), (\d+)/);
+            if (!match) return false;
+            const [, c_r, c_g, c_b] = match;
+
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.KaTeX,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+            ],
+            allottedTime: "120",
+
+            katex: {
+                local: 'plugin/math/katex',
+                extensions: ["mhchem"],
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                    {
+                        id: 'toggle-overview',
+                        title: 'Toggle overview (O)',
+                        icon: '<i class="fa fa-th"></i>',
+                        action: 'Reveal.toggleOverview();'
+                    },
+                ]
+            },
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":true,"transition":"concave","transitionSpeed":"default","width":960,"height":700,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      /**
+       * KaTeX Equation Numbering Note
+       *
+       * KaTeX maintains a global equation counter for \begin{equation} environments.
+       * When navigating between slides, reveal.js math plugin may re-render math, causing
+       * equation numbers to change randomly.
+       *
+       * Note: Regular $$ blocks don't have equation numbers - only \begin{equation} does.
+       *
+       * If you experience issues with equation numbers changing:
+       * Use manual \tag{} commands: \begin{equation}\tag{1} ... \end{equation}
+       */
+
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
