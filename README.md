@@ -10,4 +10,3 @@
 2. [不休息菩薩慈示訓(二)：1.標準崇德人2.無限可能](<./Extra/Slides Extended/index_不休息菩薩慈示訓(二)：1.標準崇德人2.無限可能.html>)
 3. [百孝經聖訓輯要(三)：第9~12句之訓中訓](<./Extra/Slides Extended/index_百孝經聖訓輯要(三)：第9~12句之訓中訓.html>)
 4. [大學選讀(三)](<./Extra/Slides Extended/index_大學選讀(三).html>)
-
