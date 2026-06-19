@@ -13,8 +13,8 @@
 
 -->
 
-1. [不休息菩薩慈示訓(二)：1.標準崇德人2.無限可能](<./Extra/Slides Extended/index_不休息菩薩慈示訓(二)：1.標準崇德人2.無限可能.html>)
+1. [大學選讀(三)](<./Extra/Slides Extended/index_大學選讀(三).html>)
+2. [不休息菩薩慈示訓(二)：1.標準崇德人2.無限可能](<./Extra/Slides Extended/index_不休息菩薩慈示訓(二)：1.標準崇德人2.無限可能.html>)
 4. [百孝經聖訓輯要(三)：第9~12句之訓中訓](<./Extra/Slides Extended/index_百孝經聖訓輯要(三)：第9~12句之訓中訓.html>)
-5. [大學選讀(三)](<./Extra/Slides Extended/index_大學選讀(三).html>)
 6. [論語選讀(四)：性與天道、禮與仁](<./Extra/Slides Extended/index_論語選讀(四)：性與天道、禮與仁.html>)
 9. [心經](<./Extra/Slides Extended/index_心經.html>)
