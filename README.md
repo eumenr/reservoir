@@ -6,11 +6,12 @@
 - [簡報](#簡報)
 - [封存](#封存)
 
-## 圖示
+## 圖示 {#圖示}
+
 
 <img src="一貫道母字_黑色.svg" alt="示例圖片" width="50" style="background-color: gray"><img src="一貫道母字_白色.svg" alt="示例圖片" width="50" style="background-color: gray">
 
-## 簡報
+## 簡報 {#簡報}
 
 1. [大學選讀(三)](<./Extra/Slides Extended/index_大學選讀(三).html>)
 2. [不休息菩薩慈示訓(二)：1.標準崇德人2.無限可能](<./Extra/Slides Extended/index_不休息菩薩慈示訓(二)：1.標準崇德人2.無限可能.html>)
