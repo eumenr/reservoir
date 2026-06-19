@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>心經</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="../../.obsidian/snippets/slides_extended_css.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# 心經
+<!-- .element: class="r-fit-text" -->
+
+<div class="hide-from-slides">
+
+> [!table|share-none]
+>> [!table|right]
+>> 狀態：`INPUT[inlineSelect(option(🌱 下種), option(🪴 發展), option(👣 追蹤), option(🥾 交付), option(✅ 完成), option(🌲 常青), option(❌ 取消), showcase):status]`
+>> 主題：`INPUT[inlineSelect(option(beige), option(black), option(blood), option(dracula), option(league), option(moon), option(night), option(serif), option(simple), option(sky), option(solarized), option(white), showcase):theme]`
+>> 切換：`INPUT[inlineSelect(option(none), option(fade), option(slide), option(convex), option(concave), option(zoom), showcase):transition]`
+>
+> [up:: 傳題, 投影片]  目前位置 模板
+> ```meta-bind-button
+> style: default
+> label: 開啟簡報
+> tooltip: 'presentation'
+> id: presentation
+> hidden: false
+> action:
+>   type: command
+>   command: slides:start
+> ```
+>
+> ```meta-bind-button
+> style: default
+> label: RevealJS
+> tooltip: 'Slides Extended: Show slide preview'
+> id: RevealJS
+> hidden: false
+> action:
+>   type: command
+>   command: slides-extended:open-preview
+> ```
+
+> [!right]
+> 修改@`=dateformat(this.file.mtime, "yyyy-MM-dd HH:mm:ss")`
+
+</div><!-- .element: style="display: none" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/1) 頁 -->
+
+## 大綱
+<!-- .element: style="display: none" -->
+
+> [!flex]
+>> [!outline|slide-hide] 心經
+>> - #經題
+>> - #經文
+><!-- .element: style="display: none" -->
+>
+>> [!outline|color-purple|reading-view-hide] 心經
+>> - [經題](#/2)
+>> - [經文](#/3)
+
+
+```dataviewjs
+// 取得當前檔案內容
+const file = dv.current().file;
+const content = await app.vault.read(app.vault.getAbstractFileByPath(file.path));
+const lines = content.split("\n");
+
+// 初始化參數
+let currentSlide = -2; // 簡報頁碼通常從 0 或 1 開始
+const headings_reveal = [];
+
+// 遍歷所有行，計算頁碼與標題
+for (let i = 0; i < lines.length; i++) {
+	const line = lines[i].trim();
+
+	// 檢測水平分頁 (---) 或垂直分頁 (----)
+	// 這裡視你的簡報結構而定，若無垂直分頁，只需判斷 "---"
+	if (line === "---" || line === "----") {
+		currentSlide++;
+		continue;
+	}
+
+	// 匹配標題 (##, ###, ####)
+	const m = line.match(/^(#{2,4})\s+(.*)/);
+	if (!m) continue;
+
+	const level = m[1].length;
+	const title = m[2].trim();
+
+	headings_reveal.push({ level, title, slide: currentSlide });
+}
+
+// 產生輸出區塊
+let slide_block = "";
+let reading_block = "";
+const baseLevel = 2; // 基準層級
+
+for (const h of headings_reveal) {
+	const indent = "  ".repeat(h.level - baseLevel);
+
+	// Slide 連結 (Reveal.js 格式)
+	const slideLink = h.level === 2 ? `(#/${h.slide})` : `(#/${h.slide}/0/0)`;
+	slide_block += `>> ${indent}- [${h.title}]${slideLink}\n`;
+
+	// Reading View 連結 (Obsidian 內部連結)
+	reading_block += `>> ${indent}- #${h.title}\n`;
+}
+
+// 組合最終 Markdown 結構
+const output = `
+> [!flex]
+>> [!outline|slide-hide] **大綱 (預覽)**
+${reading_block}
+>
+>> [!outline|color-blue|reading-view-hide] **大綱 (簡報)**
+${slide_block}
+`;
+
+// 輸出到頁面
+dv.span(output);
+```
+<!-- .element: style="display: none" -->
+
+```dataviewjs [1-2]
+const file = dv.current().file;
+const content = await this.app.vault.read(app.vault.getAbstractFileByPath(file.path));
+const lines = content.split("\n");
+const file_name = file?.name;
+
+// 解析 slide 頁碼（從 HTML 註解抓 (#/n)）
+function getSlideIndex(i) {
+	for (let j = i - 1; j >= 0; j--) {
+		// 修改：增加對強制分隔符 --- 的捕捉，或者確保能抓到更完整的錨點
+		const m = lines[j].match(/#\/(\d+)/);
+		if (m) return m[1];
+	}
+	// 如果找不到，給一個預設值，而不是 return null
+	return "1";
+}
+
+// 擷取標題
+const headings_reveal = [];
+for (let i = 0; i < lines.length; i++) {
+	const line = lines[i];
+	const m = line.match(/^(#{2,4})\s+(.*)/);
+	if (!m) continue;
+
+	const level = m[1].length; // ## = 2, ### = 3, #### = 4
+	const title = m[2].trim();
+	const slide = getSlideIndex(i);
+
+	if (slide) {
+		headings_reveal.push({ level, title, slide });
+	}
+}
+
+// 基準層級
+const baseLevel = 2;
+
+// 產生階層清單
+let slide_block = "";
+let reading_block = "";
+
+for (const h of headings_reveal) {
+	const indent = "  ".repeat(h.level - baseLevel);
+	const link =
+		h.level === 2
+			? `(#/${h.slide})`
+			: `(#/${h.slide}/0/0)`;
+	// Slide Mode 標記，裡面是 Reveal/Slide 專用標記
+	slide_block += `>> ${indent}- [${h.title}]${link}\n`;
+	// Reading View 標記
+	reading_block += `>> ${indent}- #${h.title}\n`;
+}
+
+// 輸出，無法顯示在reading-view，因為slide_block無法渲染
+let link_block = "> [!flex] \n>> [!outline|slide-hide] " + file_name + "\n" + reading_block + ">\n>> [!outline|color-purple|reading-view-hide] " + file_name + "\n>>\n>>" + slide_block
+// 輸出，可以顯示在reading-view，但slide_block要手動貼上
+let code_block = "> [!flex] \n>> [!outline|slide-hide] " + file_name + "\n" + reading_block + ">\n>> [!outline|color-blue|reading-view-hide] " + file_name + "\n>>\n>> ````text\n" + slide_block + ">> ````\n";
+let code_pure = `
+\`\`\`\`markdown
+> [!flex]
+>> [!outline|slide-hide] ${file_name}
+${reading_block}><!-- .element: style=\"display:none;\"="true" -->
+>
+>> [!outline|color-purple|reading-view-hide] ${file_name}
+${slide_block}
+\`\`\`\`
+`;
+
+// 顯示為大綱及文字區塊
+dv.paragraph(code_pure);
+```
+<!-- .element: style="display: none" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/2) 頁 -->
+<!-- .element: style="background: #333" -->
+
+## 經題
+
+- 般若波羅蜜多心經
+- 唐 三藏法師玄奘 譯
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/3) 頁 -->
+
+## 經文
+
+- 觀自在菩薩，行深般若波羅蜜多時，照見五蘊皆空，度一切苦厄。
+
+- 舍利子！色不異空，空不異色；色即是空，空即是色，受想行識亦復如是。
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/4) 頁 -->
+
+- 舍利子！是諸法空相，不生不滅，不垢不淨，不增不減。
+- 是故，空中無色，無受想行識；無眼耳鼻舌身意；無色聲香味觸法；無眼界，乃至無意識界；無無明，亦無無明盡，乃至無老死，亦無老死盡；無苦集滅道；**無智亦無得**。
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/5) 頁 -->
+
+- 以無所得故，菩提薩埵。
+- 依般若波羅蜜多故，心無罣礙；無罣礙故，無有恐怖，遠離顛倒夢想，究竟涅槃。
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/6) 頁 -->
+
+- 三世諸佛，依般若波羅蜜多故，得阿耨多羅三藐三菩提。
+- 故知：般若波羅蜜多是大神咒，是大明咒，是無上咒，是無等等咒，能除一切苦，真實不虛。
+- 故說般若波羅蜜多咒，即說咒曰：揭諦揭諦，波羅揭諦，波羅僧揭諦，菩提薩婆訶。
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" id="grand-finale" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/7) 頁 -->
+
+
+
+敬祝
+<!-- .element: style="font-size: 2em" -->
+
+聖凡如意
+<!-- .element: class="r-fit-text" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-visibility="hidden" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/8) 頁 -->
+
+
+
+# 課後總結
+
+- 傳布法師 心經要解
+	- 無智亦無得
+	- 六度波羅蜜
+	- 經者，徑也
+
+> [!author] 天台四教儀備釋 上([X0977](https://cbetaonline.dila.edu.tw/zh/X57n0977_p0608c23?q=阿含十二方等八&l=0608c23&near_word=&kwic_around=30))
+> 如來四十九年說法，總成五時。頌曰：阿含十二方等八，二十二年般若談，法華涅槃共八年，華嚴最初三七日。
+
+
+<!-- begin::[U20260412_091853.md] -->
+> [!author] 大般若波羅蜜多經卷第五百七十 第六分現相品第八 ([T0220](https://cbetaonline.dila.edu.tw/zh/T07n0220_p0944c04?q=牧牛女&l=0944c04&near_word=&kwic_around=30))
+> 大德當知！如是菩薩方便善巧行深般若波羅蜜多，能降天魔，伏諸外道，大悲化度一切有情，既經六年從定而起，隨順世法詣無垢河，洗浴出已於河邊立。有牧牛女[](https://cbetaonline.dila.edu.tw/#n0944006)[6]搆百乳牛以飲一牛，[](https://cbetaonline.dila.edu.tw/#n0944006)[＊]搆此牛乳用作乳糜奉獻菩薩。復有六億天、龍、藥叉、健達縛等，各持種種香美飲食而來奉獻，咸作是言：『大士！正士！惟願受我飲食供養。』菩薩愍之皆悉為受。時，牧牛女、天、龍、藥叉、健達縛等互不相見，各見菩薩獨受其供。時，有無量諸天、人等，因見受供咸得悟道，是故菩薩為示現之。菩薩爾時實不洗浴，亦不受彼人、天等供。
+<!-- end::[U20260412_091853.md] -->
+
+
+牧牛女
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            // normalize to rgb(a)
+            const optionEl = document.createElement("option");
+            optionEl.style.color = color;
+            const normalizedColor = optionEl.style.color;
+
+            const match = normalizedColor.match(/(\d+), (\d+), (\d+)/);
+            if (!match) return false;
+            const [, c_r, c_g, c_b] = match;
+
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.KaTeX,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+            ],
+            allottedTime: "120",
+
+            katex: {
+                local: 'plugin/math/katex',
+                extensions: ["mhchem"],
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                    {
+                        id: 'toggle-overview',
+                        title: 'Toggle overview (O)',
+                        icon: '<i class="fa fa-th"></i>',
+                        action: 'Reveal.toggleOverview();'
+                    },
+                ]
+            },
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":true,"transition":"concave","transitionSpeed":"default","width":960,"height":700,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      /**
+       * KaTeX Equation Numbering Note
+       *
+       * KaTeX maintains a global equation counter for \begin{equation} environments.
+       * When navigating between slides, reveal.js math plugin may re-render math, causing
+       * equation numbers to change randomly.
+       *
+       * Note: Regular $$ blocks don't have equation numbers - only \begin{equation} does.
+       *
+       * If you experience issues with equation numbers changing:
+       * Use manual \tag{} commands: \begin{equation}\tag{1} ... \end{equation}
+       */
+
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
