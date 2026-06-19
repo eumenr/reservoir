@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>道化生活(一)：白陽修士的現代生活</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="../../.obsidian/snippets/mater.css" />
+    <link rel="stylesheet" href="../../.obsidian/snippets/slides_extended_css.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="hide-in-slides">
+
+> [!table|share-none]
+>> [!table|right]
+>> 狀態：`INPUT[inlineSelect(option(🌱 下種), option(🪴 發展), option(👣 追蹤), option(🥾 交付), option(✅ 完成), option(🌲 常青), option(❌ 取消), showcase):status]`
+>> 主題：`INPUT[inlineSelect(option(beige), option(black), option(blood), option(dracula), option(league), option(moon), option(night), option(serif), option(simple), option(sky), option(solarized), option(white), showcase):theme]`
+>> 切換：`INPUT[inlineSelect(option(none), option(fade), option(slide), option(convex), option(concave), option(zoom), showcase):transition]`
+>
+> [up:: 傳題, 投影片]  目前位置 模板
+> ```meta-bind-button
+> style: default
+> label: 開啟簡報
+> tooltip: 'presentation'
+> id: presentation
+> hidden: false
+> action:
+>   type: command
+>   command: slides:start
+> ```
+>
+> ```meta-bind-button
+> style: default
+> label: RevealJS
+> tooltip: 'Slides Extended: Show slide preview'
+> id: RevealJS
+> hidden: false
+> action:
+>   type: command
+>   command: slides-extended:open-preview
+> ```
+
+> [!right]
+> 修改@`=dateformat(this.file.mtime, "yyyy-MM-dd HH:mm:ss")`
+
+</div><!-- .element: style="display: none" -->
+
+
+## 道化生活(一)
+# 白陽修士的現代生活
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/1) 頁 -->
+
+## 大綱
+
+> [!flex]
+>> [!outline|slide-hide] 白陽修士的現代生活
+>> - #大綱
+>> - #前言
+>> - #何謂白陽
+>> - #何謂修士
+>>   - #修持目標
+>>   - #修行道場
+>>   - #共通原則
+>> - #古代與現代修行的差異
+
+> [!flex]
+>> [!outline|color-purple|reading-view-hide] 白陽修士的現代生活
+>> - [大綱](#/1)
+>> - [前言](#/2)
+>> - [何謂白陽](#/3)
+>> - [何謂修士](#/4/0/0)
+>>   - [修持目標](#/5/0/0)
+>>   - [修行道場](#/6/0/0)
+>>   - [共通原則](#/7/0/0)
+>> - [古代與現代修行的差異](#/8)
+
+<!--
+```dataviewjs
+const file = dv.current().file;
+const abstract = app.vault.getAbstractFileByPath(file.path);
+const content = await app.vault.read(abstract);
+const lines = content.split("\n");
+
+// 解析 slide 頁碼（從 HTML 註解抓 (#/n)）
+function getSlideIndex(i) {
+	for (let j = i - 1; j >= 0; j--) {
+		const m = lines[j].match(/\(#\/(\d+)\)/);
+		if (m) return m[1];
+	}
+	return null;
+}
+
+// 擷取標題
+const headings = [];
+for (let i = 0; i < lines.length; i++) {
+	const line = lines[i];
+	const m = line.match(/^(#{2,4})\s+(.*)/);
+	if (!m) continue;
+
+	const level = m[1].length; // ## = 2, ### = 3, #### = 4
+	const title = m[2].trim();
+	const slide = getSlideIndex(i);
+
+	if (slide) {
+		headings.push({ level, title, slide });
+	}
+}
+
+// 產生階層清單
+let slide_block = "";
+let reading_block = "";
+
+// 基準層級
+const baseLevel = 2;
+
+for (const h of headings) {
+	const indent = "  ".repeat(h.level - baseLevel);
+	const link =
+		h.level === 2
+			? `(#/${h.slide})`
+			: `(#/${h.slide}/0/0)`;
+	// Slide Mode 標記
+	slide_block += `>> ${indent}- [${h.title}]${link}\n`;
+	// Reading View 標記
+	reading_block += `>> ${indent}- #${h.title}\n`;
+}
+
+// 最終輸出
+const output = `> [!flex]
+>> [!outline|slide-hide] ${file.name}
+>> \`\`\`toc
+>> \`\`\`
+>
+>> [!outline|reading-view-hide] ${file.name}
+${slide_block}
+`;
+
+dv.paragraph(output);
+
+```
+-->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/2) 頁 -->
+
+<div class="has-dark-background flex-even" style="background-color: transparent; position: absolute; left: 5%; top: 5%; height: 15%; width: 90%; display: flex; flex-direction: row; align-items: center; justify-content: center" >
+
+<!-- 上 -->
+
+## 前言
+
+</div><div class="has-dark-background scaleUp flex-even" style="background-color: transparent; position: absolute; left: 5%; top: 25%; height: 60%; width: 90%; display: flex; flex-direction: row; align-items: center; justify-content: center" >
+
+<!-- 中 -->
+
+- 理想中的人生<!-- .element: class="fragment fade-up" -->
+	1. 與神對話~瑜伽<!-- .element: class="fragment fade-up" -->
+	2. 手段即是目的~希臘<!-- .element: class="fragment fade-up" -->
+	3. 八萬四千種法門~佛家<!-- .element: class="fragment fade-up" -->
+
+
+</div><div class="has-dark-background flex-even" style="background-color: transparent; position: absolute; left: 5%; top: 90%; height: 5%; width: 90%; display: flex; flex-direction: row; align-items: center; justify-content: center" >
+
+<!-- 下 -->
+[回大綱](#/1)
+<!-- .element: style="text-align: right" -->
+
+回大綱<!-- .element: style="display: none" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/3) 頁 -->
+
+<div class="has-dark-background flex-even" style="background-color: transparent; position: absolute; left: 5%; top: 5%; height: 15%; width: 90%; display: flex; flex-direction: row; align-items: center; justify-content: center" >
+
+<!-- 上 -->
+
+## 何謂白陽
+
+</div><div class="has-dark-background scaleUp fragment flex-even" style="background-color: transparent; position: absolute; left: 5%; top: 25%; height: 60%; width: 90%; display: flex; flex-direction: row; align-items: center; justify-content: center" data-fragment-index="1">
+
+<!-- 中 -->
+
+|    時期    |     道降     | 劫難 | 劫數 | 朝代     |
+|:----------:|:------------:|:----:| ----:| -------- |
+| **青**陽期<br>(蓮葉) | 道降<mark>君王</mark> |  水  |  9劫 | 伏羲至周 |
+| **紅**陽期<br>(蓮花) | 道降<mark>師儒</mark> |  火  | 18劫 | 周至清   |
+| **白**陽期<br>(蓮藕) | 道降<mark>庶民</mark> | 罡風 | 81劫 | 民國     |
+
+
+
+</div><div class="has-dark-background flex-even" style="background-color: transparent; position: absolute; left: 5%; top: 90%; height: 5%; width: 90%; display: flex; flex-direction: row; align-items: center; justify-content: center" >
+
+<!-- 下 -->
+[回大綱](#/1)
+<!-- .element: style="text-align: right" -->
+
+回大綱<!-- .element: style="display: none" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/4) 頁 -->
+
+<div class="has-dark-background flex-even" style="background-color: transparent; position: absolute; left: 5%; top: 5%; height: 15%; width: 90%; display: flex; flex-direction: row; align-items: center; justify-content: center" >
+
+<!-- 上 -->
+
+## 何謂修士
+
+</div><div class="has-dark-background scaleUp fragment flex-even" style="background-color: transparent; position: absolute; left: 5%; top: 25%; height: 60%; width: 90%; display: flex; flex-direction: row; align-items: center; justify-content: center" data-fragment-index="1">
+
+<!-- 中 -->
+
+- 紅陽期修士都做些什麼？<!-- .element: class="fragment fade-up" -->
+- 舉例<!-- .element: class="fragment fade-up" -->
+	- 釋：釋迦牟尼佛、百丈懷海禪師<!-- .element: class="fragment fade-up" -->
+	- 儒：孔子、曾子、孟子<!-- .element: class="fragment fade-up" -->
+	- 道：老子、莊子<!-- .element: class="fragment fade-up" -->
+	- 耶：耶穌、摩西、德蕾莎修女<!-- .element: class="fragment fade-up" -->
+	- 回：穆罕默德<!-- .element: class="fragment fade-up" -->
+
+</div><div class="has-dark-background flex-even" style="background-color: transparent; position: absolute; left: 5%; top: 90%; height: 5%; width: 90%; display: flex; flex-direction: row; align-items: center; justify-content: center" >
+
+<!-- 下 -->
+[回大綱](#/1)
+<!-- .element: style="text-align: right" -->
+
+回大綱<!-- .element: style="display: none" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/5) 頁 -->
+
+<div class="has-dark-background flex-even" style="background-color: transparent; position: absolute; left: 5%; top: 5%; height: 15%; width: 90%; display: flex; flex-direction: row; align-items: center; justify-content: center" >
+
+<!-- 上 -->
+
+### 修持目標
+
+</div><div class="has-dark-background scaleUp fragment flex-even" style="background-color: transparent; position: absolute; left: 5%; top: 25%; height: 60%; width: 90%; display: flex; flex-direction: row; align-items: center; justify-content: center" data-fragment-index="1">
+
+<!-- 中 -->
+
+- 請寫下自己一年內的修行目標以及計劃？<!-- .element: class="fragment fade-up" -->
+- 三足鼎立：<!-- .element: class="fragment fade-up" -->
+	- 實務<!-- .element: class="fragment fade-up" -->
+	- 修持<!-- .element: class="fragment fade-up" -->
+	- 經訓<!-- .element: class="fragment fade-up" -->
+
+</div><div class="has-dark-background flex-even" style="background-color: transparent; position: absolute; left: 5%; top: 90%; height: 5%; width: 90%; display: flex; flex-direction: row; align-items: center; justify-content: center" >
+
+<!-- 下 -->
+[回大綱](#/1)
+<!-- .element: style="text-align: right" -->
+
+回大綱<!-- .element: style="display: none" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/6) 頁 -->
+
+### 修行道場
+
+> [!flex]
+>> [!rocket] 三大修行道場
+>> - 父母、兄弟、子女<!-- .element: class="fragment fade-in-then-semi-out" -->
+>> - 上司、同事、部屬<!-- .element: class="fragment fade-in-then-semi-out" -->
+>> - 前賢、同修、後學<!-- .element: class="fragment fade-in-then-semi-out" -->
+>> - **承上啟下，繼往開來**<!-- .element: class="fragment fade-in" -->
+>
+> <img src="Extra/Excalidraw/Drawing 修行道場 2023-09-24 09.20.40.excalidraw.svg" alt=".svg" style="object-fit: scale-down">
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/7) 頁 -->
+
+<div class="has-dark-background flex-even" style="background-color: transparent; position: absolute; left: 5%; top: 5%; height: 15%; width: 90%; display: flex; flex-direction: row; align-items: center; justify-content: center" >
+
+<!-- 上 -->
+
+### 共通原則
+
+</div><div class="has-dark-background scaleUp fragment flex-even" style="background-color: transparent; position: absolute; left: 5%; top: 25%; height: 60%; width: 90%; display: flex; flex-direction: row; align-items: center; justify-content: center" data-fragment-index="1">
+
+<!-- 中 -->
+
+- 對長輩：孝<!-- .element: class="fragment fade-up" -->
+	- 詩云：「樂只君子，民之父母。」
+- 對平輩：悌<!-- .element: class="fragment fade-up" -->
+	- 見不善而不能退，退而不能遠，過也。
+- 對晚輩：慈<!-- .element: class="fragment fade-up" -->
+	- 德者，本也；財者，末也；外本內末，爭民施奪。
+
+</div><div class="has-dark-background flex-even" style="background-color: transparent; position: absolute; left: 5%; top: 90%; height: 5%; width: 90%; display: flex; flex-direction: row; align-items: center; justify-content: center" >
+
+<!-- 下 -->
+[回大綱](#/1)
+<!-- .element: style="text-align: right" -->
+
+回大綱<!-- .element: style="display: none" -->
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/8) 頁 -->
+
+<div class="has-dark-background flex-even" style="background-color: transparent; position: absolute; left: 5%; top: 5%; height: 15%; width: 90%; display: flex; flex-direction: row; align-items: center; justify-content: center" >
+
+<!-- 上 -->
+
+## 古代與現代修行的差異
+
+</div><div class="has-dark-background scaleUp fragment flex-even" style="background-color: transparent; position: absolute; left: 5%; top: 25%; height: 60%; width: 90%; display: flex; flex-direction: row; align-items: center; justify-content: center" data-fragment-index="1">
+
+<!-- 中 -->
+
+| 古代修行(**青、紅陽期**) | 現代修行(**白陽期**)                                      |
+| -------------------- | ----------------------------------------------------- |
+| 拋家捨業、出家修行   | 在家出家、在家修行                                    |
+| 外出化緣             | 修己渡人                                              |
+| 接受佈施供養         | 自立更生，不受供養                                    |
+| **<span class="cloze-span">千里訪明師</span>**           | 引保師引進求道                                        |
+| 或能得遇明師指點     | <mark>求　道</mark>是<span class="cloze-span">**天榜掛號**</span> <br><mark>開法會</mark>是<span class="cloze-span">**佛盤註冊**</span><!-- .element: class="fragment fade-in" --> |
+| 先修後得             | 先得後修，一世修一世成                                |
+<!-- .element: style="font-size: 0.8em" -->
+
+</div><div class="has-dark-background flex-even" style="background-color: transparent; position: absolute; left: 5%; top: 90%; height: 5%; width: 90%; display: flex; flex-direction: row; align-items: center; justify-content: center" >
+
+<!-- 下 -->
+[回大綱](#/1)
+<!-- .element: style="text-align: right" -->
+
+回大綱<!-- .element: style="display: none" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" id="grand-finale" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+敬祝
+<!-- .element: style="font-size: 2em" -->
+
+聖凡如意
+<!-- .element: class="r-fit-text" -->
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            // normalize to rgb(a)
+            const optionEl = document.createElement("option");
+            optionEl.style.color = color;
+            const normalizedColor = optionEl.style.color;
+
+            const match = normalizedColor.match(/(\d+), (\d+), (\d+)/);
+            if (!match) return false;
+            const [, c_r, c_g, c_b] = match;
+
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.KaTeX,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+            ],
+            allottedTime: "120",
+
+            katex: {
+                local: 'plugin/math/katex',
+                extensions: ["mhchem"],
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                    {
+                        id: 'toggle-overview',
+                        title: 'Toggle overview (O)',
+                        icon: '<i class="fa fa-th"></i>',
+                        action: 'Reveal.toggleOverview();'
+                    },
+                ]
+            },
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":true,"transition":"concave","transitionSpeed":"default","width":960,"height":700,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      /**
+       * KaTeX Equation Numbering Note
+       *
+       * KaTeX maintains a global equation counter for \begin{equation} environments.
+       * When navigating between slides, reveal.js math plugin may re-render math, causing
+       * equation numbers to change randomly.
+       *
+       * Note: Regular $$ blocks don't have equation numbers - only \begin{equation} does.
+       *
+       * If you experience issues with equation numbers changing:
+       * Use manual \tag{} commands: \begin{equation}\tag{1} ... \end{equation}
+       */
+
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
