@@ -1,0 +1,209 @@
+{
+  "main": {
+    "id": "6fc03760772aa11f",
+    "type": "split",
+    "children": [
+      {
+        "id": "974e285cac60866e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ed6a1099843982e4",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "preview",
+                "source": true
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "README"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ff5069e9c61de7c2",
+    "type": "split",
+    "children": [
+      {
+        "id": "365a20243f65461c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "303f5b5e1281dcdd",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "91ba088f74ca789a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "3e37927393c9c0a7",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "001daab1736949e8",
+    "type": "split",
+    "children": [
+      {
+        "id": "df6cdfc21e6bd26c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3e5a8143f1427ca8",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "README.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for README"
+            }
+          },
+          {
+            "id": "6f23e1056865fa66",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "README.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from README"
+            }
+          },
+          {
+            "id": "a467d49bf3c7f876",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "8497794a062bd53f",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "4963a1c57ce3721c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "README.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of README"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "slides-extended:Show slide preview": false,
+      "templater-obsidian:Templater": false
+    }
+  },
+  "active": "ed6a1099843982e4",
+  "lastOpenFiles": [
+    "Slides/大學選讀(三).md",
+    "README.md",
+    "Extra/Template/ETE1-Note/Slides.md",
+    "Slides/不休息菩薩慈示訓(二)：1.標準崇德人2.無限可能.md",
+    "Slides/心經.md",
+    "Extra/Template/ETE2-Append/Slide-Advanced_Two-Content.md",
+    "Extra/Template/ETE2-Append/Slide-Advanced_Title-and-Content.md",
+    "Extra/Template/ETE2-Append/rt.md",
+    "Extra/Template/ETE2-Append/mater - template append.md",
+    "Extra/Template/ETE2-Append",
+    "Extra/Template/ETE1-Note",
+    "Slides/百孝經聖訓輯要(三)：第9～12句之訓中訓.md",
+    "Slides",
+    "Extra/Template/Slides.md",
+    "Extra/Template"
+  ]
+}

@@ -1,14 +1,41 @@
-# Node rules:
-## Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
-.grunt
+# ==========================================
+# 1. 跨平台視窗佈局、頁籤與操作狀態 (必忽略，防止雙端衝突)
+# ==========================================
+# 記錄桌機板 Obsidian 的分頁狀態、側邊欄開合與最近開啟檔案
+# **/.obsidian/workspace.json
+# 記錄行動版 (手機/平板) Obsidian 的視窗佈局與狀態
+# **/.obsidian/workspace-mobile.json
 
-## Dependency directory
-## Commenting this out is preferred by some people, see
-## https://docs.npmjs.com/misc/faq#should-i-check-my-node_modules-folder-into-git
-node_modules
-.DS_Store
+# ==========================================
+# 2. 雙向同步軟體 (FreeFileSync) 暫存與鎖定檔
+# ==========================================
+# FreeFileSync 用於比對兩端檔案差異的離線資料庫快取
+**/.sync.ffs_db
+# 避免多個同步程序同時寫入衝突的鎖定檔 (Lock file)
+sync.ffs_lock
+
+# ==========================================
+# 3. 系統與開發工具垃圾檔
+# ==========================================
+# macOS Finder 自動產生的資料夾自訂顯示設定隱藏檔
+**/.DS_Store
+# Python 執行時自動產生的編譯位元組碼快取資料夾 (Bytecode Cache)
+__pycache__/
+TEMP_PACKING/
+**.7z.*
 README.md.tmp
 
+# ==========================================
+# 4. Obsidian 特定外掛操作紀錄檔案
+# ==========================================
+# remember-cursor-position 外掛記錄所有筆記游標最後停留位置的設定檔 (避免兩端同步時游標打架)
+**/.obsidian/plugins/remember-cursor-position/cursor-positions.json
+
+# ==========================================
+# 5. Office 文件編輯鎖定暫存檔 (如 LibreOffice/OpenOffice)
+# ==========================================
+# 當 ODF (.odt, .ods 等) 文件被開啟編輯時，系統自動產生的隱藏暫存防鎖定檔
+.~lock.*
 # Book build output
 _book
 
@@ -16,3 +43,18 @@ _book
 *.epub
 *.mobi
 *.pdf
+
+# ==========================================
+# 7. Slides Extended 外掛展示匯出與執行檔快取
+# ==========================================
+# 簡報投影片匯出成 PDF、HTML 或圖片時的預設本機輸出目錄
+Extra/export/
+# Slides Extended 外掛運作所需的 Reveal.js 核心與第三方套件實體檔案 (忽略資料夾內容)
+**/.obsidian/plugins/slides-extended/dist/
+**/.obsidian/plugins/slides-extended/dist
+# 外掛自動產生的舊版本、備份資源檔案與目錄
+**/.obsidian/plugins/slides-extended/dist-backup/
+**/.obsidian/plugins/slides-extended/dist-backup
+# 簡報互動外掛套件 (如幻燈片切換、縮放等) 的程式檔案目錄
+**/.obsidian/plugins/slides-extended/plugin/
+**/.obsidian/plugins/slides-extended/plugin

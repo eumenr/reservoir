@@ -1,0 +1,1 @@
+<ruby><% word = await tp.system.prompt('中文:', '字') %><rt><% pronunciation = await tp.system.prompt('注音:', 'ㄧㄣ') %></rt></ruby>

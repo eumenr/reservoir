@@ -1,0 +1,11 @@
+{
+  "baseFontSize": 21,
+  "enabledCssSnippets": [
+    "Author callout",
+    "Callout styling - customized",
+    "mater",
+    "slides",
+    "slides_extended_css",
+    "theme_default"
+  ]
+}
