@@ -43,7 +43,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -188,8 +190,9 @@
   },
   "active": "d20598ad68993f89",
   "lastOpenFiles": [
-    "README.md",
+    "Untitled.md",
     "Home.md",
+    "README.md",
     "Slides/大學選讀(三).md",
     "Extra/Template/ETE1-Note/Slides.md",
     "Slides/不休息菩薩慈示訓(二)：1.標準崇德人2.無限可能.md",
