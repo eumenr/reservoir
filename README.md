@@ -2,6 +2,7 @@
 
 - [obsidianmd](https://github.com/obsidianmd)/**[obsidian-releases](https://github.com/obsidianmd/obsidian-releases)**Public
 - [laurentlemercier](https://github.com/laurentlemercier)/[obsidian-portable](https://github.com/laurentlemercier/obsidian-portable) v1.12.7.paf.exe
+- github: [reservoir](https://github.com/eumenr/reservoir)
 
 ## 圖示
 
