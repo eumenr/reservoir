@@ -1,0 +1,100 @@
+/* snippets: Author callout.css */
+
+.callout[data-callout="author"],
+.reveal .callout[data-type="author"] {
+	display: flex !important;
+	flex-direction: column-reverse !important;
+	--callout-icon: user;
+	--callout-color: transparent;
+	box-shadow: var(--background-modifier-border) 0px 10px 50px;
+	box-shadow: 
+		0 0 0.9em oklch(from var(--r-main-color, #fff) calc(l*0.5) c h) !important;
+	border-left: solid 0.1em #fff !important;
+	width: 100%;
+	
+	/* ──── 核心前置：開起相對定位，作為標題絕對定位的基準點 ──── */
+	position: relative !important;
+	padding-bottom: 2em !important; /* 幫底部被推上來的標題留出呼吸空間 */
+}
+
+/* ──── 終極修正：絕對定位到右下角，並改用文字靠右 ──── */
+.callout[data-callout="author"] > .callout-title,
+.callout[data-type="author"] > .callout-title,
+.reveal .callout[data-type="author"] > .callout-title {
+	position: absolute !important;
+	bottom: 8px !important;  /* 貼緊外框底部 */
+	right: 8px !important;   /* 貼緊外框右邊 */
+	
+	display: block !important;
+	width: auto !important;
+	text-align: right !important;
+	font-style: normal !important;
+}
+
+/* ──── 關鍵修正：強迫內部的 icon 和文字並排，不要分行 ──── */
+.callout[data-callout="author"] > .callout-title > div,
+.callout[data-type="author"] > .callout-title > div,
+.reveal .callout[data-type="author"] > .callout-title > div {
+	display: inline-block !important;
+	vertical-align: middle !important; /* 確保圖示和文字水平對齊 */
+	margin-left: 6px !important;       /* 圖示和文字之間拉開一點小間距 */
+}
+
+/* ──── 終極黑魔法：幹掉原本寫死的 pencil SVG，強制換成 user 圖示 ──── */
+.callout[data-callout="author"] .callout-icon svg,
+.reveal .callout[data-type="author"] .callout-icon svg {
+	display: none !important; /* 直接隱藏原本的鉛筆 SVG */
+}
+
+.callout[data-callout="author"] .callout-icon,
+.reveal .callout[data-type="author"] .callout-icon {
+	display: inline-block !important;
+	width: 1em !important;
+	height: 1em !important;
+	vertical-align: middle !important;
+	background-color: currentColor !important; /* 自動跟隨文字顏色 */
+	
+	/* 注入原生的 Font Awesome user 圖示 SVG 遮罩 */
+	-webkit-mask-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"%3E%3Cpath d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"/%3E%3C/svg%3E') !important;
+	mask-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"%3E%3Cpath d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"/%3E%3C/svg%3E') !important;
+	-webkit-mask-repeat: no-repeat !important;
+	mask-repeat: no-repeat !important;
+	-webkit-mask-size: contain !important;
+	mask-size: contain !important;
+}
+
+/* ──── 隱藏多餘元件 ──── */
+.callout[data-callout="author"] .mod-header,
+.callout[data-type="author"] .mod-header,
+.callout[data-callout="author"] .markdown-embed-title,
+.reveal .callout[data-type="author"] .markdown-embed-title {
+	display: none !important;
+}
+
+.callout[data-callout="author"] .callout-content p,
+.callout[data-type="author"] .callout-content p,
+.reveal .callout[data-type="author"] .callout-content p {
+	margin-top: 0 !important;
+	text-align: left !important;
+}
+
+.callout[data-callout="author"] .markdown-embed-content .markdown-rendered,
+.callout[data-type="author"] .markdown-embed-content .markdown-rendered,
+.reveal .callout[data-type="author"] .markdown-embed-content .markdown-rendered {
+	padding: 0 !important;
+}
+
+/* ──── 強制修正雙位數序號（如 21.）被吃字的 Bug ──── */
+/*.callout[data-callout="author"] ol,*/
+.callout[data-type="author"] ol,
+.reveal .callout[data-type="author"] ol {
+	padding-left: 3em !important; /* 大幅補足左側空間，確保 21. 完整顯示 */
+	margin-left: 0 !important;
+}
+
+/*.callout[data-callout="author"] li,*/
+.callout[data-type="author"] li,
+.reveal .callout[data-type="author"] li {
+	list-style-position: outside !important; /* 確保點點/數字在框內排好 */
+	padding-left: 0em !important;
+}
