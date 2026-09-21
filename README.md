@@ -5,7 +5,7 @@
 
 <img src="一貫道母字_黑色.svg" alt="示例圖片" width="50" style="background-color: gray"><img src="一貫道母字_白色.svg" alt="示例圖片" width="50" style="background-color: gray">
 
-> [!info]- Obsidian
+> [!TIP] Obsidian
 > - [obsidianmd](https://github.com/obsidianmd)/[obsidian-releases](https://github.com/obsidianmd/obsidian-releases) **Public**
 > - [laurentlemercier](https://github.com/laurentlemercier)/[obsidian-portable](https://github.com/laurentlemercier/obsidian-portable) v1.12.7.paf.exe
 > - github: [reservoir](https://github.com/eumenr/reservoir)
