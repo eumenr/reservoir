@@ -1,12 +1,14 @@
 # reservoir
 
-- [obsidianmd](https://github.com/obsidianmd)/**[obsidian-releases](https://github.com/obsidianmd/obsidian-releases)**Public
-- [laurentlemercier](https://github.com/laurentlemercier)/[obsidian-portable](https://github.com/laurentlemercier/obsidian-portable) v1.12.7.paf.exe
-- github: [reservoir](https://github.com/eumenr/reservoir)
 
-## 圖示
+## 工具集
 
 <img src="一貫道母字_黑色.svg" alt="示例圖片" width="50" style="background-color: gray"><img src="一貫道母字_白色.svg" alt="示例圖片" width="50" style="background-color: gray">
+
+> [!info]- Obsidian
+> - [obsidianmd](https://github.com/obsidianmd)/[obsidian-releases](https://github.com/obsidianmd/obsidian-releases) **Public**
+> - [laurentlemercier](https://github.com/laurentlemercier)/[obsidian-portable](https://github.com/laurentlemercier/obsidian-portable) v1.12.7.paf.exe
+> - github: [reservoir](https://github.com/eumenr/reservoir)
 
 ## 簡報
 
@@ -17,16 +19,6 @@
 9. [心經](<./Extra/Slides Extended/index_心經.html>)
 
 <!--
-
-
-9. [百孝經聖訓輯要(三)：第9～12句之訓中訓](<./Extra/Slides Extended/index_百孝經聖訓輯要(三)：第9～12句之訓中訓.html>)
-
-
-9. [百孝經聖訓輯要(三)：第9～12句之訓中訓](<./Extra/Slides Extended/index_百孝經聖訓輯要(三)：第9～12句之訓中訓.html>)
-
-
-9. [百孝經聖訓輯要(三)：第9～12句之訓中訓](<./Extra/Slides Extended/index_百孝經聖訓輯要(三)：第9～12句之訓中訓.html>)
-
 
 9. [百孝經聖訓輯要(三)：第9～12句之訓中訓](<./Extra/Slides Extended/index_百孝經聖訓輯要(三)：第9～12句之訓中訓.html>)
 
