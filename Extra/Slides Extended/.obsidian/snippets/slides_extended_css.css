@@ -189,33 +189,7 @@ blockquote {
 	margin: 0 1em 0 0;
 }
 
-mark {
-	/*background-color: hsl(from var(--r-link-color-dark) h s l / 0.5);*/
-	background-color: oklch(from var(--r-link-color-dark, rgb(19.8216494845, 155.4536082474, 248.7783505155)) calc(l*0.8) c h);
-	color: white;
-}
 
-section :is(h2, h3, h4, h5, h6):not(:is(h2, h3, h4, h5, h6) ~ *) {
-	/* 1. 基礎屬性維持不變 */
-	background-color: transparent !important;
-	text-shadow: 
-		0 0 0.1em var(--r-link-color-dark, rgb(19.8216494845, 155.4536082474, 248.7783505155)),
-		0 0 0.3em var(--r-link-color-dark, rgb(19.8216494845, 155.4536082474, 248.7783505155)),
-		0 0 0.6em var(--r-link-color-dark, rgb(19.8216494845, 155.4536082474, 248.7783505155)),
-		0 0 0.9em var(--r-link-color-dark, rgb(19.8216494845, 155.4536082474, 248.7783505155)) !important;
-
-	/* 
-	   2. 直接使用 color-contrast 函數 (現代瀏覽器皆支援)
-	   它會自動計算 var(--r-main-color) 與白色、黑色的對比度，
-	   並自動選擇對比度最高的那一個！
-	*/
-	/*color: color-contrast(var(--r-main-color) vs #fff, #000 to AA) !important;*/
-	color: var(--r-main-color, #fff);
-}
-
-u {
-	text-decoration-color: var(--r-link-color, #42affa);
-}
 
 /* mater 問題 */
 
