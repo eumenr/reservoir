@@ -16,8 +16,10 @@
 4. [百孝經聖訓輯要(三)：第9～12句之訓中訓](<./Extra/Slides Extended/index_百孝經聖訓輯要(三)：第9～12句之訓中訓.html>)
 6. [論語選讀(四)：性與天道、禮與仁](<./Extra/Slides Extended/index_論語選讀(四)：性與天道、禮與仁.html>)
 9. [心經](<./Extra/Slides Extended/index_心經.html>)
+9. [新聞稿 AI 協作指南簡報](<./Extra/Slides Extended/index_新聞稿 AI 協作指南簡報.html>)
 
 <!--
+
 
 ## 封存
 
