@@ -21,7 +21,6 @@
 
 
 
-9. [新聞稿 AI 協作指南簡報](<./Extra/Slides Extended/index_新聞稿 AI 協作指南簡報.html>)
 
 ## 封存
 
