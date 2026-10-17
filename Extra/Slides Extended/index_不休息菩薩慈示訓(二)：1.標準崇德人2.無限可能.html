@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="plugin/customcontrols/style.css">
 
 
-    <link rel="stylesheet" href="../../.obsidian/snippets/mater.css" />
-    <link rel="stylesheet" href="../../.obsidian/snippets/slides_extended_css.css" />
+    <link rel="stylesheet" href=".obsidian/snippets/mater.css" />
+    <link rel="stylesheet" href=".obsidian/snippets/slides_extended_css.css" />
 
     <script defer src="dist/fontawesome/all.min.js"></script>
 
@@ -89,7 +89,11 @@
 
 <body>
     <div class="reveal">
-        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+        <div class="slides"><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 <!--
@@ -107,29 +111,24 @@
 
 [up::傳題 ]
 
-上次修改日期：`=dateformat(this.file.mtime, "yyyy-MM-dd HH:mm:ss")`
+上次修改日期：`$=dv.span(dv.current().date_modified)`
 
 投影片 | Templates
 `BUTTON[presentation]`
 
-```meta-bind-button
-style: default
-label: 開啟簡報
-toolip: 'presentation'
-id: presentation
-hidden: true
-action:
-  type: command
-  command: slides:start
-```
+FENCEDCODEmeta-bind-button:1:YGBgbWV0YS1iaW5kLWJ1dHRvbgpzdHlsZTogZGVmYXVsdApsYWJlbDog6ZaL5ZWf57Ch5aCxCnRvb2xpcDogJ3ByZXNlbnRhdGlvbicKaWQ6IHByZXNlbnRhdGlvbgpoaWRkZW46IHRydWUKYWN0aW9uOgogIHR5cGU6IGNvbW1hbmQKICBjb21tYW5kOiBzbGlkZXM6c3RhcnQKYGBgECODDECNEF
 
 [Presentation](obsidian://adv-uri?vault=Note&commandid=slides%3Astart)|[Slide Extended: Open Preview](obsidian://adv-uri?vault=Note&commandid=slides-extended%3Aopen-preview)
 
 </div>
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-> [!example|blue] 大綱
+> [!outline] 大綱
 > - [前言](#/2)
 > - [標準崇德人](#/3)
 > 	- [冠頂訓](#/4)
@@ -139,24 +138,35 @@ action:
 > 	- [以身示道](#/14)
 > 	- [身為崇德人](#/21)
 > - [無限可能](#/24)
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+
+
+[回首頁](https://eumenr.github.io/reservoir/)
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ## 前言
 
 - 濟公活佛慈悲《<u>崇德</u>道場》
-	+ 「<u>崇德</u>」二字非只是宗教名詞
-	+ 更象徵*一貫薪傳*之精神
-	+ 深具歷史重要的地位
-	+ <u>燃盡前人輩生命蘊化成的**蓮花**</u>
-	+ 它是<u>刻在千百萬後學心間上的**名字**</u>
-	+ 它是<u>菩薩倒裝來降世乘愿來的**愿立**</u>
-	+ 它是<u>印證道真、理真及天命真的**殊勝**</u>
+	- 「<u>崇德</u>」二字非只是宗教名詞
+	- 更象徵*一貫薪傳*之精神
+	- 深具歷史重要的地位
+	- <u>燃盡前人輩生命蘊化成的**蓮花**</u>
+	- 它是<u>刻在千百萬後學心間上的**名字**</u>
+	- 它是<u>菩薩倒裝來降世乘愿來的**愿立**</u>
+	- 它是<u>印證道真、理真及天命真的**殊勝**</u>
 
 [回大綱](#/1)<!-- .element: style="width: 100%; text-align: right" -->
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ## 標準崇德人
@@ -164,7 +174,11 @@ action:
 - 不休息菩薩慈訓
 - 崇德佛院 台北道場負責講師輔導講師研習
 - 2018-02-04
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ### 冠頂訓
@@ -180,7 +194,11 @@ action:
 [回大綱](#/1)|[>>](#/13)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ### 冠頂訓解釋
@@ -188,7 +206,7 @@ action:
 > 不休息菩薩慈訓：**德者**<u>若谷</u>鄰親近
 - 老師慈悲：
 	- 我們修道是要「<u>看重自己</u>」，
-	- 　　　而不是「標榜自己」
+	- 而不是「標榜自己」
 	- 是要「<u>自信</u>」，而不是「自負、自傲」；
 	- 是要「<u>謙卑、涵養</u>」，
 		- 而不是要「矯揉造作」；
@@ -198,14 +216,18 @@ action:
 [標準崇德人](#/3)|[回大綱](#/1)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 #### 大白
 
 > **大白若辱**<u>心純真</u>。
 - 老子道德經聞道章第41
-  馬王堆帛書《老子乙本．德經》
+  
 	- 故建言有之：
 		- 明道若昧；進道若退；夷道若<ruby>纇<rp>(</rp><rt>ㄌㄟˋ</rt><rp>)</rp></ruby>；
 		- 上德若谷；**大白若辱**；廣德若不足；
@@ -217,7 +239,11 @@ action:
 [標準崇德人](#/3)|[回大綱](#/1)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 #### 善愿
@@ -230,26 +256,33 @@ action:
 > 	- 徒有<u>三分</u>心
 > 	- 師助你<u>七分</u>力
 >
-> <img src="https://imgpile.com/images/haZFaj.png" alt="" style="width: 350px; object-fit: fill">
+><img src="https://imgpile.com/images/haZFaj.png" alt="" style="width: 350px; object-fit: fill">
 
 
 [標準崇德人](#/3)|[回大綱](#/1)|[崇德人](#/13)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 #### 忍辱仙人
 
 - 賢愚經 羼提波梨品第12
-
 - 乃往久遠無量無邊不可思議阿僧祇劫，此閻浮提，有一大國，名波羅㮈，當時國王，名為迦梨。爾時國中，有一大仙士，名羼提波梨，與五百弟子，處於山林，修行忍辱。
 - 于時國王與諸群臣夫人婇女，入山遊觀。王時疲懈，因臥休息。諸婇女輩，捨王遊行，觀諸花林，見羼提波梨端坐思惟，敬心內生，即以眾花而散其上，因坐其前，聽所說法。
 
 [標準崇德人](#/3)|[回大綱](#/1)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 - 王覺顧望，不見諸女，與四大臣，行共求之。
@@ -264,7 +297,11 @@ action:
 [忍辱仙人](#/7)|[回大綱](#/1)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 - 王即怒曰：『於爾所功德，皆言未有，汝是凡夫，獨與諸女，在此屏處，云何可信？』
@@ -277,7 +314,11 @@ action:
 [忍辱仙人](#/7)|[回大綱](#/1)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 - 爾時天地，六種震動。
@@ -288,7 +329,11 @@ action:
 [忍辱仙人](#/7)|[回大綱](#/1)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 - 王見忍證，倍懷恐怖，『咄我無狀！毀辱大仙，唯見垂哀受我懺悔。』
@@ -300,7 +345,11 @@ action:
 [忍辱仙人](#/7)|[回大綱](#/1)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ### 崇德人
@@ -316,7 +365,11 @@ action:
 [標準崇德人](#/3)|[↤](#/4)|[回大綱](#/1)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ### 以身示道
@@ -330,22 +383,30 @@ action:
 [以身示道](#/13)|[回大綱](#/1)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 - 日日以智慧<mark>覺察</mark>己言行，
-	+ 是否合乎道？
+	- 是否合乎道？
 - 時時以智慧<mark>覺知</mark>己修辦，
-	+ 是否正知見？
+	- 是否正知見？
 - 二六以智慧<mark>覺照</mark>己心念，
-	+ 是否皆光明？
+	- 是否皆光明？
 - 分秒以智慧<mark>覺悟</mark>己愿力，
-	+ 是否真實踐？
+	- 是否真實踐？
 
 [以身示道](#/13)|[回大綱](#/1)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 - 能自覺者，必能<u>覺他</u>。
@@ -358,7 +419,11 @@ action:
 [以身示道](#/13)|[回大綱](#/1)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 - 能自渡者，必有
@@ -366,12 +431,16 @@ action:
 	- <u>慈悲喜捨</u>之胸襟。
 - 進而使父母、兄弟、親友、鄰居，
 	- 以至道場同修、前賢、後學，
-- 皆因接觸你而受感化。 
+- 皆因接觸你而受感化。
 
 [以身示道](#/13)|[回大綱](#/1)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 - 使迷惑者，得解惑；
@@ -385,7 +454,11 @@ action:
 [以身示道](#/13)|[回大綱](#/1)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 - 批至此，問一問崇德人！
@@ -397,7 +470,11 @@ action:
 [以身示道](#/13)|[回大綱](#/1)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 - 一字字，一句句，
@@ -408,7 +485,11 @@ action:
 [以身示道](#/13)|[回大綱](#/1)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ### 身為崇德人
@@ -423,7 +504,11 @@ action:
 [身為崇德人](#/21)|[回大綱](#/1)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 - 身為崇德人，
@@ -436,7 +521,11 @@ action:
 [身為崇德人](#/21)|[回大綱](#/1)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 - 盼吾崇德人，
@@ -448,7 +537,11 @@ action:
 [身為崇德人](#/21)|[回大綱](#/1)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ## 無限可能
@@ -461,7 +554,11 @@ action:
 [回大綱](#/1)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ### 本
@@ -481,7 +578,11 @@ action:
 [回大綱](#/1)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ### 標
@@ -501,7 +602,11 @@ action:
 [回大綱](#/1)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ## 讓我們人人做
@@ -597,12 +702,6 @@ action:
             },
             customcontrols: {
                 controls: [
-                    {
-                        id: 'toggle-overview',
-                        title: 'Toggle overview (O)',
-                        icon: '<i class="fa fa-th"></i>',
-                        action: 'Reveal.toggleOverview();'
-                    },
                 ]
             },
         };
@@ -614,7 +713,7 @@ action:
         // options from URL query string
         const queryOptions = Reveal().getQueryHash() || {};
 
-        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":true,"transition":"concave","transitionSpeed":"default","width":960,"height":700,"margin":0.04}, queryOptions);
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":true,"transition":"slide","transitionSpeed":"default","width":960,"height":700,"margin":0.04}, queryOptions);
     </script>
 
     <script>

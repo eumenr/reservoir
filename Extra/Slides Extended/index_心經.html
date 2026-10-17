@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="plugin/customcontrols/style.css">
 
 
-    <link rel="stylesheet" href="../../.obsidian/snippets/slides_extended_css.css" />
+    <link rel="stylesheet" href=".obsidian/snippets/slides_extended_css.css" />
 
     <script defer src="dist/fontawesome/all.min.js"></script>
 
@@ -88,7 +88,11 @@
 
 <body>
     <div class="reveal">
-        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+        <div class="slides"><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 # 心經
@@ -102,7 +106,7 @@
 >> 主題：`INPUT[inlineSelect(option(beige), option(black), option(blood), option(dracula), option(league), option(moon), option(night), option(serif), option(simple), option(sky), option(solarized), option(white), showcase):theme]`
 >> 切換：`INPUT[inlineSelect(option(none), option(fade), option(slide), option(convex), option(concave), option(zoom), showcase):transition]`
 >
-> [up:: 傳題, 投影片]  目前位置 模板
+> [up:: 傳題, 投影片] 目前位置 模板
 > ```meta-bind-button
 > style: default
 > label: 開啟簡報
@@ -126,10 +130,14 @@
 > ```
 
 > [!right]
-> 修改@`=dateformat(this.file.mtime, "yyyy-MM-dd HH:mm:ss")`
+> 修改@`$=dv.span(dv.current().date_modified)`
 
 </div><!-- .element: style="display: none" -->
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 <!-- 第 (#/1) 頁 -->
@@ -148,140 +156,18 @@
 >> - [經文](#/3)
 
 
-```dataviewjs
-// 取得當前檔案內容
-const file = dv.current().file;
-const content = await app.vault.read(app.vault.getAbstractFileByPath(file.path));
-const lines = content.split("\n");
-
-// 初始化參數
-let currentSlide = -2; // 簡報頁碼通常從 0 或 1 開始
-const headings_reveal = [];
-
-// 遍歷所有行，計算頁碼與標題
-for (let i = 0; i < lines.length; i++) {
-	const line = lines[i].trim();
-
-	// 檢測水平分頁 (---) 或垂直分頁 (----)
-	// 這裡視你的簡報結構而定，若無垂直分頁，只需判斷 "---"
-	if (line === "---" || line === "----") {
-		currentSlide++;
-		continue;
-	}
-
-	// 匹配標題 (##, ###, ####)
-	const m = line.match(/^(#{2,4})\s+(.*)/);
-	if (!m) continue;
-
-	const level = m[1].length;
-	const title = m[2].trim();
-
-	headings_reveal.push({ level, title, slide: currentSlide });
-}
-
-// 產生輸出區塊
-let slide_block = "";
-let reading_block = "";
-const baseLevel = 2; // 基準層級
-
-for (const h of headings_reveal) {
-	const indent = "  ".repeat(h.level - baseLevel);
-
-	// Slide 連結 (Reveal.js 格式)
-	const slideLink = h.level === 2 ? `(#/${h.slide})` : `(#/${h.slide}/0/0)`;
-	slide_block += `>> ${indent}- [${h.title}]${slideLink}\n`;
-
-	// Reading View 連結 (Obsidian 內部連結)
-	reading_block += `>> ${indent}- #${h.title}\n`;
-}
-
-// 組合最終 Markdown 結構
-const output = `
-> [!flex]
->> [!outline|slide-hide] **大綱 (預覽)**
-${reading_block}
->
->> [!outline|color-blue|reading-view-hide] **大綱 (簡報)**
-${slide_block}
-`;
-
-// 輸出到頁面
-dv.span(output);
-```
+FENCEDCODEdataviewjs:1:YGBgZGF0YXZpZXdqcwovLyDlj5blvpfnlbbliY3mqpTmoYjlhaflrrkKY29uc3QgZmlsZSA9IGR2LmN1cnJlbnQoKS5maWxlOwpjb25zdCBjb250ZW50ID0gYXdhaXQgYXBwLnZhdWx0LnJlYWQoYXBwLnZhdWx0LmdldEFic3RyYWN0RmlsZUJ5UGF0aChmaWxlLnBhdGgpKTsKY29uc3QgbGluZXMgPSBjb250ZW50LnNwbGl0KCJcbiIpOwoKLy8g5Yid5aeL5YyW5Y+D5pW4CmxldCBjdXJyZW50U2xpZGUgPSAtMjsgLy8g57Ch5aCx6aCB56K86YCa5bi45b6eIDAg5oiWIDEg6ZaL5aeLCmNvbnN0IGhlYWRpbmdzX3JldmVhbCA9IFtdOwoKLy8g6YGN5q235omA5pyJ6KGM77yM6KiI566X6aCB56K86IiH5qiZ6aGMCmZvciAobGV0IGkgPSAwOyBpIDwgbGluZXMubGVuZ3RoOyBpKyspIHsKCWNvbnN0IGxpbmUgPSBsaW5lc1tpXS50cmltKCk7CgoJLy8g5qqi5ris5rC05bmz5YiG6aCBICgtLS0pIOaIluWeguebtOWIhumggSAoLS0tLSkKCS8vIOmAmeijoeimluS9oOeahOewoeWgsee1kOani+iAjOWumu+8jOiLpeeEoeWeguebtOWIhumgge+8jOWPqumcgOWIpOaWtyAiLS0tIgoJaWYgKGxpbmUgPT09ICItLS0iIHx8IGxpbmUgPT09ICItLS0tIikgewoJCWN1cnJlbnRTbGlkZSsrOwoJCWNvbnRpbnVlOwoJfQoKCS8vIOWMuemFjeaomemhjCAoIyMsICMjIywgIyMjIykKCWNvbnN0IG0gPSBsaW5lLm1hdGNoKC9eKCN7Miw0fSlccysoLiopLyk7CglpZiAoIW0pIGNvbnRpbnVlOwoKCWNvbnN0IGxldmVsID0gbVsxXS5sZW5ndGg7Cgljb25zdCB0aXRsZSA9IG1bMl0udHJpbSgpOwoKCWhlYWRpbmdzX3JldmVhbC5wdXNoKHsgbGV2ZWwsIHRpdGxlLCBzbGlkZTogY3VycmVudFNsaWRlIH0pOwp9CgovLyDnlKLnlJ/ovLjlh7rljYDloYoKbGV0IHNsaWRlX2Jsb2NrID0gIiI7CmxldCByZWFkaW5nX2Jsb2NrID0gIiI7CmNvbnN0IGJhc2VMZXZlbCA9IDI7IC8vIOWfuua6luWxpOe0mgoKZm9yIChjb25zdCBoIG9mIGhlYWRpbmdzX3JldmVhbCkgewoJY29uc3QgaW5kZW50ID0gIiAgIi5yZXBlYXQoaC5sZXZlbCAtIGJhc2VMZXZlbCk7CgoJLy8gU2xpZGUg6YCj57WQIChSZXZlYWwuanMg5qC85byPKQoJY29uc3Qgc2xpZGVMaW5rID0gaC5sZXZlbCA9PT0gMiA/IGAoIy8ke2guc2xpZGV9KWAgOiBgKCMvJHtoLnNsaWRlfS8wLzApYDsKCXNsaWRlX2Jsb2NrICs9IGA+PiAke2luZGVudH0tIFske2gudGl0bGV9XSR7c2xpZGVMaW5rfVxuYDsKCgkvLyBSZWFkaW5nIFZpZXcg6YCj57WQIChPYnNpZGlhbiDlhafpg6jpgKPntZApCglyZWFkaW5nX2Jsb2NrICs9IGA+PiAke2luZGVudH0tIFtbIyR7aC50aXRsZX1dXVxuYDsKfQoKLy8g57WE5ZCI5pyA57WCIE1hcmtkb3duIOe1kOaniwpjb25zdCBvdXRwdXQgPSBgCj4gWyFmbGV4XQo+PiBbIW91dGxpbmV8c2xpZGUtaGlkZV0gKirlpKfntrEgKOmgkOimvSkqKgoke3JlYWRpbmdfYmxvY2t9Cj4KPj4gWyFvdXRsaW5lfGNvbG9yLWJsdWV8cmVhZGluZy12aWV3LWhpZGVdICoq5aSn57axICjnsKHloLEpKioKJHtzbGlkZV9ibG9ja30KYDsKCi8vIOi8uOWHuuWIsOmggemdogpkdi5zcGFuKG91dHB1dCk7CmBgYA==ECODDECNEF
 <!-- .element: style="display: none" -->
 
-```dataviewjs [1-2]
-const file = dv.current().file;
-const content = await this.app.vault.read(app.vault.getAbstractFileByPath(file.path));
-const lines = content.split("\n");
-const file_name = file?.name;
-
-// 解析 slide 頁碼（從 HTML 註解抓 (#/n)）
-function getSlideIndex(i) {
-	for (let j = i - 1; j >= 0; j--) {
-		// 修改：增加對強制分隔符 --- 的捕捉，或者確保能抓到更完整的錨點
-		const m = lines[j].match(/#\/(\d+)/);
-		if (m) return m[1];
-	}
-	// 如果找不到，給一個預設值，而不是 return null
-	return "1";
-}
-
-// 擷取標題
-const headings_reveal = [];
-for (let i = 0; i < lines.length; i++) {
-	const line = lines[i];
-	const m = line.match(/^(#{2,4})\s+(.*)/);
-	if (!m) continue;
-
-	const level = m[1].length; // ## = 2, ### = 3, #### = 4
-	const title = m[2].trim();
-	const slide = getSlideIndex(i);
-
-	if (slide) {
-		headings_reveal.push({ level, title, slide });
-	}
-}
-
-// 基準層級
-const baseLevel = 2;
-
-// 產生階層清單
-let slide_block = "";
-let reading_block = "";
-
-for (const h of headings_reveal) {
-	const indent = "  ".repeat(h.level - baseLevel);
-	const link =
-		h.level === 2
-			? `(#/${h.slide})`
-			: `(#/${h.slide}/0/0)`;
-	// Slide Mode 標記，裡面是 Reveal/Slide 專用標記
-	slide_block += `>> ${indent}- [${h.title}]${link}\n`;
-	// Reading View 標記
-	reading_block += `>> ${indent}- #${h.title}\n`;
-}
-
-// 輸出，無法顯示在reading-view，因為slide_block無法渲染
-let link_block = "> [!flex] \n>> [!outline|slide-hide] " + file_name + "\n" + reading_block + ">\n>> [!outline|color-purple|reading-view-hide] " + file_name + "\n>>\n>>" + slide_block
-// 輸出，可以顯示在reading-view，但slide_block要手動貼上
-let code_block = "> [!flex] \n>> [!outline|slide-hide] " + file_name + "\n" + reading_block + ">\n>> [!outline|color-blue|reading-view-hide] " + file_name + "\n>>\n>> ````text\n" + slide_block + ">> ````\n";
-let code_pure = `
-\`\`\`\`markdown
-> [!flex]
->> [!outline|slide-hide] ${file_name}
-${reading_block}><!-- .element: style=\"display:none;\"="true" -->
->
->> [!outline|color-purple|reading-view-hide] ${file_name}
-${slide_block}
-\`\`\`\`
-`;
-
-// 顯示為大綱及文字區塊
-dv.paragraph(code_pure);
-```
+FENCEDCODEdataviewjs:1:YGBgZGF0YXZpZXdqcyBbMS0yXQpjb25zdCBmaWxlID0gZHYuY3VycmVudCgpLmZpbGU7CmNvbnN0IGNvbnRlbnQgPSBhd2FpdCB0aGlzLmFwcC52YXVsdC5yZWFkKGFwcC52YXVsdC5nZXRBYnN0cmFjdEZpbGVCeVBhdGgoZmlsZS5wYXRoKSk7CmNvbnN0IGxpbmVzID0gY29udGVudC5zcGxpdCgiXG4iKTsKY29uc3QgZmlsZV9uYW1lID0gZmlsZT8ubmFtZTsKCi8vIOino+aekCBzbGlkZSDpoIHnorzvvIjlvp4gSFRNTCDoqLvop6PmipMgKCMvbinvvIkKZnVuY3Rpb24gZ2V0U2xpZGVJbmRleChpKSB7Cglmb3IgKGxldCBqID0gaSAtIDE7IGogPj0gMDsgai0tKSB7CgkJLy8g5L+u5pS577ya5aKe5Yqg5bCN5by35Yi25YiG6ZqU56ymIC0tLSDnmoTmjZXmjYnvvIzmiJbogIXnorrkv53og73mipPliLDmm7TlrozmlbTnmoTpjKjpu54KCQljb25zdCBtID0gbGluZXNbal0ubWF0Y2goLyNcLyhcZCspLyk7CgkJaWYgKG0pIHJldHVybiBtWzFdOwoJfQoJLy8g5aaC5p6c5om+5LiN5Yiw77yM57Wm5LiA5YCL6aCQ6Kit5YC877yM6ICM5LiN5pivIHJldHVybiBudWxsCglyZXR1cm4gIjEiOwp9CgovLyDmk7flj5bmqJnpoYwKY29uc3QgaGVhZGluZ3NfcmV2ZWFsID0gW107CmZvciAobGV0IGkgPSAwOyBpIDwgbGluZXMubGVuZ3RoOyBpKyspIHsKCWNvbnN0IGxpbmUgPSBsaW5lc1tpXTsKCWNvbnN0IG0gPSBsaW5lLm1hdGNoKC9eKCN7Miw0fSlccysoLiopLyk7CglpZiAoIW0pIGNvbnRpbnVlOwoKCWNvbnN0IGxldmVsID0gbVsxXS5sZW5ndGg7IC8vICMjID0gMiwgIyMjID0gMywgIyMjIyA9IDQKCWNvbnN0IHRpdGxlID0gbVsyXS50cmltKCk7Cgljb25zdCBzbGlkZSA9IGdldFNsaWRlSW5kZXgoaSk7CgoJaWYgKHNsaWRlKSB7CgkJaGVhZGluZ3NfcmV2ZWFsLnB1c2goeyBsZXZlbCwgdGl0bGUsIHNsaWRlIH0pOwoJfQp9CgovLyDln7rmupblsaTntJoKY29uc3QgYmFzZUxldmVsID0gMjsKCi8vIOeUoueUn+majuWxpOa4heWWrgpsZXQgc2xpZGVfYmxvY2sgPSAiIjsKbGV0IHJlYWRpbmdfYmxvY2sgPSAiIjsKCmZvciAoY29uc3QgaCBvZiBoZWFkaW5nc19yZXZlYWwpIHsKCWNvbnN0IGluZGVudCA9ICIgICIucmVwZWF0KGgubGV2ZWwgLSBiYXNlTGV2ZWwpOwoJY29uc3QgbGluayA9CgkJaC5sZXZlbCA9PT0gMgoJCQk/IGAoIy8ke2guc2xpZGV9KWAKCQkJOiBgKCMvJHtoLnNsaWRlfS8wLzApYDsKCS8vIFNsaWRlIE1vZGUg5qiZ6KiY77yM6KOh6Z2i5pivIFJldmVhbC9TbGlkZSDlsIjnlKjmqJnoqJgKCXNsaWRlX2Jsb2NrICs9IGA+PiAke2luZGVudH0tIFske2gudGl0bGV9XSR7bGlua31cbmA7CgkvLyBSZWFkaW5nIFZpZXcg5qiZ6KiYCglyZWFkaW5nX2Jsb2NrICs9IGA+PiAke2luZGVudH0tIFtbIyR7aC50aXRsZX1dXVxuYDsKfQoKLy8g6Ly45Ye677yM54Sh5rOV6aGv56S65ZyocmVhZGluZy12aWV377yM5Zug54K6c2xpZGVfYmxvY2vnhKHms5XmuLLmn5MKbGV0IGxpbmtfYmxvY2sgPSAiPiBbIWZsZXhdIFxuPj4gWyFvdXRsaW5lfHNsaWRlLWhpZGVdICIgKyBmaWxlX25hbWUgKyAiXG4iICsgcmVhZGluZ19ibG9jayArICI+XG4+PiBbIW91dGxpbmV8Y29sb3ItcHVycGxlfHJlYWRpbmctdmlldy1oaWRlXSAiICsgZmlsZV9uYW1lICsgIlxuPj5cbj4+IiArIHNsaWRlX2Jsb2NrCi8vIOi8uOWHuu+8jOWPr+S7pemhr+ekuuWcqHJlYWRpbmctdmlld++8jOS9hnNsaWRlX2Jsb2Nr6KaB5omL5YuV6LK85LiKCmxldCBjb2RlX2Jsb2NrID0gIj4gWyFmbGV4XSBcbj4+IFshb3V0bGluZXxzbGlkZS1oaWRlXSAiICsgZmlsZV9uYW1lICsgIlxuIiArIHJlYWRpbmdfYmxvY2sgKyAiPlxuPj4gWyFvdXRsaW5lfGNvbG9yLWJsdWV8cmVhZGluZy12aWV3LWhpZGVdICIgKyBmaWxlX25hbWUgKyAiXG4+PlxuPj4gYGBgYHRleHRcbiIgKyBzbGlkZV9ibG9jayArICI+PiBgYGBgXG4iOwpsZXQgY29kZV9wdXJlID0gYApcYFxgXGBcYG1hcmtkb3duCj4gWyFmbGV4XQo+PiBbIW91dGxpbmV8c2xpZGUtaGlkZV0gJHtmaWxlX25hbWV9CiR7cmVhZGluZ19ibG9ja30+PCEtLSAuZWxlbWVudDogc3R5bGU9XCJkaXNwbGF5Om5vbmU7XCIgLS0+Cj4KPj4gWyFvdXRsaW5lfGNvbG9yLXB1cnBsZXxyZWFkaW5nLXZpZXctaGlkZV0gJHtmaWxlX25hbWV9CiR7c2xpZGVfYmxvY2t9ClxgXGBcYFxgCmA7CgovLyDpoa/npLrngrrlpKfntrHlj4rmloflrZfljYDloYoKZHYucGFyYWdyYXBoKGNvZGVfcHVyZSk7CmBgYA==ECODDECNEF
 <!-- .element: style="display: none" -->
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+
+[回首頁](https://eumenr.github.io/reservoir/)
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 <!-- 第 (#/2) 頁 -->
@@ -295,7 +181,11 @@ dv.paragraph(code_pure);
 [回大綱](#/1)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 <!-- 第 (#/3) 頁 -->
@@ -303,13 +193,16 @@ dv.paragraph(code_pure);
 ## 經文
 
 - 觀自在菩薩，行深般若波羅蜜多時，照見五蘊皆空，度一切苦厄。
-
 - 舍利子！色不異空，空不異色；色即是空，空即是色，受想行識亦復如是。
 
 [回大綱](#/1)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 <!-- 第 (#/4) 頁 -->
@@ -320,7 +213,11 @@ dv.paragraph(code_pure);
 [回大綱](#/1)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 <!-- 第 (#/5) 頁 -->
@@ -331,7 +228,11 @@ dv.paragraph(code_pure);
 [回大綱](#/1)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 <!-- 第 (#/6) 頁 -->
@@ -343,7 +244,11 @@ dv.paragraph(code_pure);
 [回大綱](#/1)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" id="grand-finale" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" id="grand-finale" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 <!-- 第 (#/7) 頁 -->
@@ -355,7 +260,11 @@ dv.paragraph(code_pure);
 
 聖凡如意
 <!-- .element: class="r-fit-text" -->
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-visibility="hidden" template="" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" data-visibility="hidden" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 <!-- 第 (#/8) 頁 -->
@@ -464,12 +373,6 @@ dv.paragraph(code_pure);
             },
             customcontrols: {
                 controls: [
-                    {
-                        id: 'toggle-overview',
-                        title: 'Toggle overview (O)',
-                        icon: '<i class="fa fa-th"></i>',
-                        action: 'Reveal.toggleOverview();'
-                    },
                 ]
             },
         };
