@@ -133,6 +133,14 @@
 
 
 /* 投影片設定不顯示 */
+
+.reveal .hide-from-slides {
+	display: none;
+}
+.reveal .block-language-dataviewjs.node-insert-event {
+	/*display: none;*/
+}
+
 /* 隱藏回大綱 */
 .reveal .callout[data-callout-metadata*="slide-hide"] {
 	display: none !important;
@@ -271,12 +279,15 @@ div.markdown-preview-section > div:has(a[href="#/1"]),
 div.slides > section > p:has(>a[href^="#^toc-"]) {
 	display: none !important;
 }
-div.slides > section > p:has(>a[href="#/1"]) {
+div.slides > section > p:has(>a[href="#/1"]),
+div.markdown-preview-section > div:has(a[href*="github.io"]) {
 	display: block;
 	clear: right;
 	/*border: 1px solid yellow;*/
 	text-align: right;
-	font-size: 0.7em;
+}
+div.slides > section > p:has(>a[href="#/1"]) {
+	font-size: 0.7em !important;
 }
 
 /* 解決 slide 中的跳頁問題 */

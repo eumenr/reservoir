@@ -184,7 +184,8 @@ blockquote {
 }
 
 /* 顯示 #/1 */
-.reveal section p:has(a[href="#/1"]) {
+.reveal section p:has(a[href="#/1"]),
+.reveal section p:has(a[href*="github.io"]) {
 	text-align: right; width: 100%; 
 	margin: 0 1em 0 0;
 }
