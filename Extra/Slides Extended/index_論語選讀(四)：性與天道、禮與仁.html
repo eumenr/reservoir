@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="plugin/customcontrols/style.css">
 
 
-    <link rel="stylesheet" href="../../.obsidian/snippets/mater.css" />
-    <link rel="stylesheet" href="../../.obsidian/snippets/Author callout.css" />
-    <link rel="stylesheet" href="../../.obsidian/snippets/slides_extended_css.css" />
+    <link rel="stylesheet" href=".obsidian/snippets/mater.css" />
+    <link rel="stylesheet" href=".obsidian/snippets/Author callout.css" />
+    <link rel="stylesheet" href=".obsidian/snippets/slides_extended_css.css" />
 
     <script defer src="dist/fontawesome/all.min.js"></script>
 
@@ -90,7 +90,15 @@
 
 <body>
     <div class="reveal">
-        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+        <div class="slides"><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 <style>
@@ -123,7 +131,7 @@
 >> 主題：`INPUT[inlineSelect(option(beige), option(black), option(blood), option(dracula), option(league), option(moon), option(night), option(serif), option(simple), option(sky), option(solarized), option(white), showcase):theme]`
 >> 切換：`INPUT[inlineSelect(option(none), option(fade), option(slide), option(convex), option(concave), option(zoom), showcase):transition]`
 >
-> [up:: 傳題, 投影片]  目前位置 模板
+> [up:: 傳題, 投影片] 目前位置 模板
 > ```meta-bind-button
 > style: default
 > label: 開啟簡報
@@ -147,84 +155,45 @@
 > ```
 
 > [!right]
-> 修改@`=dateformat(this.file.mtime, "yyyy-MM-dd HH:mm:ss")`
+> 修改@`$=dv.span(dv.current().date_modified)`
 
 </div><!-- .element: style="display: none" -->
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/1) 頁 -->
 
 ## 大綱
 
-```dataviewjs
-const file = dv.current().file;
-const content = await this.app.vault.read(app.vault.getAbstractFileByPath(file.path));
-const lines = content.split("\n");
-const file_name = file?.name;
+FENCEDCODEdataviewjs:1:YGBgZGF0YXZpZXdqcwpjb25zdCBmaWxlID0gZHYuY3VycmVudCgpLmZpbGU7CmNvbnN0IGNvbnRlbnQgPSBhd2FpdCB0aGlzLmFwcC52YXVsdC5yZWFkKGFwcC52YXVsdC5nZXRBYnN0cmFjdEZpbGVCeVBhdGgoZmlsZS5wYXRoKSk7CmNvbnN0IGxpbmVzID0gY29udGVudC5zcGxpdCgiXG4iKTsKY29uc3QgZmlsZV9uYW1lID0gZmlsZT8ubmFtZTsKCi8vIOino+aekCBzbGlkZSDpoIHnorzvvIjlvp4gSFRNTCDoqLvop6PmipMgKCMvbinvvIkKZnVuY3Rpb24gZ2V0U2xpZGVJbmRleChpKSB7Cglmb3IgKGxldCBqID0gaSAtIDE7IGogPj0gMDsgai0tKSB7CgkJY29uc3QgbSA9IGxpbmVzW2pdLm1hdGNoKC9cKCNcLyhcZCspXCkvKTsKCQlpZiAobSkgcmV0dXJuIG1bMV07Cgl9CglyZXR1cm4gbnVsbDsKfQoKLy8g5pO35Y+W5qiZ6aGMCmNvbnN0IGhlYWRpbmdzX3JldmVhbCA9IFtdOwpmb3IgKGxldCBpID0gMDsgaSA8IGxpbmVzLmxlbmd0aDsgaSsrKSB7Cgljb25zdCBsaW5lID0gbGluZXNbaV07Cgljb25zdCBtID0gbGluZS5tYXRjaCgvXigjezIsNH0pXHMrKC4qKS8pOwoJaWYgKCFtKSBjb250aW51ZTsKCgljb25zdCBsZXZlbCA9IG1bMV0ubGVuZ3RoOyAvLyAjIyA9IDIsICMjIyA9IDMsICMjIyMgPSA0Cgljb25zdCB0aXRsZSA9IG1bMl0udHJpbSgpOwoJY29uc3Qgc2xpZGUgPSBnZXRTbGlkZUluZGV4KGkpOwoKCWlmIChzbGlkZSkgewoJCWhlYWRpbmdzX3JldmVhbC5wdXNoKHsgbGV2ZWwsIHRpdGxlLCBzbGlkZSB9KTsKCX0KfQoKLy8g5Z+65rqW5bGk57SaCmNvbnN0IGJhc2VMZXZlbCA9IDI7CgovLyDnlKLnlJ/pmo7lsaTmuIXllq4KbGV0IHNsaWRlX2Jsb2NrID0gIiI7CmxldCByZWFkaW5nX2Jsb2NrID0gIiI7Cgpmb3IgKGNvbnN0IGggb2YgaGVhZGluZ3NfcmV2ZWFsKSB7Cgljb25zdCBpbmRlbnQgPSAiICAiLnJlcGVhdChoLmxldmVsIC0gYmFzZUxldmVsKTsKCWNvbnN0IGxpbmsgPQoJCWgubGV2ZWwgPT09IDIKCQkJPyBgKCMvJHtoLnNsaWRlfSlgCgkJCTogYCgjLyR7aC5zbGlkZX0vMC8wKWA7CgkvLyBTbGlkZSBNb2RlIOaomeiomO+8jOijoemdouaYryBSZXZlYWwvU2xpZGUg5bCI55So5qiZ6KiYCglzbGlkZV9ibG9jayArPSBgPj4gJHtpbmRlbnR9LSBbJHtoLnRpdGxlfV0ke2xpbmt9XG5gOwoJLy8gUmVhZGluZyBWaWV3IOaomeiomAoJcmVhZGluZ19ibG9jayArPSBgPj4gJHtpbmRlbnR9LSBbWyMke2gudGl0bGV9XV1cbmA7Cn0KCi8vIOi8uOWHuu+8jOeEoeazlemhr+ekuuWcqHJlYWRpbmctdmlld++8jOWboOeCunNsaWRlX2Jsb2Nr54Sh5rOV5riy5p+TCmxldCBsaW5rX2Jsb2NrID0gIj4gWyFmbGV4XSBcbj4+IFshb3V0bGluZXxzbGlkZS1oaWRlXSAiICsgZmlsZV9uYW1lICsgIlxuIiArIHJlYWRpbmdfYmxvY2sgKyAiPlxuPj4gWyFvdXRsaW5lfGNvbG9yLXB1cnBsZXxyZWFkaW5nLXZpZXctaGlkZV0gIiArIGZpbGVfbmFtZSArICJcbj4+XG4+PiIgKyBzbGlkZV9ibG9jawovLyDovLjlh7rvvIzlj6/ku6Xpoa/npLrlnKhyZWFkaW5nLXZpZXfvvIzkvYZzbGlkZV9ibG9ja+imgeaJi+WLleiyvOS4igpsZXQgY29kZV9ibG9jayA9ICI+IFshZmxleF0gXG4+PiBbIW91dGxpbmV8c2xpZGUtaGlkZV0gIiArIGZpbGVfbmFtZSArICJcbiIgKyByZWFkaW5nX2Jsb2NrICsgIj5cbj4+IFshb3V0bGluZXxjb2xvci1wdXJwbGV8cmVhZGluZy12aWV3LWhpZGVdICIgKyBmaWxlX25hbWUgKyAiXG4+PlxuPj4gYGBgYHRleHRcbiIgKyBzbGlkZV9ibG9jayArICI+PiBgYGBgXG4iOwpsZXQgY29kZV9wdXJlID0gYApcYFxgXGBcYG1hcmtkb3duCj4gWyFmbGV4XQo+PiBbIW91dGxpbmV8c2xpZGUtaGlkZV0gJHtmaWxlX25hbWV9CiR7cmVhZGluZ19ibG9ja30KPiBbIWZsZXhdCj4+IFshb3V0bGluZXxjb2xvci1wdXJwbGV8cmVhZGluZy12aWV3LWhpZGVdICR7ZmlsZV9uYW1lfQoke3NsaWRlX2Jsb2NrfQpcYFxgXGBcYApgOwoKLy8g6aGv56S654K65aSn57ax5Y+K5paH5a2X5Y2A5aGKCmR2LnBhcmFncmFwaChjb2RlX3B1cmUpOwoKYGBgECODDECNEF
+<!-- .element: style="display: none" -->
 
-// 解析 slide 頁碼（從 HTML 註解抓 (#/n)）
-function getSlideIndex(i) {
-	for (let j = i - 1; j >= 0; j--) {
-		const m = lines[j].match(/\(#\/(\d+)\)/);
-		if (m) return m[1];
-	}
-	return null;
-}
-
-// 擷取標題
-const headings_reveal = [];
-for (let i = 0; i < lines.length; i++) {
-	const line = lines[i];
-	const m = line.match(/^(#{2,4})\s+(.*)/);
-	if (!m) continue;
-
-	const level = m[1].length; // ## = 2, ### = 3, #### = 4
-	const title = m[2].trim();
-	const slide = getSlideIndex(i);
-
-	if (slide) {
-		headings_reveal.push({ level, title, slide });
-	}
-}
-
-// 基準層級
-const baseLevel = 2;
-
-// 產生階層清單
-let slide_block = "";
-let reading_block = "";
-
-for (const h of headings_reveal) {
-	const indent = "  ".repeat(h.level - baseLevel);
-	const link =
-		h.level === 2
-			? `(#/${h.slide})`
-			: `(#/${h.slide}/0/0)`;
-	// Slide Mode 標記，裡面是 Reveal/Slide 專用標記
-	slide_block += `>> ${indent}- [${h.title}]${link}\n`;
-	// Reading View 標記
-	reading_block += `>> ${indent}- #${h.title}\n`;
-}
-
-// 輸出，無法顯示在reading-view，因為slide_block無法渲染
-let link_block = "> [!flex] \n>> [!outline|slide-hide] " + file_name + "\n" + reading_block + ">\n>> [!outline|color-purple|reading-view-hide] " + file_name + "\n>>\n>>" + slide_block
-// 輸出，可以顯示在reading-view，但slide_block要手動貼上
-let code_block = "> [!flex] \n>> [!outline|slide-hide] " + file_name + "\n" + reading_block + ">\n>> [!outline|color-purple|reading-view-hide] " + file_name + "\n>>\n>> ````text\n" + slide_block + ">> ````\n";
-let code_pure = `
-\`\`\`\`markdown
 > [!flex]
->> [!outline|slide-hide] ${file_name}
-${reading_block}
+>> [!outline|slide-hide] 論語選讀(四)：性與天道、禮與仁
+>> - #一、性與天道
+>> - #二、禮與仁
+
 > [!flex]
->> [!outline|color-purple|reading-view-hide] ${file_name}
-${slide_block}
-\`\`\`\`
-`;
-
-// 顯示為大綱及文字區塊
-dv.paragraph(code_pure);
-
-```
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+>> [!outline|color-purple|reading-view-hide] 論語選讀(四)：性與天道、禮與仁
+>> - [一、性與天道](#/2)
+>> - [二、禮與仁](#/15)
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 <!-- 第 (#/2) 頁 -->
@@ -232,45 +201,199 @@ dv.paragraph(code_pure);
 ## 一、性與天道
 
 > [!flex]
->> [!info] [性與**天命**](#/1/0/0)
->> - [上知下愚](#/1/0/0)
->> - [性相近](#/1/0/0)
->> - [不亦君子乎](#/1/0/0)
->> - [畏天命](#/1/0/0)
->> - [天無言](#/1/0/0)
->> - [朝聞道](#/1/0/0)
+>> [!tip] [**性**與**天道**](#/1)
+>> - [學而時習之](#/3)
+>> - [朝聞道](#/4)
+>> - [君子有三畏](#/9)
+>> - [性相近](#/10)
+>> - [上智不移](#/11)
+>> - [天無言](#/12)
 >
->> [!tip] [夫子之道](#/1/0/0)
->> - [一以貫之](#/1/0/0)
->> - [可得而聞](#/1/0/0)
->> - [出不由戶](#/1/0/0)
->> - [天之曆數](#/1/0/0)
->> - [不知命](#/1/0/0)
+>> [!tip] [夫子之道](#/1)
+>> - [一以貫之](#/5)
+>> - [可得而聞](#/6)
+>> - [出不由戶](#/7)
+>> - [多學而識](#/8)
+>> - [天之曆數](#/13)
+>> - [不知命](#/14)
 
 [回大綱](#/1)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### 性與天命
+<!-- 第 (#/3) 頁 -->
 
-#### 上知下愚
 
-> [!author] 論語#陽貨17.3
+> [!author] 論語#學而1.1
 > 
 > <!-- begin::[論語.md] -->
-> 3. 子曰：「唯上知與下愚不移。」
+> 1. 子曰：「學而時習之，不亦說乎？有朋自遠方來，不亦樂乎？人不知而不慍，不亦君子乎？」
 > <!-- end::[論語.md] -->
 
 
-[回大綱](#/1)
+[一、性與天道](#/2)|[回大綱](#/1)
 
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+#一、性與天道|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-#### 性相近
+<!-- 第 (#/4) 頁 -->
+
+> [!author] 論語#里仁4.8
+> 
+> <!-- begin::[論語.md] -->
+> 8. 子曰：「朝聞道，夕死可矣。」
+> <!-- end::[論語.md] -->
+
+
+[一、性與天道](#/2)|[回大綱](#/1)
+
+#一、性與天道|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/5) 頁 -->
+
+> [!author] 論語#里仁4.15
+> 
+> <!-- begin::[論語.md] -->
+> 15. 子曰：「參乎！吾道一以貫之。」曾子曰：「唯。」子出。門人問曰：「何謂也？」曾子曰：「夫子之道，忠恕而已矣。」
+> <!-- end::[論語.md] -->
+
+
+[一、性與天道](#/2)|[回大綱](#/1)
+
+#一、性與天道|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/6) 頁 -->
+
+> [!author] 論語#公冶長5.13
+> 
+> <!-- begin::[論語.md] -->
+> 13. 子貢曰：「夫子之文章，可得而聞也；夫子之言性與天道，不可得而聞也。」
+> <!-- end::[論語.md] -->
+
+
+[一、性與天道](#/2)|[回大綱](#/1)
+
+#一、性與天道|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/7) 頁 -->
+
+> [!author] 論語#雍也6.17
+> 
+> <!-- begin::[論語.md] -->
+> 17. 子曰：「誰能出不由戶？何莫由斯道也？」
+> <!-- end::[論語.md] -->
+
+
+[一、性與天道](#/2)|[回大綱](#/1)
+
+#一、性與天道|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/8) 頁 -->
+
+> [!author] 論語#衛靈公15.3
+> 
+> <!-- begin::[論語.md] -->
+> 3. 子曰：「賜也，女以予為多學而識之者與？」對曰：「然，非與？」曰：「非也，予一以貫之。」
+> <!-- end::[論語.md] -->
+
+
+[一、性與天道](#/2)|[回大綱](#/1)
+
+#一、性與天道|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/9) 頁 -->
+
+> [!author] 論語#季氏16.8
+> 
+> <!-- begin::[論語.md] -->
+> 8. 孔子曰：「君子有三畏：畏天命，畏大人，畏聖人之言。小人不知天命而不畏也，狎大人，侮聖人之言。」
+> <!-- end::[論語.md] -->
+
+
+[一、性與天道](#/2)|[回大綱](#/1)
+
+#一、性與天道|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/10) 頁 -->
 
 > [!author] 論語#陽貨17.2
 > 
@@ -282,43 +405,44 @@ dv.paragraph(code_pure);
 > [!author] 中庸證釋#第一章
 > 天命之謂性，率性之謂道，修道之謂教。道也者，不可須臾離也；可離，非道也。
 
-[回大綱](#/1)
+[一、性與天道](#/2)|[回大綱](#/1)
 
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+#一、性與天道|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-#### 不亦君子乎
+<!-- 第 (#/11) 頁 -->
 
-> [!author] 論語#學而1.1
+> [!author] 論語#陽貨17.3
 > 
 > <!-- begin::[論語.md] -->
-> 1. 子曰：「學而時習之，不亦說乎？有朋自遠方來，不亦樂乎？人不知而不慍，不亦君子乎？」
+> 3. 子曰：「唯上知與下愚不移。」
 > <!-- end::[論語.md] -->
 
 
-[回大綱](#/1)
+[一、性與天道](#/2)|[回大綱](#/1)
 
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+#一、性與天道|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-#### 畏天命
-
-> [!author] 論語#季氏16.8
-> 
-> <!-- begin::[論語.md] -->
-> 8. 孔子曰：「君子有三畏：畏天命，畏大人，畏聖人之言。小人不知天命而不畏也，狎大人，侮聖人之言。」
-> <!-- end::[論語.md] -->
-
-
-[回大綱](#/1)
-
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-#### 天無言
+<!-- 第 (#/12) 頁 -->
 
 > [!author] 論語#陽貨17.19
 > 
@@ -327,93 +451,40 @@ dv.paragraph(code_pure);
 > <!-- end::[論語.md] -->
 
 
-> [!author] 論語#里仁4.8
-> 
-> <!-- begin::[論語.md] -->
-> 8. 子曰：「朝聞道，夕死可矣。」
-> <!-- end::[論語.md] -->
+[一、性與天道](#/2)|[回大綱](#/1)
 
-
-[回大綱](#/1)
-
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+#一、性與天道|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### 夫子之道
-
-#### 一以貫之
-
-> [!author] 論語#衛靈公15.3
-> 
-> <!-- begin::[論語.md] -->
-> 3. 子曰：「賜也，女以予為多學而識之者與？」對曰：「然，非與？」曰：「非也，予一以貫之。」
-> <!-- end::[論語.md] -->
-
-
-[回大綱](#/1)
-
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-> [!author] 論語#里仁4.15
-> 
-> <!-- begin::[論語.md] -->
-> 15. 子曰：「參乎！吾道一以貫之。」曾子曰：「唯。」子出。門人問曰：「何謂也？」曾子曰：「夫子之道，忠恕而已矣。」
-> <!-- end::[論語.md] -->
-
-
-[回大綱](#/1)
-
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-<!-- 第 (#/3) 頁 -->
-
-#### 可得而聞
-
-> [!author] 論語#公冶長5.13
-> 
-> <!-- begin::[論語.md] -->
-> 13. 子貢曰：「夫子之文章，可得而聞也；夫子之言性與天道，不可得而聞也。」
-> <!-- end::[論語.md] -->
-
-
-[回大綱](#/1)
-
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-#### 出不由戶
-
-> [!author] 論語#雍也6.17
-> 
-> <!-- begin::[論語.md] -->
-> 17. 子曰：「誰能出不由戶？何莫由斯道也？」
-> <!-- end::[論語.md] -->
-
-
-[回大綱](#/1)
-
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-#### 天之曆數
+<!-- 第 (#/13) 頁 -->
 
 > [!author] 論語#堯曰20.1
 > 堯曰：「咨！爾舜！天之曆數在爾躬。允執其中。四海困窮，天祿永終。」舜亦以命禹。
 
-[回大綱](#/1)
+[一、性與天道](#/2)|[回大綱](#/1)
 
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+#一、性與天道|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-#### 不知命
+<!-- 第 (#/14) 頁 -->
 
 > [!author] 論語#堯曰20.3
 > 
@@ -422,56 +493,78 @@ dv.paragraph(code_pure);
 > <!-- end::[論語.md] -->
 
 
-[回大綱](#/1)
+[一、性與天道](#/2)|[回大綱](#/1)
 
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+#一、性與天道|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/15) 頁 -->
 
 ## 二、禮與仁
 
-> [!col3]
+> [!flex]
 >> [!info] 禮
->> - 禮之用
->> - 齊之以禮
->> - 人而不仁
->> - 禮之本
->> - 禘
->> - 祭如在
->> - 每事問
->> - 里仁為美
->> - 仁者安仁
->> - 仁者能好人
->> - 苟志於仁
->> - 未見好仁
->> - 仁者樂山
->> - 博施於民
->> - 仁遠乎哉
->> - 恭而無禮
->> - 仁者不憂
->> - 克己復禮
->> - 己所不欲
->> - 其言也訒
->> - 約之以禮
->> - 愛人知人
->> - 禹稷躬稼
->> - 殺身成仁
->> - 事賢友仁
->> - 知及仁守
->> - 未見蹈仁
->> - 寬則得眾
+>> - [禮之用](#/16)
+>> - [齊之以禮](#/17)
+>> - [人而不仁](#/18)
+>> - [禮之本](#/19)
+>> - [禘](#/20)
+>> - [祭如在](#/23)
+>> - [每事問](#/24)
+>> - [恭而無禮](#/33)
+>> - [克己復禮](#/35)
+>> - [約之以禮](#/38)
+>
+>> [!info] 仁
+>> - [里仁為美](#/25)
+>> - [仁者安仁](#/26)
+>> - [仁者能好人](#/27)
+>> - [苟志於仁](#/28)
+>> - [未見好仁](#/29)
+>> - [仁者樂山](#/30)
+>> - [博施於民](#/31)
+>> - [仁遠乎哉](#/32)
+>> - [仁者不憂](#/34)
+>
+>> [!info] 問
+>> - [己所不欲](#/36)
+>> - [其言也訒](#/37)
+>> - [愛人知人](#/39)
+>> - [禹稷躬稼](#/40)
+>> - [事賢友仁](#/42)
+>> - [寬則得眾](#/45)
+>>
+>> 泛答
+>> - [殺身成仁](#/41)
+>> - [知及仁守](#/43)
+>> - [未見蹈仁](#/44)
 >
 >> [!table]
 
 [回大綱](#/1)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### 禮門義路
-
-#### 禮之用
+<!-- 第 (#/16) 頁 -->
 
 > [!author] 論語#學而1.12
 > 
@@ -480,7 +573,21 @@ dv.paragraph(code_pure);
 > <!-- end::[論語.md] -->
 
 
-#### 齊之以禮
+[二、禮與仁](#/15)|[回大綱](#/1)
+
+#二、禮與仁|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/17) 頁 -->
 
 > [!author] 論語#為政2.3
 > 
@@ -489,50 +596,21 @@ dv.paragraph(code_pure);
 > <!-- end::[論語.md] -->
 
 
-[回大綱](#/1)
+[二、禮與仁](#/15)|[回大綱](#/1)
 
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+#二、禮與仁|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### 祭之以禮
-
-#### 禘
-
-> [!author] 論語#八佾3.10
-> 
-> <!-- begin::[論語.md] -->
-> 10. 子曰：「禘自既灌而往者，吾不欲觀之矣。」
-> <!-- end::[論語.md] -->
-
-
-#### 祭如在
-
-> [!author] 論語#八佾3.12
-> 
-> <!-- begin::[論語.md] -->
-> 12. 祭如在，祭神如神在。子曰：「吾不與祭，如不祭。」
-> <!-- end::[論語.md] -->
-
-
-#### 每事問
-
-> [!author] 論語#八佾3.15
-> 
-> <!-- begin::[論語.md] -->
-> 15. 子入大廟，每事問。或曰：「孰謂鄹人之子知禮乎？入大廟，每事問。」子聞之曰：「是禮也。」
-> <!-- end::[論語.md] -->
-
-
-[回大綱](#/1)
-
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### 禮之本
-
-#### 人而不仁
+<!-- 第 (#/18) 頁 -->
 
 > [!author] 論語#八佾3.3
 > 
@@ -541,16 +619,21 @@ dv.paragraph(code_pure);
 > <!-- end::[論語.md] -->
 
 
-#### 里仁為美
+[二、禮與仁](#/15)|[回大綱](#/1)
 
-> [!author] 論語#里仁4.1
-> 
-> <!-- begin::[論語.md] -->
-> 1. 子曰：「里仁為美。擇不處仁，焉得知？」
-> <!-- end::[論語.md] -->
+#二、禮與仁|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-
-#### 禮之本
+<!-- 第 (#/19) 頁 -->
 
 > [!author] 論語#八佾3.4
 > 
@@ -559,13 +642,155 @@ dv.paragraph(code_pure);
 > <!-- end::[論語.md] -->
 
 
-[回大綱](#/1)
+[二、禮與仁](#/15)|[回大綱](#/1)
 
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+#二、禮與仁|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-#### 仁者安仁
+<!-- 第 (#/20) 頁 -->
+
+> [!author] 論語#八佾3.10
+> 
+> <!-- begin::[論語.md] -->
+> 10. 子曰：「禘自既灌而往者，吾不欲觀之矣。」
+> <!-- end::[論語.md] -->
+
+
+[二、禮與仁](#/15)|[回大綱](#/1)
+
+#二、禮與仁|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/21) 頁 -->
+
+> - **禘**：天子諸侯宗廟之祭，春曰礿，夏曰禘，秋曰嘗，冬曰烝。
+> - **灌**：禘祭開始時的迎神儀式，將鬱金草泡的酒（鬯酒）倒在地上，以芬芳香氣上達神明與祖先。
+> - **既灌而往**：灌禮完成之後，接下來是依「昭穆」（宗廟牌位的左昭右穆輩分次序）排列進行嚴格的祭祀。
+
+[二、禮與仁](#/15)|[回大綱](#/1)
+
+#二、禮與仁|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/22) 頁 -->
+
+> - 不欲觀之的原因：
+> 	- **僭越禮制與亂昭穆**：魯國的禘禮不合天子之禮，且當時魯國宗廟祭祀已經亂了昭穆次序（如魯文公將僖公牌位次序顛倒），違背了周禮。
+> 	- **失去誠敬之心**：祭祀重在誠敬，若儀式流於形式、亂了倫常次序，則無實質。
+
+[二、禮與仁](#/15)|[回大綱](#/1)
+
+#二、禮與仁|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/23) 頁 -->
+
+> [!author] 論語#八佾3.12
+> 
+> <!-- begin::[論語.md] -->
+> 12. 祭如在，祭神如神在。子曰：「吾不與祭，如不祭。」
+> <!-- end::[論語.md] -->
+
+
+[二、禮與仁](#/15)|[回大綱](#/1)
+
+#二、禮與仁|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/24) 頁 -->
+
+> [!author] 論語#八佾3.15
+> 
+> <!-- begin::[論語.md] -->
+> 15. 子入大廟，每事問。或曰：「孰謂鄹人之子知禮乎？入大廟，每事問。」子聞之曰：「是禮也。」
+> <!-- end::[論語.md] -->
+
+
+[二、禮與仁](#/15)|[回大綱](#/1)
+
+#二、禮與仁|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/25) 頁 -->
+
+> [!author] 論語#里仁4.1
+> 
+> <!-- begin::[論語.md] -->
+> 1. 子曰：「里仁為美。擇不處仁，焉得知？」
+> <!-- end::[論語.md] -->
+
+
+> **知**：通「智」。
+
+[二、禮與仁](#/15)|[回大綱](#/1)
+
+#二、禮與仁|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/26) 頁 -->
 
 > [!author] 論語#里仁4.2
 > 
@@ -574,13 +799,21 @@ dv.paragraph(code_pure);
 > <!-- end::[論語.md] -->
 
 
-[回大綱](#/1)
+[二、禮與仁](#/15)|[回大綱](#/1)
 
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+#二、禮與仁|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-#### 仁者能好人
+<!-- 第 (#/27) 頁 -->
 
 > [!author] 論語#里仁4.3
 > 
@@ -589,13 +822,21 @@ dv.paragraph(code_pure);
 > <!-- end::[論語.md] -->
 
 
-[回大綱](#/1)
+[二、禮與仁](#/15)|[回大綱](#/1)
 
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+#二、禮與仁|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-#### 苟志於仁
+<!-- 第 (#/28) 頁 -->
 
 > [!author] 論語#里仁4.4
 > 
@@ -604,13 +845,21 @@ dv.paragraph(code_pure);
 > <!-- end::[論語.md] -->
 
 
-[回大綱](#/1)
+[二、禮與仁](#/15)|[回大綱](#/1)
 
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+#二、禮與仁|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-#### 未見好仁者
+<!-- 第 (#/29) 頁 -->
 
 > [!author] 論語#里仁4.6
 > 
@@ -619,13 +868,21 @@ dv.paragraph(code_pure);
 > <!-- end::[論語.md] -->
 
 
-[回大綱](#/1)
+[二、禮與仁](#/15)|[回大綱](#/1)
 
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+#二、禮與仁|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-#### 仁者樂山
+<!-- 第 (#/30) 頁 -->
 
 > [!author] 論語#雍也6.23
 > 
@@ -634,13 +891,21 @@ dv.paragraph(code_pure);
 > <!-- end::[論語.md] -->
 
 
-[回大綱](#/1)
+[二、禮與仁](#/15)|[回大綱](#/1)
 
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+#二、禮與仁|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-#### 博施於民
+<!-- 第 (#/31) 頁 -->
 
 > [!author] 論語#雍也6.30
 > 
@@ -649,13 +914,21 @@ dv.paragraph(code_pure);
 > <!-- end::[論語.md] -->
 
 
-[回大綱](#/1)
+[二、禮與仁](#/15)|[回大綱](#/1)
 
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+#二、禮與仁|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-#### 我欲仁
+<!-- 第 (#/32) 頁 -->
 
 > [!author] 論語#述而7.30
 > 
@@ -664,13 +937,21 @@ dv.paragraph(code_pure);
 > <!-- end::[論語.md] -->
 
 
-[回大綱](#/1)
+[二、禮與仁](#/15)|[回大綱](#/1)
 
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+#二、禮與仁|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-#### 恭而無禮
+<!-- 第 (#/33) 頁 -->
 
 > [!author] 論語#泰伯8.2
 > 
@@ -679,13 +960,21 @@ dv.paragraph(code_pure);
 > <!-- end::[論語.md] -->
 
 
-[回大綱](#/1)
+[二、禮與仁](#/15)|[回大綱](#/1)
 
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+#二、禮與仁|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-#### 仁者不憂
+<!-- 第 (#/34) 頁 -->
 
 > [!author] 論語#子罕9.29
 > 
@@ -694,13 +983,21 @@ dv.paragraph(code_pure);
 > <!-- end::[論語.md] -->
 
 
-[回大綱](#/1)
+[二、禮與仁](#/15)|[回大綱](#/1)
 
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+#二、禮與仁|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-#### 克己復禮
+<!-- 第 (#/35) 頁 -->
 
 > [!author] 論語#顏淵12.1
 > 
@@ -709,13 +1006,21 @@ dv.paragraph(code_pure);
 > <!-- end::[論語.md] -->
 
 
-[回大綱](#/1)
+[二、禮與仁](#/15)|[回大綱](#/1)
 
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+#二、禮與仁|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-#### 己所不欲
+<!-- 第 (#/36) 頁 -->
 
 > [!author] 論語#顏淵12.2
 > 
@@ -724,13 +1029,21 @@ dv.paragraph(code_pure);
 > <!-- end::[論語.md] -->
 
 
-[回大綱](#/1)
+[二、禮與仁](#/15)|[回大綱](#/1)
 
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+#二、禮與仁|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-#### 其言也訒
+<!-- 第 (#/37) 頁 -->
 
 > [!author] 論語#顏淵12.3
 > 
@@ -739,13 +1052,23 @@ dv.paragraph(code_pure);
 > <!-- end::[論語.md] -->
 
 
-[回大綱](#/1)
+> 仁者其言也**訒**：說話謹慎，難以啟口的樣子
 
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+[二、禮與仁](#/15)|[回大綱](#/1)
+
+#二、禮與仁|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-#### 約之以禮
+<!-- 第 (#/38) 頁 -->
 
 > [!author] 論語#顏淵12.15
 > 
@@ -754,13 +1077,21 @@ dv.paragraph(code_pure);
 > <!-- end::[論語.md] -->
 
 
-[回大綱](#/1)
+[二、禮與仁](#/15)|[回大綱](#/1)
 
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+#二、禮與仁|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-#### 愛人知人
+<!-- 第 (#/39) 頁 -->
 
 > [!author] 論語#顏淵12.22
 > 
@@ -769,13 +1100,21 @@ dv.paragraph(code_pure);
 > <!-- end::[論語.md] -->
 
 
-[回大綱](#/1)
+[二、禮與仁](#/15)|[回大綱](#/1)
 
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+#二、禮與仁|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-#### 禹稷躬稼
+<!-- 第 (#/40) 頁 -->
 
 > [!author] 論語#憲問14.5
 > 
@@ -784,13 +1123,21 @@ dv.paragraph(code_pure);
 > <!-- end::[論語.md] -->
 
 
-[回大綱](#/1)
+[二、禮與仁](#/15)|[回大綱](#/1)
 
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+#二、禮與仁|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-#### 殺身成仁
+<!-- 第 (#/41) 頁 -->
 
 > [!author] 論語#衛靈公15.9
 > 
@@ -799,13 +1146,21 @@ dv.paragraph(code_pure);
 > <!-- end::[論語.md] -->
 
 
-[回大綱](#/1)
+[二、禮與仁](#/15)|[回大綱](#/1)
 
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+#二、禮與仁|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-#### 事賢友仁
+<!-- 第 (#/42) 頁 -->
 
 > [!author] 論語#衛靈公15.10
 > 
@@ -814,14 +1169,21 @@ dv.paragraph(code_pure);
 > <!-- end::[論語.md] -->
 
 
-[回大綱](#/1)
+[二、禮與仁](#/15)|[回大綱](#/1)
 
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+#二、禮與仁|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-<% tp.file.cursor(1) %>
-#### 知及仁守
+<!-- 第 (#/43) 頁 -->
 
 > [!author] 論語#衛靈公15.33
 > 
@@ -830,13 +1192,21 @@ dv.paragraph(code_pure);
 > <!-- end::[論語.md] -->
 
 
-[回大綱](#/1)
+[二、禮與仁](#/15)|[回大綱](#/1)
 
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+#二、禮與仁|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-#### 知及仁守
+<!-- 第 (#/44) 頁 -->
 
 > [!author] 論語#衛靈公15.35
 > 
@@ -845,13 +1215,21 @@ dv.paragraph(code_pure);
 > <!-- end::[論語.md] -->
 
 
-[回大綱](#/1)
+[二、禮與仁](#/15)|[回大綱](#/1)
 
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+#二、禮與仁|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-#### 寬則得眾
+<!-- 第 (#/45) 頁 -->
 
 > [!author] 論語#陽貨17.6
 > 
@@ -860,11 +1238,36 @@ dv.paragraph(code_pure);
 > <!-- end::[論語.md] -->
 
 
-[回大綱](#/1)
+[二、禮與仁](#/15)|[回大綱](#/1)
 
-回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+#二、禮與仁|回大綱
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/46) 頁 -->
+
+<p style="font-size:2em; text-align: center;">敬祝</p>
+<p style="font-size:3em; text-align: center;">聖凡如意</p>
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- .element: -style:="true" display:none="true" -->
 
 %%
 
@@ -955,7 +1358,15 @@ dv.paragraph(code_pure);
 [回大綱](#/1)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+</div></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ##### 二、禮與仁
@@ -1156,16 +1567,11 @@ dv.paragraph(code_pure);
 > <!-- end::[論語.md] -->
 
 
-%%
-
 [回大綱](#/1)
 
 回大綱
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-<p style="font-size:2em; text-align: center;">敬祝</p>
-<p style="font-size:3em; text-align: center;">聖凡如意</p>
+%%
 </div></script></section></div>
     </div>
 
@@ -1250,12 +1656,6 @@ dv.paragraph(code_pure);
             },
             customcontrols: {
                 controls: [
-                    {
-                        id: 'toggle-overview',
-                        title: 'Toggle overview (O)',
-                        icon: '<i class="fa fa-th"></i>',
-                        action: 'Reveal.toggleOverview();'
-                    },
                 ]
             },
         };
