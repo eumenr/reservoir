@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>AI 協作撰寫考核報告及新聞稿</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="../../.obsidian/snippets/mater.css" />
+    <link rel="stylesheet" href="../../.obsidian/snippets/slides_extended_css.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# AI 協作撰寫考核報告及新聞稿
+<!-- .element: class="r-fit-text" -->
+
+歷年範例 × AI 協作撰稿
+<!-- .element: class="r-fit-text" -->
+
+<div class="hide-from-slides">
+
+> [!table|share-none]
+>> [!table|right]
+>> 狀態：`INPUT[inlineSelect(option(🌱 下種), option(🪴 發展), option(👣 追蹤), option(🥾 交付), option(✅ 完成), option(🌲 常青), option(❌ 取消), showcase):status]`
+>> 主題：`INPUT[inlineSelect(option(beige), option(black), option(blood), option(dracula), option(league), option(moon), option(night), option(serif), option(simple), option(sky), option(solarized), option(white), showcase):theme]`
+>> 切換：`INPUT[inlineSelect(option(none), option(fade), option(slide), option(convex), option(concave), option(zoom), showcase):transition]`
+>
+> [up:: 傳題, 投影片] 目前位置 模板
+> ```meta-bind-button
+> style: default
+> label: 開啟簡報
+> tooltip: 'presentation'
+> id: presentation
+> hidden: false
+> action:
+>   type: command
+>   command: slides:start
+> ```
+>
+> ```meta-bind-button
+> style: default
+> label: RevealJS
+> tooltip: 'Slides Extended: Show slide preview'
+> id: RevealJS
+> hidden: false
+> action:
+>   type: command
+>   command: slides-extended:open-preview
+> ```
+
+> [!right]
+> 修改@`$=dv.span(dv.current().date_modified)`
+
+</div><!-- .element: style="display: none" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/1) 頁 -->
+
+## 大綱
+<!-- .element: style="display: none" -->
+
+FENCEDCODEdataviewjs:1:YGBgZGF0YXZpZXdqcwon55Si5Ye65aSn57axJwovLyDlj5blvpfnlbbliY3mqpTmoYjlhaflrrkKY29uc3QgZmlsZSA9IGR2LmN1cnJlbnQoKS5maWxlOwpjb25zdCBjb250ZW50ID0gYXdhaXQgYXBwLnZhdWx0LnJlYWQoYXBwLnZhdWx0LmdldEFic3RyYWN0RmlsZUJ5UGF0aChmaWxlLnBhdGgpKTsKY29uc3QgbGluZXMgPSBjb250ZW50LnNwbGl0KCJcbiIpOwoKLy8g5Yid5aeL5YyW5Y+D5pW4CmxldCBjdXJyZW50U2xpZGUgPSAtMjsgLy8g57Ch5aCx6aCB56K86YCa5bi45b6eIDAg5oiWIDEg6ZaL5aeLCmNvbnN0IGhlYWRpbmdzX3JldmVhbCA9IFtdOwoKLy8g6YGN5q235omA5pyJ6KGM77yM6KiI566X6aCB56K86IiH5qiZ6aGMCmZvciAobGV0IGkgPSAwOyBpIDwgbGluZXMubGVuZ3RoOyBpKyspIHsKCWNvbnN0IGxpbmUgPSBsaW5lc1tpXS50cmltKCk7CgoJLy8g5qqi5ris5rC05bmz5YiG6aCBICgtLS0pIOaIluWeguebtOWIhumggSAoLS0tLSkKCS8vIOmAmeijoeimluS9oOeahOewoeWgsee1kOani+iAjOWumu+8jOiLpeeEoeWeguebtOWIhumgge+8jOWPqumcgOWIpOaWtyAiLS0tIgoJaWYgKGxpbmUgPT09ICItLS0iIHx8IGxpbmUgPT09ICItLS0tIikgewoJCWN1cnJlbnRTbGlkZSsrOwoJCWNvbnRpbnVlOwoJfQoKCS8vIOWMuemFjeaomemhjCAoIyMsICMjIywgIyMjIykKCWNvbnN0IG0gPSBsaW5lLm1hdGNoKC9eKCN7Miw0fSlccysoLiopLyk7CglpZiAoIW0pIGNvbnRpbnVlOwoKCWNvbnN0IGxldmVsID0gbVsxXS5sZW5ndGg7Cgljb25zdCB0aXRsZSA9IG1bMl0udHJpbSgpOwoKCWhlYWRpbmdzX3JldmVhbC5wdXNoKHsgbGV2ZWwsIHRpdGxlLCBzbGlkZTogY3VycmVudFNsaWRlIH0pOwp9CgovLyDnlKLnlJ/ovLjlh7rljYDloYoKbGV0IHNsaWRlX2Jsb2NrID0gIiI7CmxldCByZWFkaW5nX2Jsb2NrID0gIiI7CmNvbnN0IGJhc2VMZXZlbCA9IDI7IC8vIOWfuua6luWxpOe0mgoKZm9yIChjb25zdCBoIG9mIGhlYWRpbmdzX3JldmVhbCkgewoJaWYgKGgudGl0bGUgIT0gIuWkp+e2sSIpIHsKCQljb25zdCBpbmRlbnQgPSAiICAiLnJlcGVhdChoLmxldmVsIC0gYmFzZUxldmVsKTsKCQoJCS8vIFNsaWRlIOmAo+e1kCAoUmV2ZWFsLmpzIOagvOW8jykKCQljb25zdCBzbGlkZUxpbmsgPSBoLmxldmVsID09PSAyID8gYCgjLyR7aC5zbGlkZX0pYCA6IGAoIy8ke2guc2xpZGV9LzAvMClgOwoJCXNsaWRlX2Jsb2NrICs9IGA+PiAke2luZGVudH0tIFske2gudGl0bGV9XSR7c2xpZGVMaW5rfVxuYDsKCQoJCS8vIFJlYWRpbmcgVmlldyDpgKPntZAgKE9ic2lkaWFuIOWFp+mDqOmAo+e1kCkKCQlyZWFkaW5nX2Jsb2NrICs9IGA+PiAke2luZGVudH0tIFtbIyR7aC50aXRsZX1dXVxuYDsKCX0KfQoKLy8g57WE5ZCI5pyA57WCIE1hcmtkb3duIOe1kOaniwpjb25zdCBvdXRwdXQgPSBgCj4gWyFmbGV4XQo+PiBbIW91dGxpbmV8c2xpZGUtaGlkZV0gKirlpKfntrEgKOmgkOimvSkqKgoke3JlYWRpbmdfYmxvY2t9Cj4KPj4gWyFvdXRsaW5lfGNvbG9yLWJsdWV8cmVhZGluZy12aWV3LWhpZGVdICoq5aSn57axICjnsKHloLEpKioKJHtzbGlkZV9ibG9ja30KYDsKCi8vIOi8uOWHuuWIsOmggemdogpkdi5zcGFuKG91dHB1dCk7CmBgYA==ECODDECNEF
+<!-- .element: style="display: none" -->
+
+FENCEDCODEdataviewjs:1:YGBgZGF0YXZpZXdqcyBbMS0yXQon55Si5Ye65Y+v6KSH6KO95Luj56K8Jwpjb25zdCBmaWxlID0gZHYuY3VycmVudCgpLmZpbGU7CmNvbnN0IGNvbnRlbnQgPSBhd2FpdCB0aGlzLmFwcC52YXVsdC5yZWFkKGFwcC52YXVsdC5nZXRBYnN0cmFjdEZpbGVCeVBhdGgoZmlsZS5wYXRoKSk7CmNvbnN0IGxpbmVzID0gY29udGVudC5zcGxpdCgiXG4iKTsKY29uc3QgZmlyc3RfaDEgPSBsaW5lcy5maW5kKChsaW5lKSA9PiAvXiNccysvLnRlc3QobGluZSkpOwpjb25zdCBkaXNwbGF5X3RpdGxlID0gZmlyc3RfaDEKCT8gZmlyc3RfaDEucmVwbGFjZSgvXiNccysvLCAiIikudHJpbSgpCgk6IGZpbGU/Lm5hbWUgPz8gIiI7CgovLyDop6PmnpAgc2xpZGUg6aCB56K877yI5b6eIEhUTUwg6Ki76Kej5oqTICgjL24p77yJCmZ1bmN0aW9uIGdldFNsaWRlSW5kZXgoaSkgewoJZm9yIChsZXQgaiA9IGkgLSAxOyBqID49IDA7IGotLSkgewoJCS8vIOS/ruaUue+8muWinuWKoOWwjeW8t+WItuWIhumalOespiAtLS0g55qE5o2V5o2J77yM5oiW6ICF56K65L+d6IO95oqT5Yiw5pu05a6M5pW055qE6Yyo6bueCgkJY29uc3QgbSA9IGxpbmVzW2pdLm1hdGNoKC8jXC8oXGQrKS8pOwoJCWlmIChtKSByZXR1cm4gbVsxXTsKCX0KCS8vIOWmguaenOaJvuS4jeWIsO+8jOe1puS4gOWAi+mgkOioreWAvO+8jOiAjOS4jeaYryByZXR1cm4gbnVsbAoJcmV0dXJuICIxIjsKfQoKLy8g5pO35Y+W5qiZ6aGMCmNvbnN0IGhlYWRpbmdzX3JldmVhbCA9IFtdOwpmb3IgKGxldCBpID0gMDsgaSA8IGxpbmVzLmxlbmd0aDsgaSsrKSB7Cgljb25zdCBsaW5lID0gbGluZXNbaV07Cgljb25zdCBtID0gbGluZS5tYXRjaCgvXigjezIsNH0pXHMrKC4qKS8pOwoJaWYgKCFtKSBjb250aW51ZTsKCgljb25zdCBsZXZlbCA9IG1bMV0ubGVuZ3RoOyAvLyAjIyA9IDIsICMjIyA9IDMsICMjIyMgPSA0Cgljb25zdCB0aXRsZSA9IG1bMl0udHJpbSgpOwoJY29uc3Qgc2xpZGUgPSBnZXRTbGlkZUluZGV4KGkpOwoKCWlmIChzbGlkZSkgewoJCWhlYWRpbmdzX3JldmVhbC5wdXNoKHsgbGV2ZWwsIHRpdGxlLCBzbGlkZSB9KTsKCX0KfQoKLy8g5Z+65rqW5bGk57SaCmNvbnN0IGJhc2VMZXZlbCA9IDI7CgovLyDnlKLnlJ/pmo7lsaTmuIXllq4KbGV0IHNsaWRlX2Jsb2NrID0gIiI7CmxldCByZWFkaW5nX2Jsb2NrID0gIiI7Cgpmb3IgKGNvbnN0IGggb2YgaGVhZGluZ3NfcmV2ZWFsKSB7CglpZiAoaC50aXRsZSAhPSAi5aSn57axIikgewoJCWNvbnN0IGluZGVudCA9ICIgICIucmVwZWF0KGgubGV2ZWwgLSBiYXNlTGV2ZWwpOwoJCWNvbnN0IGxpbmsgPQoJCQloLmxldmVsID09PSAyCgkJCQk/IGAoIy8ke2guc2xpZGV9KWAKCQkJCTogYCgjLyR7aC5zbGlkZX0vMC8wKWA7CgkJLy8gU2xpZGUgTW9kZSDmqJnoqJjvvIzoo6HpnaLmmK8gUmV2ZWFsL1NsaWRlIOWwiOeUqOaomeiomAoJCXNsaWRlX2Jsb2NrICs9IGA+PiAke2luZGVudH0tIFske2gudGl0bGV9XSR7bGlua31cbmA7CgkJLy8gUmVhZGluZyBWaWV3IOaomeiomAoJCXJlYWRpbmdfYmxvY2sgKz0gYD4+ICR7aW5kZW50fS0gW1sjJHtoLnRpdGxlfV1dXG5gOwoJfQp9CgovLyDovLjlh7rvvIznhKHms5Xpoa/npLrlnKhyZWFkaW5nLXZpZXfvvIzlm6DngrpzbGlkZV9ibG9ja+eEoeazlea4suafkwpsZXQgbGlua19ibG9jayA9ICI+IFshZmxleF0gXG4+PiBbIW91dGxpbmV8c2xpZGUtaGlkZV0gIiArIGRpc3BsYXlfdGl0bGUgKyAiXG4iICsgcmVhZGluZ19ibG9jayArICI+XG4+PiBbIW91dGxpbmV8Y29sb3ItcHVycGxlfHJlYWRpbmctdmlldy1oaWRlXSAiICsgZGlzcGxheV90aXRsZSArICJcbj4+XG4+PiIgKyBzbGlkZV9ibG9jawovLyDovLjlh7rvvIzlj6/ku6Xpoa/npLrlnKhyZWFkaW5nLXZpZXfvvIzkvYZzbGlkZV9ibG9ja+imgeaJi+WLleiyvOS4igpsZXQgY29kZV9ibG9jayA9ICI+IFshZmxleF0gXG4+PiBbIW91dGxpbmV8c2xpZGUtaGlkZV0gIiArIGRpc3BsYXlfdGl0bGUgKyAiXG4iICsgcmVhZGluZ19ibG9jayArICI+XG4+PiBbIW91dGxpbmV8Y29sb3ItYmx1ZXxyZWFkaW5nLXZpZXctaGlkZV0gIiArIGRpc3BsYXlfdGl0bGUgKyAiXG4+PlxuPj4gYGBgYHRleHRcbiIgKyBzbGlkZV9ibG9jayArICI+PiBgYGBgXG4iOwpsZXQgY29kZV9wdXJlID0gYApcYFxgXGBcYG1hcmtkb3duCj4gWyFmbGV4XQo+PiBbIW91dGxpbmV8c2xpZGUtaGlkZV0gJHtkaXNwbGF5X3RpdGxlfQoke3JlYWRpbmdfYmxvY2t9PjwhLS0gLmVsZW1lbnQ6IHN0eWxlPVwiZGlzcGxheTpub25lO1wiIC0tPgo+Cj4+IFshb3V0bGluZXxjb2xvci1wdXJwbGV8cmVhZGluZy12aWV3LWhpZGVdICR7ZGlzcGxheV90aXRsZX0KJHtzbGlkZV9ibG9ja30+ClxgXGBcYFxgCmA7CgovLyDpoa/npLrngrrlpKfntrHlj4rmloflrZfljYDloYoKZHYucGFyYWdyYXBoKGNvZGVfcHVyZSk7CmBgYA==ECODDECNEF
+<!-- .element: style="display: none" -->
+
+> [!flex]
+>> [!outline|slide-hide] AI 協作撰寫考核報告及新聞稿
+>> - #目標
+>> - #為什麼是 Gemini Notebook？
+>> - #免費版使用提醒
+>> - #示範資料準備
+>> - #人機協作分工
+>> - #共通協作流程
+>> - #速查手冊入口
+>> - #演示一：考核報告五格填空卡
+>> - #演示二：新聞稿選題與寫作骨架
+>> - #兩類文件的查核重點
+>> - #資料到位，即刻起稿
+><!-- .element: style="display: none" -->
+>
+>> [!outline|color-purple|reading-view-hide] AI 協作撰寫考核報告及新聞稿
+>> - [目標](#/2)
+>> - [為什麼是 Gemini Notebook？](#/3)
+>> - [免費版使用提醒](#/4)
+>> - [示範資料準備](#/5)
+>> - [人機協作分工](#/6)
+>> - [共通協作流程](#/7)
+>> - [速查手冊入口](#/8)
+>> - [演示一：考核報告五格填空卡](#/9)
+>> - [演示二：新聞稿選題與寫作骨架](#/11)
+>> - [兩類文件的查核重點](#/13)
+>> - [資料到位，即刻起稿](#/14)
+>
+
+[回首頁](https://eumenr.github.io/reservoir/)
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/2) 頁 -->
+
+## 目標
+
+- 運用 AI 協作
+- 撰寫考核報告及新聞稿
+
+> 從歷年資料出發，<br>
+> 建立未來可直接套用的工作方法
+
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/3) 頁 -->
+
+## 為什麼是 Gemini Notebook？
+
+> [!flex]
+>> [!info] 彙整資料
+>>
+>> 可集中閱讀<br>
+>> 多份歷年文件<br>
+>>
+>
+>> [!help] 依據提問
+>>
+>> 對資料提問<br>
+>> 找案例<br>
+>> 比較寫法
+>
+>> [!todo] 回溯來源
+>>
+>> 查看原始文件
+>> 核對回答依據
+
+> 適合以**歷年資料**為基礎的撰稿協作
+
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/4) 頁 -->
+
+## 免費版使用提醒
+
+> [!flex]
+>> [!info] 固定上限
+>>
+>> 100本筆記本<br>
+>>
+>> 每本**50**份來源
+>
+>> [!help] 產製功能
+>>
+>> 報告、簡報與修訂均有使用額度<!-- .element: style="margin: 0 0.5em; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left" -->
+>
+>> [!warning] 實際額度
+>>
+>> 依帳號與使用情況變動請以<br>**設定→用量**<br>為準<!-- .element: style="margin: 0 0.5em; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left" -->
+
+> 重要產出請**預留額度**
+
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/5) 頁 -->
+
+## 示範資料準備
+
+本次演示所需的歷年考核報告與新聞稿範例
+
+<a href="https://is.gd/bLW8KL" target="_blank"><i class="fas fa-download fa-4x"></i></a>
+
+> 詳細資料來源、提示詞及操作步驟，請見後續速查手冊。**限內部使用**
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/6) 頁 -->
+
+## 人機協作分工
+
+| Gemini Notebook | 承辦人 |
+| --- | --- |
+| 起草、改寫、比對 | 判斷、核對、定稿 |
+| 整理來源與格式 | 補入事實與法規 |
+| 依指令反覆修稿 | 陳核與發布 |
+
+> **AI 負責文字 <i class="fas fa-handshake"></i> 人 負責內容**
+
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/7) 頁 -->
+
+## 共通協作流程
+
+
+> [!flex]
+>> [!note] 起草≠終點
+>>
+>> 設定任務<br>
+>> 核對來源<br>
+>> 標示問題<br>
+>> 指示重寫<br><br>
+>> <i class="fas fa-sync-alt fa-3x"></i>
+>
+><img src="https://cdn.imgpile.com/f/GzBN435_xl.webp" alt="流程圖" style="object-fit: scale-down">
+
+
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/8) 頁 -->
+
+## 速查手冊入口
+
+> [!flex]
+>> [!note] 速查手冊包含：
+>>
+>> - 考核報告五格填空卡
+>> - 考核報告提示詞
+>> - 新聞稿提示詞
+>> - 人工查核清單
+>>
+>> 請先掃描 QRcode；後續示範可直接開啟並複製提示詞。
+>
+><img src="https://api.qrserver.com/v1/create-qr-code/?color=000000&bgcolor=FFFFFF&data=https%3A%2F%2Ftoui.io%2FO2WAZk&qzone=1&margin=0&size=350x350&ecc=L" alt="QRcode@Quartz" style="object-fit: scale-down">
+
+
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/9) 頁 -->
+
+## 演示一：考核報告五格填空卡
+
+> [!flex]
+>> [!info] 填什麼？
+>>
+>> 業務主題<br>
+>> 計畫/法規依據<br>
+>> 系統/資料來源<br>
+>> 執行成果<br>
+>> 查核亮點
+>
+>> [!help] 怎麼填？
+>>
+>> - 對照歷年考核報告<br>將既有事實填入
+>>
+>> - 缺資料，先補資料<br>**資料齊，再交 AI 起草**
+
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/10) 頁 -->
+
+考核報告──從資料到成稿
+<!-- .element: style="font-size: 50pt" -->
+
+> [!flex]
+>> [!info] 準備資料
+>>
+>> **五格填空卡**
+>>
+>> 主題<br>
+>> 依據<br>
+>> 資料來源<br>
+>> 執行成果<br>
+>> 查核亮點
+>
+>> [!help] AI 協作
+>>
+>> **考核報告專用提示詞**
+>>
+>> 套用北國體例
+>> 組織工作內容
+>> 轉化成果敘述
+>> <a href="實際速查手冊網址" target="_blank"><i class="fas fa-file-alt"></i>速查手冊</a>
+>
+>> [!todo] 交付成果
+>>
+>> **考核報告段落**
+>>
+>> 規定辦理工作<br>
+>> 辦理成效<br>
+>> 標題與結語
+
+
+
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/11) 頁 -->
+
+## 演示二：新聞稿選題與寫作骨架
+
+| 資料 | 用途 |
+| --- | --- |
+| 臺北國稅局<br>奉核稿 | 學習行文風格、文章結構及敘事方式 |
+| 其他地區國稅局新聞稿 | 參考選題、標題及案例呈現方式 |
+| 法規／函釋來源 | 提供撰稿依據及來源回溯 |
+
+> **多元題材，行文仍維持本局風格。**
+
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/12) 頁 -->
+
+新聞稿──從資料到成稿
+<!-- .element: style="font-size: 50pt" -->
+
+> [!flex]
+>> [!info] 準備資料
+>>
+>> **本局新聞稿**<br>
+>> 學格式與風格
+>>
+>> **其他地區國稅局新聞稿**<br>
+>> 找題材與切角
+>>
+>> **法規與函釋**<br>
+>> 核對規定依據
+>
+>> [!help] AI 協作
+>>
+>> **新聞稿提示詞**
+>>
+>> 指定題材<br>
+>> 指定讀者<br>
+>> 指定格式<br>
+>> 要求來源引註
+>> <a href="https://example.com" target="_blank"><i class="fas fa-newspaper"></i></a>[速查手冊]()
+>
+>> [!todo] 交付成果
+>>
+>> **新聞稿初稿**
+>>
+>> 標題<br>
+>> 規定說明<br>
+>> 案例<br>
+>> 提醒事項
+
+
+
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/13) 頁 -->
+
+## 兩類文件的查核重點
+
+| <i class="fas fa-check-double"></i> | 考核報告 | 新聞稿 |
+| --- | --- | --- |
+| 事實 | 成果、件數、金額 | 案例、日期、計算 |
+| 依據 | 計畫、系統、制度 | 條號、要件、期限 |
+| 表達 | 成果可佐證 | 題材不重複<br>資訊不誤植 |
+
+> **<i class="fas fa-shield-alt"></i>僅匯入經核准、業務必要且不含個資的資料**
+
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/14) 頁 -->
+
+## 資料到位，即刻起稿
+
+> [!flex]
+>> [!info] 考核報告
+>>
+>> 填五格卡<br>
+>> 產出
+>> 成效段落**初稿**
+>
+>> [!help] 新聞稿
+>>
+>> 填素材表<br>
+>> 產出
+>> 新聞稿<br>**初稿**
+>
+>> [!bug] 共同流程
+>>
+>> **檢查**<br>
+>> 修正<br>
+>> 陳核
+
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/15) 頁 -->
+
+## 結語
+
+把**資料**交給 AI、把**判斷**留給自己
+<!-- .element: class="r-fit-text" -->
+
+
+
+[回大綱](#/1)
+
+回大綱
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" id="grand-finale" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/16) 頁 -->
+
+
+
+感謝聆聽
+<!-- .element: class="r-fit-text" -->
+## Q&A
+<!-- .element: style="font-size: 3em" -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" data-visibility="hidden" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- 第 (#/17) 頁 -->
+
+
+
+# 課後總結
+
+回大綱
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            // normalize to rgb(a)
+            const optionEl = document.createElement("option");
+            optionEl.style.color = color;
+            const normalizedColor = optionEl.style.color;
+
+            const match = normalizedColor.match(/(\d+), (\d+), (\d+)/);
+            if (!match) return false;
+            const [, c_r, c_g, c_b] = match;
+
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.KaTeX,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+            ],
+            allottedTime: "120",
+
+            katex: {
+                local: 'plugin/math/katex',
+                extensions: ["mhchem"],
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":true,"transition":"concave","transitionSpeed":"default","width":960,"height":700,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      /**
+       * KaTeX Equation Numbering Note
+       *
+       * KaTeX maintains a global equation counter for \begin{equation} environments.
+       * When navigating between slides, reveal.js math plugin may re-render math, causing
+       * equation numbers to change randomly.
+       *
+       * Note: Regular $$ blocks don't have equation numbers - only \begin{equation} does.
+       *
+       * If you experience issues with equation numbers changing:
+       * Use manual \tag{} commands: \begin{equation}\tag{1} ... \end{equation}
+       */
+
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>

@@ -43,6 +43,7 @@
 .reveal-viewport .slides section strong {
 	/*--text-accent: hsl(from var(--r-link-color) calc(h + 60) 80 60);*/
 	color: var(--r-link-color, #42affa);
+	color: var(--r-link-color, #ff0) !important;
 }
 .reveal .button,
 .reveal .hide-in-slides {
@@ -72,6 +73,17 @@
 		/*filter: none !important;*/
 		display: inline !important;
 	}
+}
+
+/* 粗體固定顯示黃色 */
+.reveal .slides section strong,
+.reveal-viewport .slides section strong,
+html:not([class*="theme-"]) .reveal .slides section strong {
+	color: #ffd60a !important;
+	-webkit-text-fill-color: #ffd60a !important;
+	background: none !important;
+	-webkit-background-clip: border-box !important;
+	background-clip: border-box !important;
 }
 
 blockquote {
@@ -124,16 +136,22 @@ blockquote {
 	padding: 0; margin: 0;
 }
 
+/* 處理 callout 背景顏色 */
+.callout {
+	/*background-color: rgba(var(--callout-background-color), 0.05);*/
+	background-color: rgba(var(--callout-background-color), 0.03);
+}
+
 /*.callout[data-type*="outline"]*/
 .callout-color-default {
 	--callout-color: var(--r-link-color, #42affa) !important;
-	background-color: hsl(from var(--r-link-color, #42affa) h s l / 0.1) !important;
+	background-color: hsl(from var(--r-link-color, #42affa) h s l / 0.05) !important;
 	border-left: 4px solid var(--r-link-color, #42affa) !important;
 }
 
 /*.callout[data-type*="outline"]*/
 .callout-color-default .callout-title {
-	background-color: hsl(from var(--r-link-color, #42affa) h s l / 0.1) !important;
+	background-color: hsl(from var(--r-link-color, #42affa) h s l / 0.2) !important;
 }
 /*.callout[data-type*="outline"] .callout-icon*/
 .callout-color-default[data-type*="outline"] .callout-icon,
