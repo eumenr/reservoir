@@ -19,10 +19,6 @@
 
 <!--
 
-
-
-
-
 9. [AI協作撰寫考核報告及新聞稿簡報](<./Extra/Slides Extended/index_AI協作撰寫考核報告及新聞稿簡報.html>)
 
 ## 封存
