@@ -19,12 +19,13 @@
 
 <!--
 
-9. [AI協作撰寫考核報告及新聞稿簡報](<./Extra/Slides Extended/index_AI協作撰寫考核報告及新聞稿簡報.html>)
+
 
 ## 封存
 
 1. [不休息菩薩慈示訓(六)︰1.囑咐壇主2.崇德家書3.使命](./Extra/不休息菩薩慈示訓(六)︰1.囑咐壇主2.崇德家書3.使命/)
 3. [道化生活(一)：白陽修士的現代生活](<./Extra/Slides Extended/index_道化生活(一)：白陽修士的現代生活.html>)
 9. [新聞稿 AI 協作指南簡報](<./Extra/Slides Extended/index_新聞稿 AI 協作指南簡報.html>)
+9. [AI協作撰寫考核報告及新聞稿簡報](<./Extra/Slides Extended/index_AI協作撰寫考核報告及新聞稿簡報.html>)
 
 -->
