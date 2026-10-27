@@ -43,6 +43,7 @@
 .reveal-viewport .slides section strong {
 	/*--text-accent: hsl(from var(--r-link-color) calc(h + 60) 80 60);*/
 	color: var(--r-link-color, #42affa);
+	color: var(--r-link-color, #B9D9EB);
 	color: var(--r-link-color, #ff0) !important;
 }
 .reveal .button,
